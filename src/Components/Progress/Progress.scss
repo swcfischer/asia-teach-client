@@ -1,0 +1,36 @@
+.progress-container {
+  display: flex;
+  width: 650px;
+  margin: 0 auto;
+  padding-bottom: 55px;
+  justify-content: space-between;
+  align-items: center;
+
+  &.resume-progress-container {
+    width: 500px;
+  }
+
+  .disable-link {
+    pointer-events: none;
+  }
+  .step-btn {
+    cursor: pointer;
+    border: 1px solid #c7c7c7;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-weight: bold;
+
+    outline: none;
+
+    &.selected {
+      background: #007aff;
+      color: #fff;
+      border: 1px solid #007aff;
+    }
+  }
+}
+.line {
+  height: 1px;
+  width: 100px;
+  background: #777;
+}

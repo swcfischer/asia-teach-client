@@ -1,0 +1,116 @@
+.posting-link {
+  display: block;
+  width: 650px;
+  // margin-bottom: 15px;
+  margin: 0 auto 15px 0;
+  text-decoration: none;
+  border: 1px solid #dae0e6;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(196, 199, 204) 0px 0px 2px;
+  border-radius: 3px;
+  transition: box-shadow 240ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 10px rgba(133, 140, 148, 0.4), 0 0 2px #c4c7cc;
+  }
+
+  &:first-of-type {
+    margin-top: 20px;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+  .result-item {
+    position: relative;
+    background: #fff;
+    padding: 15px;
+    color: #000;
+    &:first-of-type {
+      border-radius: 3px;
+    }
+    &:last-of-type {
+      margin-bottom: 0px;
+      border-radius: 3px;
+    }
+
+    .name {
+      font-weight: light;
+      text-align: left;
+      font-size: 24px;
+      // font-style: italic;
+      // font-weight: lighter;
+      padding-bottom: 20px;
+      line-height: 36px;
+    }
+
+    .flex-container {
+      display: block;
+      position: relative;
+      .thumbnail-container-width {
+        display: inline-block;
+        // width: 370px;
+        .thumbnail-container {
+          height: 190px;
+          width: 339px;
+          padding-right: 15px;
+          img {
+            height: 100%;
+            width: auto;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+
+    .bottom-section {
+      display: inline-block;
+      height: 190px;
+      width: 260px;
+      vertical-align: top;
+      padding-left: 25px;
+
+      .text-popper {
+        top: 0px;
+        transform: translateX(-110%);
+      }
+
+      .location {
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .contract-start {
+        position: absolute;
+        top: 15px;
+        right: 0px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .students {
+        padding-top: 8px;
+        text-transform: capitalize;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .duration {
+        position: absolute;
+        top: 35px;
+        right: 0px;
+        color: #333;
+        font-weight: bold;
+      }
+    }
+
+    .date {
+      position: absolute;
+      font-size: 14px;
+      color: #888;
+      bottom: 0px;
+      right: 0px;
+    }
+  }
+}

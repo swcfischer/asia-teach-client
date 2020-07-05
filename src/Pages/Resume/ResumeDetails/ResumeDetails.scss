@@ -1,0 +1,91 @@
+.resume-container {
+  position: relative;
+  background: #fff;
+  box-shadow: #c4c7cc 0px 0px 2px;
+  width: 780px;
+  margin: 30px auto 0 auto;
+  padding: 35px 35px 35px 35px;
+  position: relative;
+  .resume-form {
+    height: 100%;
+    .separator-md {
+      display: block;
+      margin: 25px 0;
+    }
+
+    .separator-lg {
+      display: block;
+      margin: 75px 0;
+    }
+
+    .text-field-container,
+    .select-field-container {
+      display: inline-block;
+      margin-right: 10px;
+
+      .inner-container {
+        display: flex;
+        flex-direction: column;
+        width: 225px;
+        position: relative;
+        // margin-bottom: 10px;
+
+        .text-field-label,
+        .select-field-label {
+          display: flex;
+          align-items: center;
+          padding-bottom: 10px;
+          font-weight: bold;
+          .error-message {
+            padding-left: 10px;
+            font-size: 12px;
+            font-weight: lighter;
+            color: red;
+          }
+        }
+
+        .text-field-input,
+        .select-field {
+          border-radius: 3px;
+          border: 1px solid #dae0e6;
+          padding: 6px 10px;
+          background: #fff;
+          font-size: 16px;
+        }
+
+        .select-field {
+          appearance: none;
+        }
+
+        .triangle {
+          position: absolute;
+          top: 40px;
+          right: 10px;
+          width: 0;
+          height: 0;
+          border-top: 5px solid black;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  .btn-container {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    .details-next-btn {
+      margin-left: 15px;
+
+      &.disable-resume-next-btn {
+        pointer-events: none;
+        color: transparent;
+      }
+    }
+  }
+}

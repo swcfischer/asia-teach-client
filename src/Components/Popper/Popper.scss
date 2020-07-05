@@ -1,0 +1,23 @@
+.popper-container {
+  position: relative;
+
+  .popper {
+    display: none;
+    z-index: -100;
+    position: absolute;
+    width: auto;
+    top: -45px;
+    transform: translateX(-40%);
+    padding: 10px;
+    background: #222;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    &.show-popper {
+      z-index: 100;
+      display: block;
+    }
+  }
+}

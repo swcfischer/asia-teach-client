@@ -1,0 +1,36 @@
+.sidebar {
+  position: relative;
+  display: inline-block;
+  width: 33%;
+  box-sizing: border-box;
+  height: calc(100vh - 58px);
+  padding-top: 40px;
+  vertical-align: top;
+  .react-select-container {
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: rgb(196, 199, 204) 0px 0px 2px;
+    .search-select__control {
+      min-height: 50px;
+      padding-left: 10px;
+      .search-select__value-container {
+        input {
+          font-size: 24px !important;
+          color: #000 !important;
+          width: 200px !important;
+        }
+      }
+      .search-select__placeholder {
+        font-size: 24px;
+        color: #1d1b1b;
+      }
+      .search-select__single-value {
+        color: #000;
+        font-size: 24px;
+      }
+    }
+    .search-select__option {
+      font-size: 24px;
+    }
+  }
+}

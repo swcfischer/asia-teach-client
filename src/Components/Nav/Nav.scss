@@ -1,0 +1,91 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  min-width: 950px;
+
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+  align-items: center;
+  padding: 0px 25px;
+  z-index: 150;
+  background: #fff;
+  border-bottom: 1px solid #dae0e6;
+
+  .nav-width-container {
+    // will need to do media queries here
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    .header-container {
+      display: flex;
+      align-items: center;
+      margin: 0;
+
+      .logo {
+        background: url(assets/fan.png);
+        background-size: cover;
+        width: 45px;
+        height: 45px;
+      }
+
+      .logo-text {
+        font-family: 'Merienda', cursive;
+        font-size: 28px;
+        font-weight: normal;
+        font-style: italic;
+        padding-left: 20px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .nav-items-container {
+      display: flex;
+      .nav-item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 1px 4px;
+        padding: 4px 6px;
+        cursor: pointer;
+        color: #000;
+        font-size: 18px;
+
+        .text {
+          padding-left: 7px;
+          font-style: italic;
+          font-size: 16px;
+        }
+
+        &:hover {
+          background: #dcdcdc;
+          border-radius: 3px;
+        }
+
+        &.selected {
+          font-weight: bold;
+        }
+        svg {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

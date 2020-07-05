@@ -1,0 +1,115 @@
+.photo-links-parent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 300px);
+  box-sizing: border-box;
+  grid-gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+
+  div {
+    border-radius: 3px;
+  }
+  .flex-styling {
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.6s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+
+    &.thailand {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+
+    &.indonesia {
+      grid-row-start: 2;
+      grid-row-end: 4;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    &:hover .image-background {
+      transform: scale(1.3);
+    }
+
+    .image-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.1);
+      transition: all 0.5s;
+      background-position: center;
+      &.south-korea {
+        background-image: url('../../assets/south-korea.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      &.japan {
+        background-image: url('../../assets/japan.jpg');
+        background-size: cover;
+      }
+
+      &.thailand {
+        background-image: url('../../assets/thailand.jpg');
+        background-size: cover;
+      }
+
+      &.taiwan {
+        background-image: url('../../assets/taiwan.jpg');
+        background-size: cover;
+      }
+      &.china {
+        background-image: url('../../assets/china.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      &.vietnam {
+        background-image: url('../../assets/vietnam.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      &.indonesia {
+        background-image: url('../../assets/indonesia.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    .image-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px 40px;
+      width: 100%;
+      height: 200px;
+      color: #fff;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 1) 100%
+      );
+      z-index: 10;
+      .image-header {
+        padding-top: 30px;
+        font-size: 42px;
+        color: #fff;
+      }
+
+      .image-info {
+        font-size: 18px;
+        color: #fff;
+        font-style: italic;
+      }
+    }
+  }
+}

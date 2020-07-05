@@ -1,0 +1,35 @@
+.purchase-form-container {
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    min-height: 290px;
+    margin: 0 auto;
+    padding: 25px;
+    box-shadow: #212a35 0px 0px 2px;
+    // border: 1px solid #094585;
+    // border-right: none;
+    // border-left: none;
+    background: #fff;
+    .checkout-info {
+      text-transform: capitalize;
+      font-size: 30px;
+      font-style: italic;
+      color: #2f3233;
+    }
+
+    .form-element {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 150px;
+
+      .btn-container {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

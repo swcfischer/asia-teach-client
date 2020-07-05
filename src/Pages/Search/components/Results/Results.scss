@@ -1,0 +1,12 @@
+.results-container {
+  display: inline-block;
+  width: 67%;
+  height: calc(100vh - 58px);
+  overflow-y: scroll;
+  padding-right: 30px;
+  .no-results {
+    text-align: center;
+    padding-top: 100px;
+    font-size: 26px;
+  }
+}

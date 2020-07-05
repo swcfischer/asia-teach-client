@@ -1,0 +1,91 @@
+.react-tabs {
+  width: 700px;
+  margin: 0 auto;
+
+  .react-tabs__tab-list {
+    width: 541px;
+    margin: 0px auto 40px auto;
+    border-bottom: 1px solid #dae0e6;
+    .react-tabs__tab {
+      width: 175px;
+      height: 50px;
+      font-size: 24px;
+      text-align: center;
+      border-radius: 5px 5px 0 0;
+      transition: all 0.1s;
+      border-bottom: 1px solid #dae0e6;
+      &:focus {
+        box-shadow: none;
+      }
+      &:focus {
+        &:after {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  .react-tabs__tab--selected {
+    border-color: #dae0e6;
+    background: #fff;
+    color: #000;
+    border-bottom: 1px solid #dae0e6;
+  }
+}
+
+.job-dashboard {
+  width: 700px;
+  min-height: 100vh;
+  margin: 0 auto;
+  .header-container {
+    position: relative;
+    .purchase-job-posting {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      text-decoration: none;
+    }
+  }
+
+  .jobs-container {
+    margin-top: 100px;
+    width: 650px;
+    margin: 0 auto;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .job-item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 70px;
+      border: 1px solid #dae0e6;
+      border-bottom: none;
+      background: #fff;
+      padding: 10px 0px;
+
+      &:last-of-type {
+        border: 1px solid #dae0e6;
+        border-bottom: 1px solid #dae0e6;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+      &:first-of-type {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+      }
+
+      .job-company-name {
+        padding: 0px;
+        padding-left: 20px;
+        font-size: 24px;
+      }
+    }
+  }
+}

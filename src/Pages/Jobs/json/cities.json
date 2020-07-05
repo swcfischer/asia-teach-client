@@ -1,0 +1,3468 @@
+{
+  "south-korea": [
+    { "label": "Seoul", "value": "Seoul" },
+    { "label": "Busan", "value": "Busan" },
+    { "label": "Incheon", "value": "Incheon" },
+    { "label": "Daegu", "value": "Daegu" },
+    { "label": "Daejeon", "value": "Daejeon" },
+    { "label": "Gwangju", "value": "Gwangju" },
+    { "label": "Suwon", "value": "Suwon" },
+    { "label": "Ulsan", "value": "Ulsan" },
+    { "label": "Changwon", "value": "Changwon" },
+    { "label": "Goyang", "value": "Goyang" },
+    { "label": "Yongin", "value": "Yongin" },
+    { "label": "Seongnam", "value": "Seongnam" },
+    { "label": "Bucheon", "value": "Bucheon" },
+    { "label": "Cheongju", "value": "Cheongju" },
+    { "label": "Ansan", "value": "Ansan" },
+    { "label": "Jeonju", "value": "Jeonju" },
+    { "label": "Cheonan", "value": "Cheonan" },
+    { "label": "Namyangju", "value": "Namyangju" },
+    { "label": "Hwaseong", "value": "Hwaseong" },
+    { "label": "Anyang", "value": "Anyang" },
+    { "label": "Gimhae", "value": "Gimhae" },
+    { "label": "Pohang", "value": "Pohang" },
+    { "label": "Pyeongtaek", "value": "Pyeongtaek" },
+    {
+      "label": "Jeju",
+      "value": "Jeju"
+    },
+    { "label": "Siheung", "value": "Siheung" },
+    { "label": "Uijeongbu", "value": "Uijeongbu" },
+    { "label": "Gumi", "value": "Gumi" },
+    { "label": "Paju", "value": "Paju" },
+    { "label": "Gimpo", "value": "Gimpo" },
+    { "label": "Jinju", "value": "Jinju" },
+    { "label": "Gwangmyeong", "value": "Gwangmyeong" },
+    { "label": "Wonju", "value": "Wonju" },
+    { "label": "Asan", "value": "Asan" },
+    { "label": "Gwangju", "value": "Gwangju" },
+    { "label": "Iksan", "value": "Iksan" },
+    { "label": "Yangsan", "value": "Yangsan" },
+    { "label": "Gunpo", "value": "Gunpo" },
+    { "label": "Chuncheon", "value": "Chuncheon" },
+    { "label": "Gyeongsan", "value": "Gyeongsan" },
+    { "label": "Gunsan", "value": "Gunsan" },
+    { "label": "Yeosu", "value": "Yeosu" },
+    { "label": "Suncheon", "value": "Suncheon" },
+    { "label": "Gyeongju", "value": "Gyeongju" },
+    { "label": "Geoje", "value": "Geoje" },
+    { "label": "Mokpo", "value": "Mokpo" },
+    { "label": "Gangneung", "value": "Gangneung" },
+    { "label": "Osan", "value": "Osan" },
+    { "label": "Chungju", "value": "Chungju" },
+    { "label": "Icheon", "value": "Icheon" },
+    { "label": "Yangju", "value": "Yangju" },
+    { "label": "Sejong", "value": "Sejong" },
+    { "label": "Anseong", "value": "Anseong" },
+    { "label": "Guri", "value": "Guri" },
+    { "label": "Seosan", "value": "Seosan" },
+    { "label": "Andong", "value": "Andong" },
+    { "label": "Dangjin", "value": "Dangjin" },
+    { "label": "Pocheon", "value": "Pocheon" },
+    { "label": "Uiwang", "value": "Uiwang" },
+    { "label": "Hanam", "value": "Hanam" },
+    { "label": "Seogwipo", "value": "Seogwipo" },
+    { "label": "Gwangyang", "value": "Gwangyang" },
+    { "label": "Gimcheon", "value": "Gimcheon" },
+    { "label": "Tongyeong", "value": "Tongyeong" },
+    { "label": "Jecheon", "value": "Jecheon" },
+    { "label": "Nonsan", "value": "Nonsan" },
+    { "label": "Gongju", "value": "Gongju" },
+    { "label": "Sacheon", "value": "Sacheon" },
+    { "label": "Jeongeup", "value": "Jeongeup" },
+    { "label": "Yeoju", "value": "Yeoju" },
+    { "label": "Yeongju", "value": "Yeongju" },
+    { "label": "Miryang", "value": "Miryang" },
+    { "label": "Boryeong", "value": "Boryeong" },
+    { "label": "Sangju", "value": "Sangju" },
+    { "label": "Yeongcheon", "value": "Yeongcheon" },
+    { "label": "Dongducheon", "value": "Dongducheon" },
+    { "label": "Naju", "value": "Naju" },
+    { "label": "Donghae", "value": "Donghae" },
+    { "label": "Gimje", "value": "Gimje" },
+    { "label": "Namwon", "value": "Namwon" },
+    { "label": "Sokcho", "value": "Sokcho" },
+    { "label": "Mungyeong", "value": "Mungyeong" },
+    { "label": "Samcheok", "value": "Samcheok" },
+    { "label": "Gwacheon", "value": "Gwacheon" },
+    { "label": "Taebaek", "value": "Taebaek" },
+    { "label": "Gyeryong", "value": "Gyeryong" }
+  ],
+  "china": [
+    {
+      "label": "Hong Kong",
+      "value": "Hong Kong"
+    },
+    {
+      "label": "Macau",
+      "value": "Macau"
+    },
+    {
+      "label": "Beijing",
+      "value": "Beijing"
+    },
+    {
+      "label": "Chongqing",
+      "value": "Chongqing"
+    },
+    {
+      "label": "Shanghai",
+      "value": "Shanghai"
+    },
+    {
+      "label": "Tianjin",
+      "value": "Tianjin"
+    },
+    {
+      "label": "Anqing",
+      "value": "Anqing"
+    },
+    {
+      "label": "Bengbu",
+      "value": "Bengbu"
+    },
+    {
+      "label": "Bozhou",
+      "value": "Bozhou"
+    },
+    {
+      "label": "Chaohu",
+      "value": "Chaohu"
+    },
+    {
+      "label": "Chizhou",
+      "value": "Chizhou"
+    },
+    {
+      "label": "Chuzhou",
+      "value": "Chuzhou"
+    },
+    {
+      "label": "Fuyang",
+      "value": "Fuyang"
+    },
+    {
+      "label": "Guangde",
+      "value": "Guangde"
+    },
+    {
+      "label": "Hefei",
+      "value": "Hefei"
+    },
+    {
+      "label": "Huaibei",
+      "value": "Huaibei"
+    },
+    {
+      "label": "Huainan",
+      "value": "Huainan"
+    },
+    {
+      "label": "Huangshan",
+      "value": "Huangshan"
+    },
+    {
+      "label": "Jieshou",
+      "value": "Jieshou"
+    },
+    {
+      "label": "Lu'an",
+      "value": "Lu'an"
+    },
+    {
+      "label": "Ma'anshan",
+      "value": "Ma'anshan"
+    },
+    {
+      "label": "Mingguang",
+      "value": "Mingguang"
+    },
+    {
+      "label": "Ningguo",
+      "value": "Ningguo"
+    },
+    {
+      "label": "Qianshan",
+      "value": "Qianshan"
+    },
+    {
+      "label": "Suzhou",
+      "value": "Suzhou"
+    },
+    {
+      "label": "Tianchang",
+      "value": "Tianchang"
+    },
+    {
+      "label": "Tongcheng",
+      "value": "Tongcheng"
+    },
+    {
+      "label": "Tongling",
+      "value": "Tongling"
+    },
+    {
+      "label": "Wuhu",
+      "value": "Wuhu"
+    },
+    {
+      "label": "Wuwei",
+      "value": "Wuwei"
+    },
+    {
+      "label": "Xuancheng",
+      "value": "Xuancheng"
+    },
+    {
+      "label": "Fu'an",
+      "value": "Fu'an"
+    },
+    {
+      "label": "Fuding",
+      "value": "Fuding"
+    },
+    {
+      "label": "Fuqing",
+      "value": "Fuqing"
+    },
+    {
+      "label": "Fuzhou",
+      "value": "Fuzhou"
+    },
+    {
+      "label": "Jian'ou",
+      "value": "Jian'ou"
+    },
+    {
+      "label": "Jinjiang",
+      "value": "Jinjiang"
+    },
+    {
+      "label": "Longhai",
+      "value": "Longhai"
+    },
+    {
+      "label": "Longyan",
+      "value": "Longyan"
+    },
+    {
+      "label": "Nan'an",
+      "value": "Nan'an"
+    },
+    {
+      "label": "Nanping",
+      "value": "Nanping"
+    },
+    {
+      "label": "Ningde",
+      "value": "Ningde"
+    },
+    {
+      "label": "Putian",
+      "value": "Putian"
+    },
+    {
+      "label": "Quanzhou",
+      "value": "Quanzhou"
+    },
+    {
+      "label": "Sanming",
+      "value": "Sanming"
+    },
+    {
+      "label": "Shaowu",
+      "value": "Shaowu"
+    },
+    {
+      "label": "Shishi",
+      "value": "Shishi"
+    },
+    {
+      "label": "Wuyishan",
+      "value": "Wuyishan"
+    },
+    {
+      "label": "Xiamen",
+      "value": "Xiamen"
+    },
+    {
+      "label": "Yong'an",
+      "value": "Yong'an"
+    },
+    {
+      "label": "Zhangping",
+      "value": "Zhangping"
+    },
+    {
+      "label": "Zhangzhou",
+      "value": "Zhangzhou"
+    },
+    {
+      "label": "Baiyin",
+      "value": "Baiyin"
+    },
+    {
+      "label": "Dingxi",
+      "value": "Dingxi"
+    },
+    {
+      "label": "Dunhuang",
+      "value": "Dunhuang"
+    },
+    {
+      "label": "Hezuo",
+      "value": "Hezuo"
+    },
+    {
+      "label": "Huating",
+      "value": "Huating"
+    },
+    {
+      "label": "Jiayuguan",
+      "value": "Jiayuguan"
+    },
+    {
+      "label": "Jinchang",
+      "value": "Jinchang"
+    },
+    {
+      "label": "Jiuquan",
+      "value": "Jiuquan"
+    },
+    {
+      "label": "Lanzhou",
+      "value": "Lanzhou"
+    },
+    {
+      "label": "Linxia",
+      "value": "Linxia"
+    },
+    {
+      "label": "Longnan",
+      "value": "Longnan"
+    },
+    {
+      "label": "Pingliang",
+      "value": "Pingliang"
+    },
+    {
+      "label": "Qingyang",
+      "value": "Qingyang"
+    },
+    {
+      "label": "Tianshui",
+      "value": "Tianshui"
+    },
+    {
+      "label": "Wuwei",
+      "value": "Wuwei"
+    },
+    {
+      "label": "Yumen",
+      "value": "Yumen"
+    },
+    {
+      "label": "Zhangye",
+      "value": "Zhangye"
+    },
+    {
+      "label": "Chaozhou",
+      "value": "Chaozhou"
+    },
+    {
+      "label": "Dongguan",
+      "value": "Dongguan"
+    },
+    {
+      "label": "Enping",
+      "value": "Enping"
+    },
+    {
+      "label": "Foshan",
+      "value": "Foshan"
+    },
+    {
+      "label": "Gaozhou",
+      "value": "Gaozhou"
+    },
+    {
+      "label": "Guangzhou",
+      "value": "Guangzhou"
+    },
+    {
+      "label": "Heshan",
+      "value": "Heshan"
+    },
+    {
+      "label": "Heyuan",
+      "value": "Heyuan"
+    },
+    {
+      "label": "Huazhou",
+      "value": "Huazhou"
+    },
+    {
+      "label": "Huizhou",
+      "value": "Huizhou"
+    },
+    {
+      "label": "Jiangmen",
+      "value": "Jiangmen"
+    },
+    {
+      "label": "Jieyang",
+      "value": "Jieyang"
+    },
+    {
+      "label": "Kaiping",
+      "value": "Kaiping"
+    },
+    {
+      "label": "Lechang",
+      "value": "Lechang"
+    },
+    {
+      "label": "Leizhou",
+      "value": "Leizhou"
+    },
+    {
+      "label": "Lianjiang",
+      "value": "Lianjiang"
+    },
+    {
+      "label": "Lianzhou",
+      "value": "Lianzhou"
+    },
+    {
+      "label": "Lufeng",
+      "value": "Lufeng"
+    },
+    {
+      "label": "Luoding",
+      "value": "Luoding"
+    },
+    {
+      "label": "Maoming",
+      "value": "Maoming"
+    },
+    {
+      "label": "Meizhou",
+      "value": "Meizhou"
+    },
+    {
+      "label": "Nanxiong",
+      "value": "Nanxiong"
+    },
+    {
+      "label": "Puning",
+      "value": "Puning"
+    },
+    {
+      "label": "Qingyuan",
+      "value": "Qingyuan"
+    },
+    {
+      "label": "Shantou",
+      "value": "Shantou"
+    },
+    {
+      "label": "Shanwei",
+      "value": "Shanwei"
+    },
+    {
+      "label": "Shaoguan",
+      "value": "Shaoguan"
+    },
+    {
+      "label": "Shenzhen",
+      "value": "Shenzhen"
+    },
+    {
+      "label": "Sihui",
+      "value": "Sihui"
+    },
+    {
+      "label": "Taishan",
+      "value": "Taishan"
+    },
+    {
+      "label": "Wuchuan",
+      "value": "Wuchuan"
+    },
+    {
+      "label": "Xingning",
+      "value": "Xingning"
+    },
+    {
+      "label": "Xinyi",
+      "value": "Xinyi"
+    },
+    {
+      "label": "Yangchun",
+      "value": "Yangchun"
+    },
+    {
+      "label": "Yangjiang",
+      "value": "Yangjiang"
+    },
+    {
+      "label": "Yingde",
+      "value": "Yingde"
+    },
+    {
+      "label": "Yunfu",
+      "value": "Yunfu"
+    },
+    {
+      "label": "Zhanjiang",
+      "value": "Zhanjiang"
+    },
+    {
+      "label": "Zhaoqing",
+      "value": "Zhaoqing"
+    },
+    {
+      "label": "Zhongshan",
+      "value": "Zhongshan"
+    },
+    {
+      "label": "Zhuhai",
+      "value": "Zhuhai"
+    },
+    {
+      "label": "Baise",
+      "value": "Baise"
+    },
+    {
+      "label": "Beihai",
+      "value": "Beihai"
+    },
+    {
+      "label": "Beiliu",
+      "value": "Beiliu"
+    },
+    {
+      "label": "Cenxi",
+      "value": "Cenxi"
+    },
+    {
+      "label": "Chongzuo",
+      "value": "Chongzuo"
+    },
+    {
+      "label": "Dongxing",
+      "value": "Dongxing"
+    },
+    {
+      "label": "Fangchenggang",
+      "value": "Fangchenggang"
+    },
+    {
+      "label": "Guigang",
+      "value": "Guigang"
+    },
+    {
+      "label": "Guilin",
+      "value": "Guilin"
+    },
+    {
+      "label": "Guiping",
+      "value": "Guiping"
+    },
+    {
+      "label": "Hechi",
+      "value": "Hechi"
+    },
+    {
+      "label": "Heshan",
+      "value": "Heshan"
+    },
+    {
+      "label": "Hezhou",
+      "value": "Hezhou"
+    },
+    {
+      "label": "Jingxi",
+      "value": "Jingxi"
+    },
+    {
+      "label": "Laibin",
+      "value": "Laibin"
+    },
+    {
+      "label": "Lipu",
+      "value": "Lipu"
+    },
+    {
+      "label": "Liuzhou",
+      "value": "Liuzhou"
+    },
+    {
+      "label": "Nanning",
+      "value": "Nanning"
+    },
+    {
+      "label": "Pingguo",
+      "value": "Pingguo"
+    },
+    {
+      "label": "Pingxiang",
+      "value": "Pingxiang"
+    },
+    {
+      "label": "Qinzhou",
+      "value": "Qinzhou"
+    },
+    {
+      "label": "Wuzhou",
+      "value": "Wuzhou"
+    },
+    {
+      "label": "Yulin",
+      "value": "Yulin"
+    },
+    {
+      "label": "Anshun",
+      "value": "Anshun"
+    },
+    {
+      "label": "Bijie",
+      "value": "Bijie"
+    },
+    {
+      "label": "Chishui",
+      "value": "Chishui"
+    },
+    {
+      "label": "Duyun",
+      "value": "Duyun"
+    },
+    {
+      "label": "Fuquan",
+      "value": "Fuquan"
+    },
+    {
+      "label": "Guiyang",
+      "value": "Guiyang"
+    },
+    {
+      "label": "Kaili",
+      "value": "Kaili"
+    },
+    {
+      "label": "Liupanshui",
+      "value": "Liupanshui"
+    },
+    {
+      "label": "Panzhou",
+      "value": "Panzhou"
+    },
+    {
+      "label": "Qingzhen",
+      "value": "Qingzhen"
+    },
+    {
+      "label": "Renhuai",
+      "value": "Renhuai"
+    },
+    {
+      "label": "Tongren",
+      "value": "Tongren"
+    },
+    {
+      "label": "Xingren",
+      "value": "Xingren"
+    },
+    {
+      "label": "Xingyi",
+      "value": "Xingyi"
+    },
+    {
+      "label": "Zunyi",
+      "value": "Zunyi"
+    },
+    {
+      "label": "Danzhou",
+      "value": "Danzhou"
+    },
+    {
+      "label": "Dongfang",
+      "value": "Dongfang"
+    },
+    {
+      "label": "Haikou",
+      "value": "Haikou"
+    },
+    {
+      "label": "Qionghai",
+      "value": "Qionghai"
+    },
+    {
+      "label": "Sansha",
+      "value": "Sansha"
+    },
+    {
+      "label": "Sanya",
+      "value": "Sanya"
+    },
+    {
+      "label": "Wanning",
+      "value": "Wanning"
+    },
+    {
+      "label": "Wenchang",
+      "value": "Wenchang"
+    },
+    {
+      "label": "Wuzhishan",
+      "value": "Wuzhishan"
+    },
+    {
+      "label": "Anguo",
+      "value": "Anguo"
+    },
+    {
+      "label": "Baoding",
+      "value": "Baoding"
+    },
+    {
+      "label": "Bazhou",
+      "value": "Bazhou"
+    },
+    {
+      "label": "Botou",
+      "value": "Botou"
+    },
+    {
+      "label": "Cangzhou",
+      "value": "Cangzhou"
+    },
+    {
+      "label": "Chengde",
+      "value": "Chengde"
+    },
+    {
+      "label": "Dingzhou",
+      "value": "Dingzhou"
+    },
+    {
+      "label": "Gaobeidian",
+      "value": "Gaobeidian"
+    },
+    {
+      "label": "Handan",
+      "value": "Handan"
+    },
+    {
+      "label": "Hengshui",
+      "value": "Hengshui"
+    },
+    {
+      "label": "Hejian",
+      "value": "Hejian"
+    },
+    {
+      "label": "Huanghua",
+      "value": "Huanghua"
+    },
+    {
+      "label": "Jinzhou",
+      "value": "Jinzhou"
+    },
+    {
+      "label": "Langfang",
+      "value": "Langfang"
+    },
+    {
+      "label": "Luanzhou",
+      "value": "Luanzhou"
+    },
+    {
+      "label": "Nangong",
+      "value": "Nangong"
+    },
+    {
+      "label": "Pingquan",
+      "value": "Pingquan"
+    },
+    {
+      "label": "Qian'an",
+      "value": "Qian'an"
+    },
+    {
+      "label": "Qinhuangdao",
+      "value": "Qinhuangdao"
+    },
+    {
+      "label": "Renqiu",
+      "value": "Renqiu"
+    },
+    {
+      "label": "Sanhe",
+      "value": "Sanhe"
+    },
+    {
+      "label": "Shahe",
+      "value": "Shahe"
+    },
+    {
+      "label": "Shenzhou",
+      "value": "Shenzhou"
+    },
+    {
+      "label": "Shijiazhuang",
+      "value": "Shijiazhuang"
+    },
+    {
+      "label": "Tangshan",
+      "value": "Tangshan"
+    },
+    {
+      "label": "Xinji",
+      "value": "Xinji"
+    },
+    {
+      "label": "Wu'an",
+      "value": "Wu'an"
+    },
+    {
+      "label": "Xingtai",
+      "value": "Xingtai"
+    },
+    {
+      "label": "Xinle",
+      "value": "Xinle"
+    },
+    {
+      "label": "Zhangjiakou",
+      "value": "Zhangjiakou"
+    },
+    {
+      "label": "Zhuozhou",
+      "value": "Zhuozhou"
+    },
+    {
+      "label": "Zunhua",
+      "value": "Zunhua"
+    },
+    {
+      "label": "Anda",
+      "value": "Anda"
+    },
+    {
+      "label": "Bei'an",
+      "value": "Bei'an"
+    },
+    {
+      "label": "Daqing",
+      "value": "Daqing"
+    },
+    {
+      "label": "Dongning",
+      "value": "Dongning"
+    },
+    {
+      "label": "Fujin",
+      "value": "Fujin"
+    },
+    {
+      "label": "Fuyuan",
+      "value": "Fuyuan"
+    },
+    {
+      "label": "Hailin",
+      "value": "Hailin"
+    },
+    {
+      "label": "Hailun",
+      "value": "Hailun"
+    },
+    {
+      "label": "Harbin",
+      "value": "Harbin"
+    },
+    {
+      "label": "Hegang",
+      "value": "Hegang"
+    },
+    {
+      "label": "Heihe",
+      "value": "Heihe"
+    },
+    {
+      "label": "Hulin",
+      "value": "Hulin"
+    },
+    {
+      "label": "Jiamusi",
+      "value": "Jiamusi"
+    },
+    {
+      "label": "Jixi",
+      "value": "Jixi"
+    },
+    {
+      "label": "Mishan",
+      "value": "Mishan"
+    },
+    {
+      "label": "Mohe",
+      "value": "Mohe"
+    },
+    {
+      "label": "Mudanjiang",
+      "value": "Mudanjiang"
+    },
+    {
+      "label": "Muling",
+      "value": "Muling"
+    },
+    {
+      "label": "Nehe",
+      "value": "Nehe"
+    },
+    {
+      "label": "Nenjiang",
+      "value": "Nenjiang"
+    },
+    {
+      "label": "Ning'an",
+      "value": "Ning'an"
+    },
+    {
+      "label": "Qiqihar",
+      "value": "Qiqihar"
+    },
+    {
+      "label": "Qitaihe",
+      "value": "Qitaihe"
+    },
+    {
+      "label": "Shangzhi",
+      "value": "Shangzhi"
+    },
+    {
+      "label": "Shuangyashan",
+      "value": "Shuangyashan"
+    },
+    {
+      "label": "Suifenhe",
+      "value": "Suifenhe"
+    },
+    {
+      "label": "Suihua",
+      "value": "Suihua"
+    },
+    {
+      "label": "Tieli",
+      "value": "Tieli"
+    },
+    {
+      "label": "Tongjiang",
+      "value": "Tongjiang"
+    },
+    {
+      "label": "Wuchang",
+      "value": "Wuchang"
+    },
+    {
+      "label": "Wudalianchi",
+      "value": "Wudalianchi"
+    },
+    {
+      "label": "Yichun",
+      "value": "Yichun"
+    },
+    {
+      "label": "Zhaodong",
+      "value": "Zhaodong"
+    },
+    {
+      "label": "Anyang",
+      "value": "Anyang"
+    },
+    {
+      "label": "Changge",
+      "value": "Changge"
+    },
+    {
+      "label": "Changyuan",
+      "value": "Changyuan"
+    },
+    {
+      "label": "Dengfeng",
+      "value": "Dengfeng"
+    },
+    {
+      "label": "Dengzhou",
+      "value": "Dengzhou"
+    },
+    {
+      "label": "Gongyi",
+      "value": "Gongyi"
+    },
+    {
+      "label": "Hebi",
+      "value": "Hebi"
+    },
+    {
+      "label": "Huixian",
+      "value": "Huixian"
+    },
+    {
+      "label": "Jiaozuo",
+      "value": "Jiaozuo"
+    },
+    {
+      "label": "Jiyuan",
+      "value": "Jiyuan"
+    },
+    {
+      "label": "Kaifeng",
+      "value": "Kaifeng"
+    },
+    {
+      "label": "Lingbao",
+      "value": "Lingbao"
+    },
+    {
+      "label": "Linzhou",
+      "value": "Linzhou"
+    },
+    {
+      "label": "Luohe",
+      "value": "Luohe"
+    },
+    {
+      "label": "Luoyang",
+      "value": "Luoyang"
+    },
+    {
+      "label": "Mengzhou",
+      "value": "Mengzhou"
+    },
+    {
+      "label": "Nanyang",
+      "value": "Nanyang"
+    },
+    {
+      "label": "Pingdingshan",
+      "value": "Pingdingshan"
+    },
+    {
+      "label": "Puyang",
+      "value": "Puyang"
+    },
+    {
+      "label": "Qinyang",
+      "value": "Qinyang"
+    },
+    {
+      "label": "Ruzhou",
+      "value": "Ruzhou"
+    },
+    {
+      "label": "Sanmenxia",
+      "value": "Sanmenxia"
+    },
+    {
+      "label": "Shangqiu",
+      "value": "Shangqiu"
+    },
+    {
+      "label": "Weihui",
+      "value": "Weihui"
+    },
+    {
+      "label": "Wugang",
+      "value": "Wugang"
+    },
+    {
+      "label": "Xiangcheng",
+      "value": "Xiangcheng"
+    },
+    {
+      "label": "Xingyang",
+      "value": "Xingyang"
+    },
+    {
+      "label": "Xinmi",
+      "value": "Xinmi"
+    },
+    {
+      "label": "Xinxiang",
+      "value": "Xinxiang"
+    },
+    {
+      "label": "Xinyang",
+      "value": "Xinyang"
+    },
+    {
+      "label": "Xinzheng",
+      "value": "Xinzheng"
+    },
+    {
+      "label": "Xuchang",
+      "value": "Xuchang"
+    },
+    {
+      "label": "Yanshi",
+      "value": "Yanshi"
+    },
+    {
+      "label": "Yima",
+      "value": "Yima"
+    },
+    {
+      "label": "Yongcheng",
+      "value": "Yongcheng"
+    },
+    {
+      "label": "Yuzhou",
+      "value": "Yuzhou"
+    },
+    {
+      "label": "Zhengzhou",
+      "value": "Zhengzhou"
+    },
+    {
+      "label": "Zhoukou",
+      "value": "Zhoukou"
+    },
+    {
+      "label": "Zhumadian",
+      "value": "Zhumadian"
+    },
+    {
+      "label": "Anlu",
+      "value": "Anlu"
+    },
+    {
+      "label": "Chibi",
+      "value": "Chibi"
+    },
+    {
+      "label": "Dangyang",
+      "value": "Dangyang"
+    },
+    {
+      "label": "Danjiangkou",
+      "value": "Danjiangkou"
+    },
+    {
+      "label": "Daye",
+      "value": "Daye"
+    },
+    {
+      "label": "Enshi",
+      "value": "Enshi"
+    },
+    {
+      "label": "Ezhou",
+      "value": "Ezhou"
+    },
+    {
+      "label": "Guangshui",
+      "value": "Guangshui"
+    },
+    {
+      "label": "Hanchuan",
+      "value": "Hanchuan"
+    },
+    {
+      "label": "Honghu",
+      "value": "Honghu"
+    },
+    {
+      "label": "Huanggang",
+      "value": "Huanggang"
+    },
+    {
+      "label": "Huangshi",
+      "value": "Huangshi"
+    },
+    {
+      "label": "Jingmen",
+      "value": "Jingmen"
+    },
+    {
+      "label": "Jingshan",
+      "value": "Jingshan"
+    },
+    {
+      "label": "Jingzhou",
+      "value": "Jingzhou"
+    },
+    {
+      "label": "Laohekou",
+      "value": "Laohekou"
+    },
+    {
+      "label": "Lichuan",
+      "value": "Lichuan"
+    },
+    {
+      "label": "Macheng",
+      "value": "Macheng"
+    },
+    {
+      "label": "Qianjiang",
+      "value": "Qianjiang"
+    },
+    {
+      "label": "Shishou",
+      "value": "Shishou"
+    },
+    {
+      "label": "Shiyan",
+      "value": "Shiyan"
+    },
+    {
+      "label": "Suizhou",
+      "value": "Suizhou"
+    },
+    {
+      "label": "Songzi",
+      "value": "Songzi"
+    },
+    {
+      "label": "Tianmen",
+      "value": "Tianmen"
+    },
+    {
+      "label": "Wuhan",
+      "value": "Wuhan"
+    },
+    {
+      "label": "Wuxue",
+      "value": "Wuxue"
+    },
+    {
+      "label": "Xiangyang",
+      "value": "Xiangyang"
+    },
+    {
+      "label": "Xianning",
+      "value": "Xianning"
+    },
+    {
+      "label": "Xiantao",
+      "value": "Xiantao"
+    },
+    {
+      "label": "Xiaogan",
+      "value": "Xiaogan"
+    },
+    {
+      "label": "Yichang",
+      "value": "Yichang"
+    },
+    {
+      "label": "Yicheng",
+      "value": "Yicheng"
+    },
+    {
+      "label": "Yidu",
+      "value": "Yidu"
+    },
+    {
+      "label": "Yingcheng",
+      "value": "Yingcheng"
+    },
+    {
+      "label": "Zaoyang",
+      "value": "Zaoyang"
+    },
+    {
+      "label": "Zhijiang",
+      "value": "Zhijiang"
+    },
+    {
+      "label": "Zhongxiang",
+      "value": "Zhongxiang"
+    },
+    {
+      "label": "Changde",
+      "value": "Changde"
+    },
+    {
+      "label": "Changning",
+      "value": "Changning"
+    },
+    {
+      "label": "Changsha",
+      "value": "Changsha"
+    },
+    {
+      "label": "Chenzhou",
+      "value": "Chenzhou"
+    },
+    {
+      "label": "Hengyang",
+      "value": "Hengyang"
+    },
+    {
+      "label": "Hongjiang",
+      "value": "Hongjiang"
+    },
+    {
+      "label": "Huaihua",
+      "value": "Huaihua"
+    },
+    {
+      "label": "Jinshi",
+      "value": "Jinshi"
+    },
+    {
+      "label": "Jishou",
+      "value": "Jishou"
+    },
+    {
+      "label": "Leiyang",
+      "value": "Leiyang"
+    },
+    {
+      "label": "Lengshuijiang",
+      "value": "Lengshuijiang"
+    },
+    {
+      "label": "Lianyuan",
+      "value": "Lianyuan"
+    },
+    {
+      "label": "Liling",
+      "value": "Liling"
+    },
+    {
+      "label": "Linxiang",
+      "value": "Linxiang"
+    },
+    {
+      "label": "Liuyang",
+      "value": "Liuyang"
+    },
+    {
+      "label": "Loudi",
+      "value": "Loudi"
+    },
+    {
+      "label": "Miluo",
+      "value": "Miluo"
+    },
+    {
+      "label": "Ningxiang",
+      "value": "Ningxiang"
+    },
+    {
+      "label": "Shaoshan",
+      "value": "Shaoshan"
+    },
+    {
+      "label": "Shaodong",
+      "value": "Shaodong"
+    },
+    {
+      "label": "Shaoyang",
+      "value": "Shaoyang"
+    },
+    {
+      "label": "Wugang",
+      "value": "Wugang"
+    },
+    {
+      "label": "Xiangtan",
+      "value": "Xiangtan"
+    },
+    {
+      "label": "Xiangxiang",
+      "value": "Xiangxiang"
+    },
+    {
+      "label": "Yiyang",
+      "value": "Yiyang"
+    },
+    {
+      "label": "Yongzhou",
+      "value": "Yongzhou"
+    },
+    {
+      "label": "Yuanjiang",
+      "value": "Yuanjiang"
+    },
+    {
+      "label": "Yueyang",
+      "value": "Yueyang"
+    },
+    {
+      "label": "Zhangjiajie",
+      "value": "Zhangjiajie"
+    },
+    {
+      "label": "Zhuzhou",
+      "value": "Zhuzhou"
+    },
+    {
+      "label": "Zixing",
+      "value": "Zixing"
+    },
+    {
+      "label": "Arxan",
+      "value": "Arxan"
+    },
+    {
+      "label": "Baotou",
+      "value": "Baotou"
+    },
+    {
+      "label": "Bayannur",
+      "value": "Bayannur"
+    },
+    {
+      "label": "Chifeng",
+      "value": "Chifeng"
+    },
+    {
+      "label": "Erenhot",
+      "value": "Erenhot"
+    },
+    {
+      "label": "Ergun",
+      "value": "Ergun"
+    },
+    {
+      "label": "Fengzhen",
+      "value": "Fengzhen"
+    },
+    {
+      "label": "Genhe",
+      "value": "Genhe"
+    },
+    {
+      "label": "Hohhot",
+      "value": "Hohhot"
+    },
+    {
+      "label": "Holingol",
+      "value": "Holingol"
+    },
+    {
+      "label": "Hulunbuir",
+      "value": "Hulunbuir"
+    },
+    {
+      "label": "Manzhouli",
+      "value": "Manzhouli"
+    },
+    {
+      "label": "Ordos",
+      "value": "Ordos"
+    },
+    {
+      "label": "Tongliao",
+      "value": "Tongliao"
+    },
+    {
+      "label": "Ulanhot",
+      "value": "Ulanhot"
+    },
+    {
+      "label": "Ulanqab",
+      "value": "Ulanqab"
+    },
+    {
+      "label": "Wuhai",
+      "value": "Wuhai"
+    },
+    {
+      "label": "Xilinhot",
+      "value": "Xilinhot"
+    },
+    {
+      "label": "Yakeshi",
+      "value": "Yakeshi"
+    },
+    {
+      "label": "Zhalantun",
+      "value": "Zhalantun"
+    },
+    {
+      "label": "Changshu",
+      "value": "Changshu"
+    },
+    {
+      "label": "Changzhou",
+      "value": "Changzhou"
+    },
+    {
+      "label": "Danyang",
+      "value": "Danyang"
+    },
+    {
+      "label": "Dongtai",
+      "value": "Dongtai"
+    },
+    {
+      "label": "Gaoyou",
+      "value": "Gaoyou"
+    },
+    {
+      "label": "Hai'an",
+      "value": "Hai'an"
+    },
+    {
+      "label": "Haimen",
+      "value": "Haimen"
+    },
+    {
+      "label": "Huai'an",
+      "value": "Huai'an"
+    },
+    {
+      "label": "Jiangyin",
+      "value": "Jiangyin"
+    },
+    {
+      "label": "Jingjiang",
+      "value": "Jingjiang"
+    },
+    {
+      "label": "Jurong",
+      "value": "Jurong"
+    },
+    {
+      "label": "Liyang",
+      "value": "Liyang"
+    },
+    {
+      "label": "Lianyungang",
+      "value": "Lianyungang"
+    },
+    {
+      "label": "Kunshan",
+      "value": "Kunshan"
+    },
+    {
+      "label": "Nanjing",
+      "value": "Nanjing"
+    },
+    {
+      "label": "Nantong",
+      "value": "Nantong"
+    },
+    {
+      "label": "Pizhou",
+      "value": "Pizhou"
+    },
+    {
+      "label": "Qidong",
+      "value": "Qidong"
+    },
+    {
+      "label": "Rugao",
+      "value": "Rugao"
+    },
+    {
+      "label": "Suqian",
+      "value": "Suqian"
+    },
+    {
+      "label": "Suzhou",
+      "value": "Suzhou"
+    },
+    {
+      "label": "Taicang",
+      "value": "Taicang"
+    },
+    {
+      "label": "Taixing",
+      "value": "Taixing"
+    },
+    {
+      "label": "Taizhou",
+      "value": "Taizhou"
+    },
+    {
+      "label": "Wuxi",
+      "value": "Wuxi"
+    },
+    {
+      "label": "Xinghua",
+      "value": "Xinghua"
+    },
+    {
+      "label": "Xinyi",
+      "value": "Xinyi"
+    },
+    {
+      "label": "Xuzhou",
+      "value": "Xuzhou"
+    },
+    {
+      "label": "Yancheng",
+      "value": "Yancheng"
+    },
+    {
+      "label": "Yangzhong",
+      "value": "Yangzhong"
+    },
+    {
+      "label": "Yangzhou",
+      "value": "Yangzhou"
+    },
+    {
+      "label": "Yixing",
+      "value": "Yixing"
+    },
+    {
+      "label": "Yizheng",
+      "value": "Yizheng"
+    },
+    {
+      "label": "Zhangjiagang",
+      "value": "Zhangjiagang"
+    },
+    {
+      "label": "Zhenjiang",
+      "value": "Zhenjiang"
+    },
+    {
+      "label": "Dexing",
+      "value": "Dexing"
+    },
+    {
+      "label": "Fengcheng",
+      "value": "Fengcheng"
+    },
+    {
+      "label": "Fuzhou",
+      "value": "Fuzhou"
+    },
+    {
+      "label": "Ganzhou",
+      "value": "Ganzhou"
+    },
+    {
+      "label": "Gao'an",
+      "value": "Gao'an"
+    },
+    {
+      "label": "Gongqingcheng",
+      "value": "Gongqingcheng"
+    },
+    {
+      "label": "Guixi",
+      "value": "Guixi"
+    },
+    {
+      "label": "Ji'an",
+      "value": "Ji'an"
+    },
+    {
+      "label": "Jingdezhen",
+      "value": "Jingdezhen"
+    },
+    {
+      "label": "Jinggangshan",
+      "value": "Jinggangshan"
+    },
+    {
+      "label": "Jiujiang",
+      "value": "Jiujiang"
+    },
+    {
+      "label": "Leping",
+      "value": "Leping"
+    },
+    {
+      "label": "Lushan",
+      "value": "Lushan"
+    },
+    {
+      "label": "Nanchang",
+      "value": "Nanchang"
+    },
+    {
+      "label": "Pingxiang",
+      "value": "Pingxiang"
+    },
+    {
+      "label": "Ruichang",
+      "value": "Ruichang"
+    },
+    {
+      "label": "Ruijin",
+      "value": "Ruijin"
+    },
+    {
+      "label": "Shangrao",
+      "value": "Shangrao"
+    },
+    {
+      "label": "Xinyu",
+      "value": "Xinyu"
+    },
+    {
+      "label": "Yichun",
+      "value": "Yichun"
+    },
+    {
+      "label": "Yingtan",
+      "value": "Yingtan"
+    },
+    {
+      "label": "Zhangshu",
+      "value": "Zhangshu"
+    },
+    {
+      "label": "Baicheng",
+      "value": "Baicheng"
+    },
+    {
+      "label": "Baishan",
+      "value": "Baishan"
+    },
+    {
+      "label": "Changchun",
+      "value": "Changchun"
+    },
+    {
+      "label": "Da'an",
+      "value": "Da'an"
+    },
+    {
+      "label": "Dehui",
+      "value": "Dehui"
+    },
+    {
+      "label": "Dunhua",
+      "value": "Dunhua"
+    },
+    {
+      "label": "Fuyu",
+      "value": "Fuyu"
+    },
+    {
+      "label": "Gongzhuling",
+      "value": "Gongzhuling"
+    },
+    {
+      "label": "Helong",
+      "value": "Helong"
+    },
+    {
+      "label": "Huadian",
+      "value": "Huadian"
+    },
+    {
+      "label": "Hunchun",
+      "value": "Hunchun"
+    },
+    {
+      "label": "Ji'an",
+      "value": "Ji'an"
+    },
+    {
+      "label": "Jiaohe",
+      "value": "Jiaohe"
+    },
+    {
+      "label": "Jilin",
+      "value": "Jilin"
+    },
+    {
+      "label": "Liaoyuan",
+      "value": "Liaoyuan"
+    },
+    {
+      "label": "Linjiang",
+      "value": "Linjiang"
+    },
+    {
+      "label": "Longjing",
+      "value": "Longjing"
+    },
+    {
+      "label": "Meihekou",
+      "value": "Meihekou"
+    },
+    {
+      "label": "Panshi",
+      "value": "Panshi"
+    },
+    {
+      "label": "Shuangliao",
+      "value": "Shuangliao"
+    },
+    {
+      "label": "Shulan",
+      "value": "Shulan"
+    },
+    {
+      "label": "Siping",
+      "value": "Siping"
+    },
+    {
+      "label": "Songyuan",
+      "value": "Songyuan"
+    },
+    {
+      "label": "Taonan",
+      "value": "Taonan"
+    },
+    {
+      "label": "Tonghua",
+      "value": "Tonghua"
+    },
+    {
+      "label": "Tumen",
+      "value": "Tumen"
+    },
+    {
+      "label": "Yanji",
+      "value": "Yanji"
+    },
+    {
+      "label": "Yushu",
+      "value": "Yushu"
+    },
+    {
+      "label": "Anshan",
+      "value": "Anshan"
+    },
+    {
+      "label": "Benxi",
+      "value": "Benxi"
+    },
+    {
+      "label": "Beipiao",
+      "value": "Beipiao"
+    },
+    {
+      "label": "Beizhen",
+      "value": "Beizhen"
+    },
+    {
+      "label": "Chaoyang",
+      "value": "Chaoyang"
+    },
+    {
+      "label": "Dalian",
+      "value": "Dalian"
+    },
+    {
+      "label": "Dandong",
+      "value": "Dandong"
+    },
+    {
+      "label": "Dashiqiao",
+      "value": "Dashiqiao"
+    },
+    {
+      "label": "Dengta",
+      "value": "Dengta"
+    },
+    {
+      "label": "Diaobingshan",
+      "value": "Diaobingshan"
+    },
+    {
+      "label": "Donggang",
+      "value": "Donggang"
+    },
+    {
+      "label": "Fengcheng",
+      "value": "Fengcheng"
+    },
+    {
+      "label": "Fushun",
+      "value": "Fushun"
+    },
+    {
+      "label": "Fuxin",
+      "value": "Fuxin"
+    },
+    {
+      "label": "Gaizhou",
+      "value": "Gaizhou"
+    },
+    {
+      "label": "Haicheng",
+      "value": "Haicheng"
+    },
+    {
+      "label": "Huludao",
+      "value": "Huludao"
+    },
+    {
+      "label": "Jinzhou",
+      "value": "Jinzhou"
+    },
+    {
+      "label": "Kaiyuan",
+      "value": "Kaiyuan"
+    },
+    {
+      "label": "Liaoyang",
+      "value": "Liaoyang"
+    },
+    {
+      "label": "Linghai",
+      "value": "Linghai"
+    },
+    {
+      "label": "Lingyuan",
+      "value": "Lingyuan"
+    },
+    {
+      "label": "Panjin",
+      "value": "Panjin"
+    },
+    {
+      "label": "Shenyang",
+      "value": "Shenyang"
+    },
+    {
+      "label": "Tieling",
+      "value": "Tieling"
+    },
+    {
+      "label": "Wafangdian",
+      "value": "Wafangdian"
+    },
+    {
+      "label": "Xingcheng",
+      "value": "Xingcheng"
+    },
+    {
+      "label": "Xinmin",
+      "value": "Xinmin"
+    },
+    {
+      "label": "Yingkou",
+      "value": "Yingkou"
+    },
+    {
+      "label": "Zhuanghe",
+      "value": "Zhuanghe"
+    },
+    {
+      "label": "Guyuan",
+      "value": "Guyuan"
+    },
+    {
+      "label": "Lingwu",
+      "value": "Lingwu"
+    },
+    {
+      "label": "Qingtongxia",
+      "value": "Qingtongxia"
+    },
+    {
+      "label": "Shizuishan",
+      "value": "Shizuishan"
+    },
+    {
+      "label": "Wuzhong",
+      "value": "Wuzhong"
+    },
+    {
+      "label": "Yinchuan",
+      "value": "Yinchuan"
+    },
+    {
+      "label": "Zhongwei",
+      "value": "Zhongwei"
+    },
+    {
+      "label": "Delingha",
+      "value": "Delingha"
+    },
+    {
+      "label": "Golmud",
+      "value": "Golmud"
+    },
+    {
+      "label": "Haidong",
+      "value": "Haidong"
+    },
+    {
+      "label": "Mangnai",
+      "value": "Mangnai"
+    },
+    {
+      "label": "Xining",
+      "value": "Xining"
+    },
+    {
+      "label": "Yushu",
+      "value": "Yushu"
+    },
+    {
+      "label": "Ankang",
+      "value": "Ankang"
+    },
+    {
+      "label": "Baoji",
+      "value": "Baoji"
+    },
+    {
+      "label": "Binzhou",
+      "value": "Binzhou"
+    },
+    {
+      "label": "Hancheng",
+      "value": "Hancheng"
+    },
+    {
+      "label": "Hanzhong",
+      "value": "Hanzhong"
+    },
+    {
+      "label": "Huayin",
+      "value": "Huayin"
+    },
+    {
+      "label": "Shangluo",
+      "value": "Shangluo"
+    },
+    {
+      "label": "Shenmu",
+      "value": "Shenmu"
+    },
+    {
+      "label": "Tongchuan",
+      "value": "Tongchuan"
+    },
+    {
+      "label": "Weinan",
+      "value": "Weinan"
+    },
+    {
+      "label": "Xi'an",
+      "value": "Xi'an"
+    },
+    {
+      "label": "Xianyang",
+      "value": "Xianyang"
+    },
+    {
+      "label": "Xingping",
+      "value": "Xingping"
+    },
+    {
+      "label": "Yan'an",
+      "value": "Yan'an"
+    },
+    {
+      "label": "Yulin",
+      "value": "Yulin"
+    },
+    {
+      "label": "Zichang",
+      "value": "Zichang"
+    },
+    {
+      "label": "Anqiu",
+      "value": "Anqiu"
+    },
+    {
+      "label": "Binzhou",
+      "value": "Binzhou"
+    },
+    {
+      "label": "Changyi",
+      "value": "Changyi"
+    },
+    {
+      "label": "Dezhou",
+      "value": "Dezhou"
+    },
+    {
+      "label": "Dongying",
+      "value": "Dongying"
+    },
+    {
+      "label": "Feicheng",
+      "value": "Feicheng"
+    },
+    {
+      "label": "Gaomi",
+      "value": "Gaomi"
+    },
+    {
+      "label": "Haiyang",
+      "value": "Haiyang"
+    },
+    {
+      "label": "Heze",
+      "value": "Heze"
+    },
+    {
+      "label": "Jiaozhou",
+      "value": "Jiaozhou"
+    },
+    {
+      "label": "Jinan",
+      "value": "Jinan"
+    },
+    {
+      "label": "Jining",
+      "value": "Jining"
+    },
+    {
+      "label": "Laixi",
+      "value": "Laixi"
+    },
+    {
+      "label": "Laiyang",
+      "value": "Laiyang"
+    },
+    {
+      "label": "Laizhou",
+      "value": "Laizhou"
+    },
+    {
+      "label": "Leling",
+      "value": "Leling"
+    },
+    {
+      "label": "Liaocheng",
+      "value": "Liaocheng"
+    },
+    {
+      "label": "Linqing",
+      "value": "Linqing"
+    },
+    {
+      "label": "Linyi",
+      "value": "Linyi"
+    },
+    {
+      "label": "Longkou",
+      "value": "Longkou"
+    },
+    {
+      "label": "Penglai",
+      "value": "Penglai"
+    },
+    {
+      "label": "Pingdu",
+      "value": "Pingdu"
+    },
+    {
+      "label": "Qingdao",
+      "value": "Qingdao"
+    },
+    {
+      "label": "Qingzhou",
+      "value": "Qingzhou"
+    },
+    {
+      "label": "Qixia",
+      "value": "Qixia"
+    },
+    {
+      "label": "Qufu",
+      "value": "Qufu"
+    },
+    {
+      "label": "Rizhao",
+      "value": "Rizhao"
+    },
+    {
+      "label": "Rongcheng",
+      "value": "Rongcheng"
+    },
+    {
+      "label": "Rushan",
+      "value": "Rushan"
+    },
+    {
+      "label": "Shouguang",
+      "value": "Shouguang"
+    },
+    {
+      "label": "Tai'an",
+      "value": "Tai'an"
+    },
+    {
+      "label": "Tengzhou",
+      "value": "Tengzhou"
+    },
+    {
+      "label": "Weifang",
+      "value": "Weifang"
+    },
+    {
+      "label": "Weihai",
+      "value": "Weihai"
+    },
+    {
+      "label": "Xintai",
+      "value": "Xintai"
+    },
+    {
+      "label": "Yantai",
+      "value": "Yantai"
+    },
+    {
+      "label": "Yucheng",
+      "value": "Yucheng"
+    },
+    {
+      "label": "Zaozhuang",
+      "value": "Zaozhuang"
+    },
+    {
+      "label": "Zhaoyuan",
+      "value": "Zhaoyuan"
+    },
+    {
+      "label": "Zhucheng",
+      "value": "Zhucheng"
+    },
+    {
+      "label": "Zibo",
+      "value": "Zibo"
+    },
+    {
+      "label": "Zoucheng",
+      "value": "Zoucheng"
+    },
+    {
+      "label": "Zouping",
+      "value": "Zouping"
+    },
+    {
+      "label": "Changzhi",
+      "value": "Changzhi"
+    },
+    {
+      "label": "Datong",
+      "value": "Datong"
+    },
+    {
+      "label": "Fenyang",
+      "value": "Fenyang"
+    },
+    {
+      "label": "Gaoping",
+      "value": "Gaoping"
+    },
+    {
+      "label": "Gujiao",
+      "value": "Gujiao"
+    },
+    {
+      "label": "Hejin",
+      "value": "Hejin"
+    },
+    {
+      "label": "Houma",
+      "value": "Houma"
+    },
+    {
+      "label": "Huairen",
+      "value": "Huairen"
+    },
+    {
+      "label": "Huozhou",
+      "value": "Huozhou"
+    },
+    {
+      "label": "Jiexiu",
+      "value": "Jiexiu"
+    },
+    {
+      "label": "Jincheng",
+      "value": "Jincheng"
+    },
+    {
+      "label": "Jinzhong",
+      "value": "Jinzhong"
+    },
+    {
+      "label": "Linfen",
+      "value": "Linfen"
+    },
+    {
+      "label": "Lüliang",
+      "value": "Lüliang"
+    },
+    {
+      "label": "Shuozhou",
+      "value": "Shuozhou"
+    },
+    {
+      "label": "Taiyuan",
+      "value": "Taiyuan"
+    },
+    {
+      "label": "Xiaoyi",
+      "value": "Xiaoyi"
+    },
+    {
+      "label": "Xinzhou",
+      "value": "Xinzhou"
+    },
+    {
+      "label": "Yangquan",
+      "value": "Yangquan"
+    },
+    {
+      "label": "Yongji",
+      "value": "Yongji"
+    },
+    {
+      "label": "Yuncheng",
+      "value": "Yuncheng"
+    },
+    {
+      "label": "Yuanping",
+      "value": "Yuanping"
+    },
+    {
+      "label": "Barkam",
+      "value": "Barkam"
+    },
+    {
+      "label": "Bazhong",
+      "value": "Bazhong"
+    },
+    {
+      "label": "Chengdu",
+      "value": "Chengdu"
+    },
+    {
+      "label": "Chongzhou",
+      "value": "Chongzhou"
+    },
+    {
+      "label": "Dazhou",
+      "value": "Dazhou"
+    },
+    {
+      "label": "Deyang",
+      "value": "Deyang"
+    },
+    {
+      "label": "Dujiangyan",
+      "value": "Dujiangyan"
+    },
+    {
+      "label": "Emeishan",
+      "value": "Emeishan"
+    },
+    {
+      "label": "Guang'an",
+      "value": "Guang'an"
+    },
+    {
+      "label": "Guanghan",
+      "value": "Guanghan"
+    },
+    {
+      "label": "Guangyuan",
+      "value": "Guangyuan"
+    },
+    {
+      "label": "Huaying",
+      "value": "Huaying"
+    },
+    {
+      "label": "Jiangyou",
+      "value": "Jiangyou"
+    },
+    {
+      "label": "Jianyang",
+      "value": "Jianyang"
+    },
+    {
+      "label": "Kangding",
+      "value": "Kangding"
+    },
+    {
+      "label": "Langzhong",
+      "value": "Langzhong"
+    },
+    {
+      "label": "Leshan",
+      "value": "Leshan"
+    },
+    {
+      "label": "Longchang",
+      "value": "Longchang"
+    },
+    {
+      "label": "Luzhou",
+      "value": "Luzhou"
+    },
+    {
+      "label": "Mianzhu",
+      "value": "Mianzhu"
+    },
+    {
+      "label": "Meishan",
+      "value": "Meishan"
+    },
+    {
+      "label": "Mianyang",
+      "value": "Mianyang"
+    },
+    {
+      "label": "Nanchong",
+      "value": "Nanchong"
+    },
+    {
+      "label": "Neijiang",
+      "value": "Neijiang"
+    },
+    {
+      "label": "Panzhihua",
+      "value": "Panzhihua"
+    },
+    {
+      "label": "Pengzhou",
+      "value": "Pengzhou"
+    },
+    {
+      "label": "Qionglai",
+      "value": "Qionglai"
+    },
+    {
+      "label": "Shifang",
+      "value": "Shifang"
+    },
+    {
+      "label": "Shehong",
+      "value": "Shehong"
+    },
+    {
+      "label": "Suining",
+      "value": "Suining"
+    },
+    {
+      "label": "Wanyuan",
+      "value": "Wanyuan"
+    },
+    {
+      "label": "Xichang",
+      "value": "Xichang"
+    },
+    {
+      "label": "Ya'an",
+      "value": "Ya'an"
+    },
+    {
+      "label": "Yibin",
+      "value": "Yibin"
+    },
+    {
+      "label": "Zigong",
+      "value": "Zigong"
+    },
+    {
+      "label": "Ziyang",
+      "value": "Ziyang"
+    },
+    {
+      "label": "Lhasa",
+      "value": "Lhasa"
+    },
+    {
+      "label": "Nagqu",
+      "value": "Nagqu"
+    },
+    {
+      "label": "Nyingchi",
+      "value": "Nyingchi"
+    },
+    {
+      "label": "Qamdo",
+      "value": "Qamdo"
+    },
+    {
+      "label": "Shannan",
+      "value": "Shannan"
+    },
+    {
+      "label": "Xigazê",
+      "value": "Xigazê"
+    },
+    {
+      "label": "Aksu",
+      "value": "Aksu"
+    },
+    {
+      "label": "Alashankou",
+      "value": "Alashankou"
+    },
+    {
+      "label": "Altay",
+      "value": "Altay"
+    },
+    {
+      "label": "Aral",
+      "value": "Aral"
+    },
+    {
+      "label": "Artux",
+      "value": "Artux"
+    },
+    {
+      "label": "Beitun",
+      "value": "Beitun"
+    },
+    {
+      "label": "Bole",
+      "value": "Bole"
+    },
+    {
+      "label": "Changji",
+      "value": "Changji"
+    },
+    {
+      "label": "Fukang",
+      "value": "Fukang"
+    },
+    {
+      "label": "Hami",
+      "value": "Hami"
+    },
+    {
+      "label": "Hotan",
+      "value": "Hotan"
+    },
+    {
+      "label": "Huyanghe",
+      "value": "Huyanghe"
+    },
+    {
+      "label": "Karamay",
+      "value": "Karamay"
+    },
+    {
+      "label": "Kashgar",
+      "value": "Kashgar"
+    },
+    {
+      "label": "Khorgas",
+      "value": "Khorgas"
+    },
+    {
+      "label": "Kokdala",
+      "value": "Kokdala"
+    },
+    {
+      "label": "Korla",
+      "value": "Korla"
+    },
+    {
+      "label": "Kunyu",
+      "value": "Kunyu"
+    },
+    {
+      "label": "Kuqa",
+      "value": "Kuqa"
+    },
+    {
+      "label": "Kuytun",
+      "value": "Kuytun"
+    },
+    {
+      "label": "Shihezi",
+      "value": "Shihezi"
+    },
+    {
+      "label": "Shuanghe",
+      "value": "Shuanghe"
+    },
+    {
+      "label": "Tacheng",
+      "value": "Tacheng"
+    },
+    {
+      "label": "Tiemenguan",
+      "value": "Tiemenguan"
+    },
+    {
+      "label": "Tumxuk",
+      "value": "Tumxuk"
+    },
+    {
+      "label": "Turpan",
+      "value": "Turpan"
+    },
+    {
+      "label": "Ürümqi",
+      "value": "Ürümqi"
+    },
+    {
+      "label": "Wujiaqu",
+      "value": "Wujiaqu"
+    },
+    {
+      "label": "Wusu",
+      "value": "Wusu"
+    },
+    {
+      "label": "Yining",
+      "value": "Yining"
+    },
+    {
+      "label": "Anning",
+      "value": "Anning"
+    },
+    {
+      "label": "Baoshan",
+      "value": "Baoshan"
+    },
+    {
+      "label": "Chengjiang",
+      "value": "Chengjiang"
+    },
+    {
+      "label": "Chuxiong",
+      "value": "Chuxiong"
+    },
+    {
+      "label": "Dali",
+      "value": "Dali"
+    },
+    {
+      "label": "Gejiu",
+      "value": "Gejiu"
+    },
+    {
+      "label": "Jinghong",
+      "value": "Jinghong"
+    },
+    {
+      "label": "Kaiyuan",
+      "value": "Kaiyuan"
+    },
+    {
+      "label": "Kunming",
+      "value": "Kunming"
+    },
+    {
+      "label": "Lincang",
+      "value": "Lincang"
+    },
+    {
+      "label": "Lijiang",
+      "value": "Lijiang"
+    },
+    {
+      "label": "Lushui",
+      "value": "Lushui"
+    },
+    {
+      "label": "Mangshi",
+      "value": "Mangshi"
+    },
+    {
+      "label": "Mengzi",
+      "value": "Mengzi"
+    },
+    {
+      "label": "Mile",
+      "value": "Mile"
+    },
+    {
+      "label": "Pu'er",
+      "value": "Pu'er"
+    },
+    {
+      "label": "Qujing",
+      "value": "Qujing"
+    },
+    {
+      "label": "Ruili",
+      "value": "Ruili"
+    },
+    {
+      "label": "Shangri-La",
+      "value": "Shangri-La"
+    },
+    {
+      "label": "Shuifu",
+      "value": "Shuifu"
+    },
+    {
+      "label": "Tengchong",
+      "value": "Tengchong"
+    },
+    {
+      "label": "Wenshan",
+      "value": "Wenshan"
+    },
+    {
+      "label": "Xuanwei",
+      "value": "Xuanwei"
+    },
+    {
+      "label": "Yuxi",
+      "value": "Yuxi"
+    },
+    {
+      "label": "Zhaotong",
+      "value": "Zhaotong"
+    },
+    {
+      "label": "Cixi",
+      "value": "Cixi"
+    },
+    {
+      "label": "Dongyang",
+      "value": "Dongyang"
+    },
+    {
+      "label": "Haining",
+      "value": "Haining"
+    },
+    {
+      "label": "Hangzhou",
+      "value": "Hangzhou"
+    },
+    {
+      "label": "Huzhou",
+      "value": "Huzhou"
+    },
+    {
+      "label": "Jiande",
+      "value": "Jiande"
+    },
+    {
+      "label": "Jiangshan",
+      "value": "Jiangshan"
+    },
+    {
+      "label": "Jiaxing",
+      "value": "Jiaxing"
+    },
+    {
+      "label": "Jinhua",
+      "value": "Jinhua"
+    },
+    {
+      "label": "Lanxi",
+      "value": "Lanxi"
+    },
+    {
+      "label": "Linhai",
+      "value": "Linhai"
+    },
+    {
+      "label": "Lishui",
+      "value": "Lishui"
+    },
+    {
+      "label": "Longgang",
+      "value": "Longgang"
+    },
+    {
+      "label": "Longquan",
+      "value": "Longquan"
+    },
+    {
+      "label": "Ningbo",
+      "value": "Ningbo"
+    },
+    {
+      "label": "Pinghu",
+      "value": "Pinghu"
+    },
+    {
+      "label": "Quzhou",
+      "value": "Quzhou"
+    },
+    {
+      "label": "Ruian",
+      "value": "Ruian"
+    },
+    {
+      "label": "Shaoxing",
+      "value": "Shaoxing"
+    },
+    {
+      "label": "Shengzhou",
+      "value": "Shengzhou"
+    },
+    {
+      "label": "Taizhou",
+      "value": "Taizhou"
+    },
+    {
+      "label": "Tongxiang",
+      "value": "Tongxiang"
+    },
+    {
+      "label": "Wenling",
+      "value": "Wenling"
+    },
+    {
+      "label": "Wenzhou",
+      "value": "Wenzhou"
+    },
+    {
+      "label": "Yiwu",
+      "value": "Yiwu"
+    },
+    {
+      "label": "Yongkang",
+      "value": "Yongkang"
+    },
+    {
+      "label": "Yueqing",
+      "value": "Yueqing"
+    },
+    {
+      "label": "Yuhuan",
+      "value": "Yuhuan"
+    },
+    {
+      "label": "Yuyao",
+      "value": "Yuyao"
+    },
+    {
+      "label": "Zhoushan",
+      "value": "Zhoushan"
+    },
+    {
+      "label": "Zhuji",
+      "value": "Zhuji"
+    }
+  ],
+  "thailand": [
+    {
+      "label": "Bangkok",
+      "value": "Bangkok"
+    },
+    {
+      "label": "Nonthaburi",
+      "value": "Nonthaburi"
+    },
+    {
+      "label": "Nakhon Ratchasima",
+      "value": "Nakhon Ratchasima"
+    },
+    {
+      "label": "Chiang Mai",
+      "value": "Chiang Mai"
+    },
+    {
+      "label": "Hat Yai",
+      "value": "Hat Yai"
+    },
+    {
+      "label": "Udon Thani",
+      "value": "Udon Thani"
+    },
+    {
+      "label": "Pak Kret",
+      "value": "Pak Kret"
+    },
+    {
+      "label": "Chaophraya Surasak",
+      "value": "Chaophraya Surasak"
+    },
+    {
+      "label": "Khon Kaen",
+      "value": "Khon Kaen"
+    },
+    {
+      "label": "Ubon Ratchathani",
+      "value": "Ubon Ratchathani"
+    },
+    {
+      "label": "Nakhon Si Thammarat",
+      "value": "Nakhon Si Thammarat"
+    },
+    {
+      "label": "Nakhon Sawan",
+      "value": "Nakhon Sawan"
+    },
+    {
+      "label": "Nakhon Pathom",
+      "value": "Nakhon Pathom"
+    },
+    {
+      "label": "Phitsanulok",
+      "value": "Phitsanulok"
+    },
+    {
+      "label": "Pattaya",
+      "value": "Pattaya"
+    },
+    {
+      "label": "Songkhla",
+      "value": "Songkhla"
+    },
+    {
+      "label": "Surat Thani",
+      "value": "Surat Thani"
+    },
+    {
+      "label": "Rangsit",
+      "value": "Rangsit"
+    },
+    {
+      "label": "Yala",
+      "value": "Yala"
+    },
+    {
+      "label": "Phuket",
+      "value": "Phuket"
+    },
+    {
+      "label": "Samut Prakan",
+      "value": "Samut Prakan"
+    },
+    {
+      "label": "Lampang",
+      "value": "Lampang"
+    },
+    {
+      "label": "Laem Chabang",
+      "value": "Laem Chabang"
+    },
+    {
+      "label": "Chiang Rai",
+      "value": "Chiang Rai"
+    },
+    {
+      "label": "Trang",
+      "value": "Trang"
+    },
+    {
+      "label": "Phra Nakhon Si Ayutthaya",
+      "value": "Phra Nakhon Si Ayutthaya"
+    },
+    {
+      "label": "Ko Samui",
+      "value": "Ko Samui"
+    },
+    {
+      "label": "Samut Sakhon",
+      "value": "Samut Sakhon"
+    },
+    {
+      "label": "Rayong",
+      "value": "Rayong"
+    },
+    {
+      "label": "Mae Sot",
+      "value": "Mae Sot"
+    },
+    {
+      "label": "Om Noi",
+      "value": "Om Noi"
+    },
+    {
+      "label": "Sakon Nakhon",
+      "value": "Sakon Nakhon"
+    }
+  ],
+  "vietnam": [
+    {
+      "label": "Can Tho",
+      "value": "Can Tho"
+    },
+    {
+      "label": "Da Nang",
+      "value": "Da Nang"
+    },
+    {
+      "label": "Haiphong",
+      "value": "Haiphong"
+    },
+    {
+      "label": "Hanoi",
+      "value": "Hanoi"
+    },
+    {
+      "label": "Ho Chi Minh City",
+      "value": "Ho Chi Minh City"
+    }
+  ],
+  "taiwan": [
+    {
+      "label": "New Taipei",
+      "value": "New Taipei"
+    },
+    {
+      "label": "Taichung City",
+      "value": "Taichung City"
+    },
+    {
+      "label": "Kaohsiung City",
+      "value": "Kaohsiung City"
+    },
+    {
+      "label": "Taipei City",
+      "value": "Taipei City"
+    },
+    {
+      "label": "Taoyuan City",
+      "value": "Taoyuan City"
+    },
+    {
+      "label": "Tainan City",
+      "value": "Tainan City"
+    },
+    {
+      "label": "Hsinchu City",
+      "value": "Hsinchu City"
+    },
+    {
+      "label": "Keelung City",
+      "value": "Keelung City"
+    },
+    {
+      "label": "Chiayi City",
+      "value": "Chiayi City"
+    },
+    {
+      "label": "Changhua County",
+      "value": "Changhua County"
+    }
+  ],
+  "indonesia": [
+    {
+      "label": "Jakarta",
+      "value": "Jakarta"
+    },
+    {
+      "label": "Surabaya",
+      "value": "Surabaya"
+    },
+    {
+      "label": "Bandung",
+      "value": "Bandung"
+    },
+    {
+      "label": "Medan",
+      "value": "Medan"
+    },
+    {
+      "label": "Semarang",
+      "value": "Semarang"
+    },
+    {
+      "label": "Palembang",
+      "value": "Palembang"
+    },
+    {
+      "label": "Makassar",
+      "value": "Makassar"
+    },
+    {
+      "label": "Batam",
+      "value": "Batam"
+    },
+    {
+      "label": "Pekanbaru",
+      "value": "Pekanbaru"
+    },
+    {
+      "label": "Bandar Lampung",
+      "value": "Bandar Lampung"
+    }
+  ],
+  "japan": [
+    {
+      "label": "Tokyo",
+      "value": "Tokyo"
+    },
+    {
+      "label": "Yokohama",
+      "value": "Yokohama"
+    },
+    {
+      "label": "Osaka ",
+      "value": "Osaka "
+    },
+    {
+      "label": "Nagoya ",
+      "value": "Nagoya "
+    },
+    {
+      "label": "Sapporo",
+      "value": "Sapporo"
+    },
+    {
+      "label": "Kobe",
+      "value": "Kobe"
+    },
+    {
+      "label": "Fukuoka",
+      "value": "Fukuoka"
+    },
+    {
+      "label": "Kyoto",
+      "value": "Kyoto"
+    },
+    {
+      "label": "Kawasaki",
+      "value": "Kawasaki"
+    },
+    {
+      "label": "Hiroshima",
+      "value": "Hiroshima"
+    },
+    {
+      "label": "Sendai",
+      "value": "Sendai"
+    },
+    {
+      "label": "Kitakyushu",
+      "value": "Kitakyushu"
+    },
+    {
+      "label": "Chiba",
+      "value": "Chiba"
+    },
+    {
+      "label": "Sakai",
+      "value": "Sakai"
+    },
+    {
+      "label": "Niigata",
+      "value": "Niigata"
+    },
+    {
+      "label": "Kumamoto",
+      "value": "Kumamoto"
+    },
+    {
+      "label": "Sagamihara",
+      "value": "Sagamihara"
+    },
+    {
+      "label": "Shizuoka",
+      "value": "Shizuoka"
+    },
+    {
+      "label": "Kagoshima",
+      "value": "Kagoshima"
+    },
+    {
+      "label": "Funabashi",
+      "value": "Funabashi"
+    },
+    {
+      "label": "Higashi-Osaka",
+      "value": "Higashi-Osaka"
+    },
+    {
+      "label": "Amagasaki",
+      "value": "Amagasaki"
+    },
+    {
+      "label": "Hachioji",
+      "value": "Hachioji"
+    },
+    {
+      "label": "Matsudo",
+      "value": "Matsudo"
+    },
+    {
+      "label": "Himeji",
+      "value": "Himeji"
+    },
+    {
+      "label": "Nagasaki",
+      "value": "Nagasaki"
+    },
+    {
+      "label": "Matsuyama",
+      "value": "Matsuyama"
+    },
+    {
+      "label": "Kanazawa",
+      "value": "Kanazawa"
+    },
+    {
+      "label": "Kawaguchi",
+      "value": "Kawaguchi"
+    },
+    {
+      "label": "Ichikawa",
+      "value": "Ichikawa"
+    },
+    {
+      "label": "Yokosuka",
+      "value": "Yokosuka"
+    },
+    {
+      "label": "Nishinomiya",
+      "value": "Nishinomiya"
+    },
+    {
+      "label": "Utsunomiya",
+      "value": "Utsunomiya"
+    },
+    {
+      "label": "Urawa",
+      "value": "Urawa"
+    },
+    {
+      "label": "Kurashiki",
+      "value": "Kurashiki"
+    },
+    {
+      "label": "Gifu",
+      "value": "Gifu"
+    },
+    {
+      "label": "Toyonaka",
+      "value": "Toyonaka"
+    },
+    {
+      "label": "Oita",
+      "value": "Oita"
+    },
+    {
+      "label": "Omiya",
+      "value": "Omiya"
+    },
+    {
+      "label": "Wakayama",
+      "value": "Wakayama"
+    },
+    {
+      "label": "Hirakata",
+      "value": "Hirakata"
+    },
+    {
+      "label": "Fukuyama",
+      "value": "Fukuyama"
+    },
+    {
+      "label": "Takatsuki",
+      "value": "Takatsuki"
+    },
+    {
+      "label": "Asahikawa",
+      "value": "Asahikawa"
+    },
+    {
+      "label": "Iwaki",
+      "value": "Iwaki"
+    },
+    {
+      "label": "Fujisawa",
+      "value": "Fujisawa"
+    },
+    {
+      "label": "Nara",
+      "value": "Nara"
+    },
+    {
+      "label": "Machida",
+      "value": "Machida"
+    },
+    {
+      "label": "Nagano",
+      "value": "Nagano"
+    },
+    {
+      "label": "Suita",
+      "value": "Suita"
+    },
+    {
+      "label": "Toyohashi",
+      "value": "Toyohashi"
+    },
+    {
+      "label": "Toyota",
+      "value": "Toyota"
+    },
+    {
+      "label": "Takamatsu",
+      "value": "Takamatsu"
+    },
+    {
+      "label": "Toyama",
+      "value": "Toyama"
+    },
+    {
+      "label": "Kochi",
+      "value": "Kochi"
+    },
+    {
+      "label": "Koriyama",
+      "value": "Koriyama"
+    },
+    {
+      "label": "Hakodate",
+      "value": "Hakodate"
+    },
+    {
+      "label": "Okazaki",
+      "value": "Okazaki"
+    },
+    {
+      "label": "Kashiwa",
+      "value": "Kashiwa"
+    },
+    {
+      "label": "Kawagoe",
+      "value": "Kawagoe"
+    },
+    {
+      "label": "Naha",
+      "value": "Naha"
+    },
+    {
+      "label": "Tokorozawa",
+      "value": "Tokorozawa"
+    },
+    {
+      "label": "Akita",
+      "value": "Akita"
+    },
+    {
+      "label": "Aomori",
+      "value": "Aomori"
+    },
+    {
+      "label": "Miyazaki",
+      "value": "Miyazaki"
+    },
+    {
+      "label": "Maebashi",
+      "value": "Maebashi"
+    },
+    {
+      "label": "Koshigaya",
+      "value": "Koshigaya"
+    },
+    {
+      "label": "Yao",
+      "value": "Yao"
+    },
+    {
+      "label": "Fukushima",
+      "value": "Fukushima"
+    },
+    {
+      "label": "Yokkaichi",
+      "value": "Yokkaichi"
+    },
+    {
+      "label": "Akashi",
+      "value": "Akashi"
+    },
+    {
+      "label": "Kasugai",
+      "value": "Kasugai"
+    },
+    {
+      "label": "Tokushima",
+      "value": "Tokushima"
+    },
+    {
+      "label": "Shimonoseki",
+      "value": "Shimonoseki"
+    },
+    {
+      "label": "Ichinomiya",
+      "value": "Ichinomiya"
+    },
+    {
+      "label": "Otsu",
+      "value": "Otsu"
+    },
+    {
+      "label": "Ichihara",
+      "value": "Ichihara"
+    },
+    {
+      "label": "Neyagawa",
+      "value": "Neyagawa"
+    },
+    {
+      "label": "Ibaraki",
+      "value": "Ibaraki"
+    },
+    {
+      "label": "Fukui",
+      "value": "Fukui"
+    },
+    {
+      "label": "Yamagata",
+      "value": "Yamagata"
+    },
+    {
+      "label": "Hiratsuka",
+      "value": "Hiratsuka"
+    },
+    {
+      "label": "Sasebo",
+      "value": "Sasebo"
+    },
+    {
+      "label": "Shimizu",
+      "value": "Shimizu"
+    },
+    {
+      "label": "Hachinohe",
+      "value": "Hachinohe"
+    },
+    {
+      "label": "Kakogawa",
+      "value": "Kakogawa"
+    },
+    {
+      "label": "Takasaki",
+      "value": "Takasaki"
+    },
+    {
+      "label": "Morioka",
+      "value": "Morioka"
+    },
+    {
+      "label": "Mito",
+      "value": "Mito"
+    },
+    {
+      "label": "Kurume",
+      "value": "Kurume"
+    },
+    {
+      "label": "Fuji",
+      "value": "Fuji"
+    },
+    {
+      "label": "Kure",
+      "value": "Kure"
+    },
+    {
+      "label": "Numazu",
+      "value": "Numazu"
+    },
+    {
+      "label": "Fuchu",
+      "value": "Fuchu"
+    },
+    {
+      "label": "Soka",
+      "value": "Soka"
+    },
+    {
+      "label": "Kushiro",
+      "value": "Kushiro"
+    },
+    {
+      "label": "Hitachi",
+      "value": "Hitachi"
+    },
+    {
+      "label": "Takarazuka",
+      "value": "Takarazuka"
+    }
+  ]
+}
