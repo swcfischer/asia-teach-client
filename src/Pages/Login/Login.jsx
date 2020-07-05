@@ -31,10 +31,10 @@ const Login = (props) => {
         if (result.data.error) {
           return toast.error(result.data.message);
         }
-        localStorage.setItem('token', result.headers['auth-token']);
+        localStorage.setItem('token', result.headers['Auth-Token']);
         axios.defaults.headers.common[
           'Authorization'
-        ] = `Bearer ${result.headers['auth-token']}`;
+        ] = `Bearer ${result.headers['Auth-Token']}`;
         const {
           data: { currentUser },
         } = result;
