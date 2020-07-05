@@ -5,8 +5,8 @@ import { withRouter, Link } from 'react-router-dom';
 import ReactLoading from 'react-loading';
 import queryString from 'query-string';
 
-import Sidebar from './Components/Sidebar/Sidebar';
-import ResultItem from './Components/Results/ResultItem';
+import Sidebar from './components/Sidebar/Sidebar';
+import ResultItem from './components/Results/ResultItem';
 
 import {
   handleSearchQuery,

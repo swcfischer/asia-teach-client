@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Photos from './Components/Photos/Photos';
+import Photos from './components/Photos/Photos';
 
 import { clearState } from '../Search/reducer';
 
