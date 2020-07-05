@@ -1,5 +1,5 @@
 {
-  "name": "asia_teach_current",
+  "name": "asia_teach_heroku",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -50,7 +50,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "postbuild": "react-snap",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -69,7 +68,6 @@
     ]
   },
   "devDependencies": {
-    "prop-types": "^15.7.2",
-    "react-snap": "^1.23.0"
+    "prop-types": "^15.7.2"
   }
 }

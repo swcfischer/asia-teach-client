@@ -7,7 +7,7 @@ import ReactModal from 'react-modal';
 import { IoIosImages } from 'react-icons/io';
 // import { GoClippy } from 'react-icons/go';
 
-import ImageCarousel from './Components/ImageCarousel';
+import ImageCarousel from './components/ImageCarousel';
 
 import './Posting.scss';
 
