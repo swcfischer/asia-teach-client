@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import classNames from 'classnames';
 
+import { API_ROOT } from 'api-config';
+
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import { IoIosCloseCircleOutline } from 'react-icons/io';
@@ -20,7 +22,7 @@ const ImageCarousel = (props) => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get(`/api/job/images/${uuid}`);
+      const { data } = await axios.get(API_ROOT + `/api/job/images/${uuid}`);
 
       setImages(data.images);
       setIsLoading(false);
