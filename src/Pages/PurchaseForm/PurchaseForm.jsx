@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import { API_ROOT } from 'api-config';
+
 import './PurchaseForm.scss';
 
 const stripePromise = loadStripe('pk_test_Cm3mbl5Qa4v6DZXHtRTS29Kp00hn4kDF06');
@@ -49,13 +51,10 @@ function PurchaseForm({ userUuid }) {
     }
     const {
       data: { client_secret },
-    } = await axios.post(
-      `https://historic-arches-33577.herokuapp.com/api/payments-jobs/`,
-      {
-        quantity: price,
-        userUuid,
-      }
-    );
+    } = await axios.post(API_ROOT + `/api/payments-jobs/`, {
+      quantity: price,
+      userUuid,
+    });
 
     const result = await stripe.confirmCardPayment(client_secret, {
       payment_method: {

@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { API_ROOT } from 'api-config';
 
 // import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -25,10 +26,7 @@ const Register = (props) => {
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
     onSubmit: async (values) => {
-      const { data } = await axios.post(
-        'https://historic-arches-33577.herokuapp.com/api/register',
-        values
-      );
+      const { data } = await axios.post(API_ROOT + '/api/register', values);
       if (data.error) {
         return toast.error(data.message);
       }

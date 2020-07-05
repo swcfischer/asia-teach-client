@@ -7,6 +7,8 @@ import { useParams, Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { SelectField, TextField } from 'Components/FormFields';
+
+import { API_ROOT } from 'api-config';
 // import ProfileCrop from '../ProfileCrop';
 // import ResumeText from './ResumeText';
 
@@ -29,7 +31,7 @@ const Details = (props) => {
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get(
-        `https://historic-arches-33577.herokuapp.com/api/post-resume/details/${userUuid}`
+        API_ROOT + `/api/post-resume/details/${userUuid}`
       );
 
       if (data) {
@@ -77,7 +79,7 @@ const Details = (props) => {
             // setSubmitting figure out what this does
             async function saveForm() {
               const { data } = await axios.put(
-                `https://historic-arches-33577.herokuapp.com/api/post-resume/details/${userUuid}`,
+                API_ROOT + `/api/post-resume/details/${userUuid}`,
                 values
               );
               setFormState(data);

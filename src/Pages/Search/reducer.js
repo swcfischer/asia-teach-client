@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_ROOT } from 'api-config';
 
 const STORE_RESULTS = 'STORE_RESULTS';
 const SET_LOADING = 'SET_LOADING';
@@ -30,12 +31,9 @@ export function storePage(page) {
 
 export function handleSearchQuery(params) {
   return async (dispatch) => {
-    const { data } = await axios.get(
-      'https://historic-arches-33577.herokuapp.com/api/filter-jobs',
-      {
-        params,
-      }
-    );
+    const { data } = await axios.get(API_ROOT + '/api/filter-jobs', {
+      params,
+    });
 
     if (data.error) {
       dispatch({
@@ -67,9 +65,7 @@ export function clearState() {
 
 export function fetchCitiesByCountry(country) {
   return async (dispatch) => {
-    const { data } = await axios.get(
-      `https://historic-arches-33577.herokuapp.com/api/jobs/cities/${country}`
-    );
+    const { data } = await axios.get(API_ROOT + `/api/jobs/cities/${country}`);
     if (data.error) {
       return dispatch({
         type: 'ERROR',

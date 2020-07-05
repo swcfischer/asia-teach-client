@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { API_ROOT } from 'api-config';
 
 import './Preview.scss';
 
@@ -16,7 +17,7 @@ const Preview = (props) => {
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get(
-        `https://historic-arches-33577.herokuapp.com/api/job/preview/${uuid}/${userUuid}`
+        API_ROOT + `/api/job/preview/${uuid}/${userUuid}`
       );
       console.log('data', data);
       setPreviewData(data);

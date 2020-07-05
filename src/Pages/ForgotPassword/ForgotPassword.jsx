@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { API_ROOT } from 'api-config';
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -20,7 +21,7 @@ const ForgotPassword = (props) => {
     }),
     onSubmit: async (values) => {
       const { data } = await axios.get(
-        `https://historic-arches-33577.herokuapp.com/api/forgot-password?email=${values.email}`
+        API_ROOT + `/api/forgot-password?email=${values.email}`
       );
       if (data.error) {
         return toast.error(data.message);

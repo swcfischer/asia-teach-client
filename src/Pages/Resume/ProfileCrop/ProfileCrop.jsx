@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 import classNames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 
+import { API_ROOT } from 'api-config';
+
 import 'react-image-crop/dist/ReactCrop.css';
 
 import './ProfileCrop.scss';
@@ -33,7 +35,7 @@ function ProfileCrop(props) {
   useEffect(() => {
     async function fetchThumnail() {
       const { data } = await axios.get(
-        `https://historic-arches-33577.herokuapp.com/api/post-resume/profile-image/${userUuid}`
+        API_ROOT + `/api/post-resume/profile-image/${userUuid}`
       );
 
       setDatabaseSrc(data.profileImage);
@@ -141,7 +143,7 @@ function ProfileCrop(props) {
       if (base64Image) {
         setIsLoading(true);
         const { data } = await axios.patch(
-          `https://historic-arches-33577.herokuapp.com/api/post-resume/profile-image/${userUuid}`,
+          API_ROOT + `/api/post-resume/profile-image/${userUuid}`,
           {
             profileImage: base64Image,
           }

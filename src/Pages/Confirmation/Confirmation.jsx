@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { API_ROOT } from 'api-config';
 
 function Confirmation() {
   const match = useRouteMatch();
@@ -12,12 +13,9 @@ function Confirmation() {
   const { token } = match.params;
   useEffect(() => {
     async function confirmUser() {
-      const { data } = await axios.post(
-        `https://historic-arches-33577.herokuapp.com/api/confirmation/`,
-        {
-          token,
-        }
-      );
+      const { data } = await axios.post(API_ROOT + `/api/confirmation/`, {
+        token,
+      });
 
       if (data.error) {
         toast.error(data.message);

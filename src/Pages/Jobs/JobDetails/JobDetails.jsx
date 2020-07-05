@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import { TextField, SelectCity, SelectField } from 'Components/FormFields';
 
 import { compareTwoValues, turnNullValuesToStrings } from 'utilities';
+import { API_ROOT } from 'api-config';
 
 import './JobDetails.scss';
 
@@ -34,7 +35,7 @@ const Details = (props) => {
   useEffect(() => {
     async function fetchJobData() {
       const { data } = await axios.get(
-        `https://historic-arches-33577.herokuapp.com/api/jobs/details/${uuid}/${currentUser.uuid}`
+        API_ROOT + `/api/jobs/details/${uuid}/${currentUser.uuid}`
       );
       console.log('data', data);
       const newDataObj = turnNullValuesToStrings(data);
@@ -75,7 +76,7 @@ const Details = (props) => {
           async function saveForm() {
             const token = localStorage.getItem('token');
             const { data } = await axios.post(
-              `https://historic-arches-33577.herokuapp.com/api/jobs/details/${uuid}/${currentUser.uuid}`,
+              API_ROOT + `/api/jobs/details/${uuid}/${currentUser.uuid}`,
               values
             );
             delete data.uuid;

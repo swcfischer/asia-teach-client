@@ -9,6 +9,7 @@ import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import classNames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
+import { API_ROOT } from 'api-config';
 
 import 'react-image-crop/dist/ReactCrop.css';
 
@@ -36,7 +37,7 @@ function ImageCrop(props) {
   useEffect(() => {
     async function fetchThumnail() {
       const { data } = await axios.get(
-        `https://historic-arches-33577.herokuapp.com/api/job/image-crop/${uuid}/${userUuid}`
+        API_ROOT + `/api/job/image-crop/${uuid}/${userUuid}`
       );
 
       setDatabaseSrc(data.thumbnail);
@@ -125,9 +126,7 @@ function ImageCrop(props) {
       // and the carousel images in s3 and then save the strings
 
       // for now, I'm just going to switch the job to isPublished: true
-      axios.post(
-        `https://historic-arches-33577.herokuapp.com/api/job/publish/${uuid}/${userUuid}`
-      );
+      axios.post(API_ROOT + `/api/job/publish/${uuid}/${userUuid}`);
     },
     [uuid, userUuid]
   );
@@ -158,7 +157,7 @@ function ImageCrop(props) {
         setIsLoading(true);
         const { data } = await axios({
           method: 'post',
-          url: `https://historic-arches-33577.herokuapp.com/api/job/image-crop/${uuid}/${userUuid}`,
+          url: API_ROOT + `/api/job/image-crop/${uuid}/${userUuid}`,
           data: {
             thumbnail: base64Image,
           },

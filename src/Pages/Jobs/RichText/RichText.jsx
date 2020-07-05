@@ -10,6 +10,8 @@ import ReactLoading from 'react-loading';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import { API_ROOT } from 'api-config';
+
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './RichText.scss';
 
@@ -34,7 +36,7 @@ const RichText = (props) => {
   useEffect(() => {
     async function fetchDescription() {
       const { data } = await axios.get(
-        `https://historic-arches-33577.herokuapp.com/api/job/richtext/${uuid}/${userUuid}`
+        API_ROOT + `/api/job/richtext/${uuid}/${userUuid}`
       );
 
       const blocksFromHtml = htmlToDraft(data.descriptionHTML || '');
@@ -61,7 +63,7 @@ const RichText = (props) => {
     );
 
     const response = await axios.post(
-      `https://historic-arches-33577.herokuapp.com/api/job/richtext/${uuid}/${userUuid}`,
+      API_ROOT + `/api/job/richtext/${uuid}/${userUuid}`,
       {
         descriptionHTML,
       }

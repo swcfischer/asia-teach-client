@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { pdfjs, Document, Page } from 'react-pdf';
 
+import { API_ROOT } from 'api-config';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './ResumeUpload.scss';
 
@@ -30,7 +31,7 @@ const RichText = (props) => {
 
   // useEffect(() => {
   //   async function fetchDescription() {
-  //     const { data } = await axios.get(`https://historic-arches-33577.herokuapp.com/api/job/richtext/${uuid}/${userUuid}`);
+  //     const { data } = await axios.get(`/api/job/richtext/${uuid}/${userUuid}`);
 
   //     const blocksFromHtml = htmlToDraft(data.descriptionHTML || '');
   //     const { contentBlocks, entityMap } = blocksFromHtml;
@@ -49,7 +50,7 @@ const RichText = (props) => {
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get(
-        `https://historic-arches-33577.herokuapp.com/api/post-resume/resume/${userUuid}`
+        API_ROOT + `/api/post-resume/resume/${userUuid}`
       );
 
       console.log(data);
@@ -73,7 +74,7 @@ const RichText = (props) => {
 
     reader.onloadend = (event) => {
       const { data } = axios.patch(
-        `https://historic-arches-33577.herokuapp.com/api/post-resume/resume/${userUuid}`,
+        API_ROOT + `/api/post-resume/resume/${userUuid}`,
         {
           resumeUrl: reader.result,
         }
@@ -85,7 +86,7 @@ const RichText = (props) => {
     // const descriptionHTML = draftToHtml(
     //   convertToRaw(editorState.getCurrentContent())
     // );
-    // const response = await axios.post(`https://historic-arches-33577.herokuapp.com/api/job/richtext/${uuid}/${userUuid}`, {
+    // const response = await axios.post(`/api/job/richtext/${uuid}/${userUuid}`, {
     //   descriptionHTML,
     // });
   };

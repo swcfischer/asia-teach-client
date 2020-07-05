@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_ROOT } from 'api-config';
 
 const STORE_RESULTS = 'STORE_RESULTS';
 const SET_LOADING = 'SET_LOADING';
@@ -31,7 +32,7 @@ export function handleSearchQuery(params) {
   return async (dispatch, getState) => {
     const { uuid: userUuid } = getState().app.currentUser;
     const { data } = await axios.get(
-      `https://historic-arches-33577.herokuapp.com/api/resume-board/filter/${userUuid}`,
+      API_ROOT + `/api/resume-board/filter/${userUuid}`,
       {
         params,
       }

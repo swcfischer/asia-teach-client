@@ -1,13 +1,13 @@
 import axios from 'axios';
 
+import { API_ROOT } from 'api-config';
+
 const FETCH_POSTING = 'FETCH_POSTING';
 const CLEAR_DATA = 'CLEAR_DATA';
 
 export function fetchPosting(uuid) {
   return async (dispatch) => {
-    const { data } = await axios.get(
-      `https://historic-arches-33577.herokuapp.com/api/job/${uuid}`
-    );
+    const { data } = await axios.get(API_ROOT + `/api/job/${uuid}`);
     if (data.error) {
       dispatch({
         type: 'ERROR',

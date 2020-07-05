@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 import ResumeItem from '../../ResumeSearch/Components/Results/ResumeItem';
+import { API_ROOT } from 'api-config';
 
 import './ResumePreview.scss';
 
@@ -13,7 +14,7 @@ const ResumePreview = () => {
 
   useEffect(() => {
     const { data } = axios.get(
-      `https://historic-arches-33577.herokuapp.com/api/post-resume/preview/${userUuid}`
+      API_ROOT + `/api/post-resume/preview/${userUuid}`
     );
 
     setResumeData(data);

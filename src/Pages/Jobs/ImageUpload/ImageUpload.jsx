@@ -5,6 +5,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import { API_ROOT } from 'api-config';
+
 import './ImageUpload.scss';
 
 function ImageUpload(props) {
@@ -16,7 +18,7 @@ function ImageUpload(props) {
   useEffect(() => {
     async function fetchImages() {
       const { data } = await axios.get(
-        `https://historic-arches-33577.herokuapp.com/api/job/image-upload/${uuid}/${userUuid}`
+        API_ROOT + `/api/job/image-upload/${uuid}/${userUuid}`
       );
       setDefaultPictures(data.images);
       console.log('data', data);
@@ -56,7 +58,7 @@ function ImageUpload(props) {
     console.log('pictures', pictures);
 
     const { data } = await axios.post(
-      `https://historic-arches-33577.herokuapp.com/api/job/image-upload/${uuid}/${userUuid}`,
+      API_ROOT + `/api/job/image-upload/${uuid}/${userUuid}`,
       {
         images: pictures,
       }

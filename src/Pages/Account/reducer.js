@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_ROOT } from 'api-config';
 
 const FETCH_UNPUBLISHED_JOBS = 'FETCH_UNPUBLISHED_JOBS';
 const FETCH_PUBLISHED_JOBS = 'FETCH_PUBLISHED_JOBS';
@@ -12,7 +13,7 @@ export function fetchUnpublished() {
   return async (dispatch, getState) => {
     const { currentUser } = getState().app;
     const { data } = await axios.get(
-      `https://historic-arches-33577.herokuapp.com/api/jobs/unpublished/user/${currentUser.uuid}`
+      API_ROOT + `/api/jobs/unpublished/user/${currentUser.uuid}`
     );
 
     // fix this up
@@ -34,7 +35,7 @@ export function fetchPublished() {
   return async (dispatch, getState) => {
     const { currentUser } = getState().app;
     const { data } = await axios.get(
-      `https://historic-arches-33577.herokuapp.com/api/jobs/published/${currentUser.uuid}?page=1`
+      API_ROOT + `/api/jobs/published/${currentUser.uuid}?page=1`
     );
 
     if (data.error) {

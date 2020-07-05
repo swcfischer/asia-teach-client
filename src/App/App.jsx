@@ -36,7 +36,6 @@ const App = ({ fetchCurrentUser, currentUser, isLoading }) => {
   useEffect(() => {
     fetchCurrentUser();
   }, [fetchCurrentUser]);
-
   return isLoading ? (
     <div className="initial-load"></div>
   ) : (

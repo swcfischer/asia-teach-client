@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { API_ROOT } from 'api-config';
 
 const FETCH_CURRENT_USER = 'FETCH_CURRENT_USER';
 const ERASE_CURRENT_USER = 'ERASE_CURRENT_USER';
@@ -16,9 +17,7 @@ export function fetchCurrentUser() {
       });
     }
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    const { data } = await axios.get(
-      'https://historic-arches-33577.herokuapp.com/api/current_user'
-    );
+    const { data } = await axios.get(API_ROOT + `/api/current_user`);
     if (data.error) {
       dispatch({
         type: 'ERROR',
