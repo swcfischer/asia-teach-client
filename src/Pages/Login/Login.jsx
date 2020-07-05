@@ -34,6 +34,9 @@ const Login = (props) => {
         // axios appears to be changing the case of the header
         // which shouldn't make a difference
         // but it appears to be making a difference
+        console.log(result.headers);
+        console.log(result.headers['Auth-Token']);
+        console.log(result.headers['auth-token'], 'auth-token');
         const token = result.headers['Auth-Token']
           ? result.headers['Auth-Token']
           : result.headers['auth-token'];
