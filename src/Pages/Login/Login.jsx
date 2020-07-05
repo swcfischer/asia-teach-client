@@ -31,10 +31,14 @@ const Login = (props) => {
         if (result.data.error) {
           return toast.error(result.data.message);
         }
-        localStorage.setItem('token', result.headers['Auth-Token']);
-        axios.defaults.headers.common[
-          'Authorization'
-        ] = `Bearer ${result.headers['Auth-Token']}`;
+        // axios appears to be changing the case of the header
+        // which shouldn't make a difference
+        // but it appears to be making a difference
+        const token = result.headers['Auth-Token']
+          ? result.headers['Auth-Token']
+          : result.headers['auth-token'];
+        localStorage.setItem('token', token);
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         const {
           data: { currentUser },
         } = result;
