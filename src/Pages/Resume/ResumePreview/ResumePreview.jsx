@@ -12,7 +12,9 @@ const ResumePreview = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const { data } = axios.get(`/api/post-resume/preview/${userUuid}`);
+    const { data } = axios.get(
+      `https://historic-arches-33577.herokuapp.com/api/post-resume/preview/${userUuid}`
+    );
 
     setResumeData(data);
     setLoading(false);

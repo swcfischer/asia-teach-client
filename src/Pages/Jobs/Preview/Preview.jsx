@@ -15,7 +15,9 @@ const Preview = (props) => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get(`/api/job/preview/${uuid}/${userUuid}`);
+      const { data } = await axios.get(
+        `https://historic-arches-33577.herokuapp.com/api/job/preview/${uuid}/${userUuid}`
+      );
       console.log('data', data);
       setPreviewData(data);
       setIsLoading(false);

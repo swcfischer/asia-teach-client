@@ -16,7 +16,9 @@ export function fetchCurrentUser() {
       });
     }
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    const { data } = await axios.get('/api/current_user');
+    const { data } = await axios.get(
+      'https://historic-arches-33577.herokuapp.com/api/current_user'
+    );
     if (data.error) {
       dispatch({
         type: 'ERROR',

@@ -49,10 +49,13 @@ function PurchaseForm({ userUuid }) {
     }
     const {
       data: { client_secret },
-    } = await axios.post(`/api/payments-jobs/`, {
-      quantity: price,
-      userUuid,
-    });
+    } = await axios.post(
+      `https://historic-arches-33577.herokuapp.com/api/payments-jobs/`,
+      {
+        quantity: price,
+        userUuid,
+      }
+    );
 
     const result = await stripe.confirmCardPayment(client_secret, {
       payment_method: {

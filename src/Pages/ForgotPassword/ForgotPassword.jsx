@@ -20,7 +20,7 @@ const ForgotPassword = (props) => {
     }),
     onSubmit: async (values) => {
       const { data } = await axios.get(
-        `/api/forgot-password?email=${values.email}`
+        `https://historic-arches-33577.herokuapp.com/api/forgot-password?email=${values.email}`
       );
       if (data.error) {
         return toast.error(data.message);

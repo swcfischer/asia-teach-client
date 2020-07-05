@@ -17,33 +17,36 @@ const STORE_PAGE = 'STORE_PAGE';
 export function storeParams(params) {
   return {
     type: STORE_PARAMS,
-    payload: params
+    payload: params,
   };
 }
 
 export function storePage(page) {
   return {
     type: STORE_PAGE,
-    payload: Number(page)
+    payload: Number(page),
   };
 }
 
 export function handleSearchQuery(params) {
-  return async dispatch => {
-    const { data } = await axios.get('/api/filter-jobs', {
-      params
-    });
+  return async (dispatch) => {
+    const { data } = await axios.get(
+      'https://historic-arches-33577.herokuapp.com/api/filter-jobs',
+      {
+        params,
+      }
+    );
 
     if (data.error) {
       dispatch({
         type: 'ERROR',
-        payload: data.message
+        payload: data.message,
       });
     }
 
     dispatch({
       type: STORE_RESULTS,
-      payload: data
+      payload: data,
     });
 
     dispatch(storeParams(params));
@@ -52,36 +55,38 @@ export function handleSearchQuery(params) {
 
 export function resetPage() {
   return {
-    type: RESET_PAGE
+    type: RESET_PAGE,
   };
 }
 
 export function clearState() {
   return {
-    type: CLEAR_STATE
+    type: CLEAR_STATE,
   };
 }
 
 export function fetchCitiesByCountry(country) {
-  return async dispatch => {
-    const { data } = await axios.get(`/api/jobs/cities/${country}`);
+  return async (dispatch) => {
+    const { data } = await axios.get(
+      `https://historic-arches-33577.herokuapp.com/api/jobs/cities/${country}`
+    );
     if (data.error) {
       return dispatch({
         type: 'ERROR',
-        payload: data.message
+        payload: data.message,
       });
     }
     if (!data || data.length < 1) {
       return dispatch({
         type: STORE_CITY_OPTIONS,
-        payload: []
+        payload: [],
       });
     }
     const cityArray = data.map(({ city }) => ({ label: city, value: city }));
 
     dispatch({
       type: STORE_CITY_OPTIONS,
-      payload: cityArray
+      payload: cityArray,
     });
   };
 }
@@ -89,7 +94,7 @@ export function fetchCitiesByCountry(country) {
 export function setLoading(isLoading = true) {
   return {
     type: SET_LOADING,
-    payload: isLoading
+    payload: isLoading,
   };
 }
 
@@ -102,46 +107,46 @@ const initialState = {
   isLoading: true,
   isLoadingCities: true,
   params: {
-    country: ''
+    country: '',
   },
   page: 1,
   results: [],
-  cities: []
+  cities: [],
 };
 
-export default function(state = initialState, { type, payload }) {
+export default function (state = initialState, { type, payload }) {
   switch (type) {
     case STORE_RESULTS:
       return {
         ...state,
         isLoading: false,
-        results: payload
+        results: payload,
       };
     case STORE_CITY_OPTIONS:
       return {
         ...state,
         isLoadingCities: false,
-        cities: payload
+        cities: payload,
       };
     case STORE_PARAMS:
       return {
         ...state,
-        params: payload
+        params: payload,
       };
     case STORE_PAGE:
       return {
         ...state,
-        page: payload
+        page: payload,
       };
     case RESET_PAGE:
       return {
         ...state,
-        page: 1
+        page: 1,
       };
     case SET_LOADING:
       return {
         ...state,
-        isLoading: payload
+        isLoading: payload,
       };
     case CLEAR_STATE:
       return initialState;

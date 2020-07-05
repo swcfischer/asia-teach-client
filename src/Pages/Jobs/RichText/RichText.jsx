@@ -33,7 +33,9 @@ const RichText = (props) => {
 
   useEffect(() => {
     async function fetchDescription() {
-      const { data } = await axios.get(`/api/job/richtext/${uuid}/${userUuid}`);
+      const { data } = await axios.get(
+        `https://historic-arches-33577.herokuapp.com/api/job/richtext/${uuid}/${userUuid}`
+      );
 
       const blocksFromHtml = htmlToDraft(data.descriptionHTML || '');
       const { contentBlocks, entityMap } = blocksFromHtml;
@@ -58,9 +60,12 @@ const RichText = (props) => {
       convertToRaw(editorState.getCurrentContent())
     );
 
-    const response = await axios.post(`/api/job/richtext/${uuid}/${userUuid}`, {
-      descriptionHTML,
-    });
+    const response = await axios.post(
+      `https://historic-arches-33577.herokuapp.com/api/job/richtext/${uuid}/${userUuid}`,
+      {
+        descriptionHTML,
+      }
+    );
     console.log('RichText -> handleSave -> response', response);
   };
 

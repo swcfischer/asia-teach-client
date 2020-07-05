@@ -26,20 +26,22 @@ const Login = (props) => {
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
     onSubmit: async (values) => {
-      axios.post('/api/login', values).then((result) => {
-        if (result.data.error) {
-          return toast.error(result.data.message);
-        }
-        localStorage.setItem('token', result.headers['auth-token']);
-        axios.defaults.headers.common[
-          'Authorization'
-        ] = `Bearer ${result.headers['auth-token']}`;
-        const {
-          data: { currentUser },
-        } = result;
-        props.storeCurrentUser(currentUser);
-        props.history.push('/');
-      });
+      axios
+        .post('https://historic-arches-33577.herokuapp.com/api/login', values)
+        .then((result) => {
+          if (result.data.error) {
+            return toast.error(result.data.message);
+          }
+          localStorage.setItem('token', result.headers['auth-token']);
+          axios.defaults.headers.common[
+            'Authorization'
+          ] = `Bearer ${result.headers['auth-token']}`;
+          const {
+            data: { currentUser },
+          } = result;
+          props.storeCurrentUser(currentUser);
+          props.history.push('/');
+        });
     },
   });
   return (

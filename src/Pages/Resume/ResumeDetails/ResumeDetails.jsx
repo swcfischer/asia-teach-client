@@ -28,7 +28,9 @@ const Details = (props) => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get(`/api/post-resume/details/${userUuid}`);
+      const { data } = await axios.get(
+        `https://historic-arches-33577.herokuapp.com/api/post-resume/details/${userUuid}`
+      );
 
       if (data) {
         setFormState(data);
@@ -75,7 +77,7 @@ const Details = (props) => {
             // setSubmitting figure out what this does
             async function saveForm() {
               const { data } = await axios.put(
-                `/api/post-resume/details/${userUuid}`,
+                `https://historic-arches-33577.herokuapp.com/api/post-resume/details/${userUuid}`,
                 values
               );
               setFormState(data);

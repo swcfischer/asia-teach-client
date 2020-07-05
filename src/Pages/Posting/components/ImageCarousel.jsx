@@ -20,7 +20,9 @@ const ImageCarousel = (props) => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get(`/api/job/images/${uuid}`);
+      const { data } = await axios.get(
+        `https://historic-arches-33577.herokuapp.com/api/job/images/${uuid}`
+      );
 
       setImages(data.images);
       setIsLoading(false);

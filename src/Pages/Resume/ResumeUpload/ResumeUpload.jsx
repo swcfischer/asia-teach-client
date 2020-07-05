@@ -30,7 +30,7 @@ const RichText = (props) => {
 
   // useEffect(() => {
   //   async function fetchDescription() {
-  //     const { data } = await axios.get(`/api/job/richtext/${uuid}/${userUuid}`);
+  //     const { data } = await axios.get(`https://historic-arches-33577.herokuapp.com/api/job/richtext/${uuid}/${userUuid}`);
 
   //     const blocksFromHtml = htmlToDraft(data.descriptionHTML || '');
   //     const { contentBlocks, entityMap } = blocksFromHtml;
@@ -48,7 +48,9 @@ const RichText = (props) => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get(`/api/post-resume/resume/${userUuid}`);
+      const { data } = await axios.get(
+        `https://historic-arches-33577.herokuapp.com/api/post-resume/resume/${userUuid}`
+      );
 
       console.log(data);
       setUploadedFile(data);
@@ -70,9 +72,12 @@ const RichText = (props) => {
     const reader = new FileReader();
 
     reader.onloadend = (event) => {
-      const { data } = axios.patch(`/api/post-resume/resume/${userUuid}`, {
-        resumeUrl: reader.result,
-      });
+      const { data } = axios.patch(
+        `https://historic-arches-33577.herokuapp.com/api/post-resume/resume/${userUuid}`,
+        {
+          resumeUrl: reader.result,
+        }
+      );
     };
     reader.readAsDataURL(uploadedFile);
 
@@ -80,7 +85,7 @@ const RichText = (props) => {
     // const descriptionHTML = draftToHtml(
     //   convertToRaw(editorState.getCurrentContent())
     // );
-    // const response = await axios.post(`/api/job/richtext/${uuid}/${userUuid}`, {
+    // const response = await axios.post(`https://historic-arches-33577.herokuapp.com/api/job/richtext/${uuid}/${userUuid}`, {
     //   descriptionHTML,
     // });
   };

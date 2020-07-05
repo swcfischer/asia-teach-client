@@ -30,9 +30,12 @@ export function storePage(page) {
 export function handleSearchQuery(params) {
   return async (dispatch, getState) => {
     const { uuid: userUuid } = getState().app.currentUser;
-    const { data } = await axios.get(`/api/resume-board/filter/${userUuid}`, {
-      params,
-    });
+    const { data } = await axios.get(
+      `https://historic-arches-33577.herokuapp.com/api/resume-board/filter/${userUuid}`,
+      {
+        params,
+      }
+    );
 
     if (data.error) {
       dispatch({

@@ -33,7 +33,7 @@ function ProfileCrop(props) {
   useEffect(() => {
     async function fetchThumnail() {
       const { data } = await axios.get(
-        `/api/post-resume/profile-image/${userUuid}`
+        `https://historic-arches-33577.herokuapp.com/api/post-resume/profile-image/${userUuid}`
       );
 
       setDatabaseSrc(data.profileImage);
@@ -141,7 +141,7 @@ function ProfileCrop(props) {
       if (base64Image) {
         setIsLoading(true);
         const { data } = await axios.patch(
-          `/api/post-resume/profile-image/${userUuid}`,
+          `https://historic-arches-33577.herokuapp.com/api/post-resume/profile-image/${userUuid}`,
           {
             profileImage: base64Image,
           }

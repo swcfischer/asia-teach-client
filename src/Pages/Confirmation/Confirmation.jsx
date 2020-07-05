@@ -12,9 +12,12 @@ function Confirmation() {
   const { token } = match.params;
   useEffect(() => {
     async function confirmUser() {
-      const { data } = await axios.post(`/api/confirmation/`, {
-        token
-      });
+      const { data } = await axios.post(
+        `https://historic-arches-33577.herokuapp.com/api/confirmation/`,
+        {
+          token,
+        }
+      );
 
       if (data.error) {
         toast.error(data.message);
@@ -34,10 +37,10 @@ function Confirmation() {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return state;
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Confirmation);

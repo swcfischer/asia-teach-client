@@ -16,7 +16,7 @@ function ImageUpload(props) {
   useEffect(() => {
     async function fetchImages() {
       const { data } = await axios.get(
-        `/api/job/image-upload/${uuid}/${userUuid}`
+        `https://historic-arches-33577.herokuapp.com/api/job/image-upload/${uuid}/${userUuid}`
       );
       setDefaultPictures(data.images);
       console.log('data', data);
@@ -56,7 +56,7 @@ function ImageUpload(props) {
     console.log('pictures', pictures);
 
     const { data } = await axios.post(
-      `/api/job/image-upload/${uuid}/${userUuid}`,
+      `https://historic-arches-33577.herokuapp.com/api/job/image-upload/${uuid}/${userUuid}`,
       {
         images: pictures,
       }

@@ -36,7 +36,7 @@ function ImageCrop(props) {
   useEffect(() => {
     async function fetchThumnail() {
       const { data } = await axios.get(
-        `/api/job/image-crop/${uuid}/${userUuid}`
+        `https://historic-arches-33577.herokuapp.com/api/job/image-crop/${uuid}/${userUuid}`
       );
 
       setDatabaseSrc(data.thumbnail);
@@ -125,7 +125,9 @@ function ImageCrop(props) {
       // and the carousel images in s3 and then save the strings
 
       // for now, I'm just going to switch the job to isPublished: true
-      axios.post(`/api/job/publish/${uuid}/${userUuid}`);
+      axios.post(
+        `https://historic-arches-33577.herokuapp.com/api/job/publish/${uuid}/${userUuid}`
+      );
     },
     [uuid, userUuid]
   );
@@ -156,7 +158,7 @@ function ImageCrop(props) {
         setIsLoading(true);
         const { data } = await axios({
           method: 'post',
-          url: `/api/job/image-crop/${uuid}/${userUuid}`,
+          url: `https://historic-arches-33577.herokuapp.com/api/job/image-crop/${uuid}/${userUuid}`,
           data: {
             thumbnail: base64Image,
           },

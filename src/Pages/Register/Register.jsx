@@ -25,7 +25,10 @@ const Register = (props) => {
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
     onSubmit: async (values) => {
-      const { data } = await axios.post('/api/register', values);
+      const { data } = await axios.post(
+        'https://historic-arches-33577.herokuapp.com/api/register',
+        values
+      );
       if (data.error) {
         return toast.error(data.message);
       }

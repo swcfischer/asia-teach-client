@@ -34,7 +34,7 @@ const Details = (props) => {
   useEffect(() => {
     async function fetchJobData() {
       const { data } = await axios.get(
-        `/api/jobs/details/${uuid}/${currentUser.uuid}`
+        `https://historic-arches-33577.herokuapp.com/api/jobs/details/${uuid}/${currentUser.uuid}`
       );
       console.log('data', data);
       const newDataObj = turnNullValuesToStrings(data);
@@ -75,7 +75,7 @@ const Details = (props) => {
           async function saveForm() {
             const token = localStorage.getItem('token');
             const { data } = await axios.post(
-              `/api/jobs/details/${uuid}/${currentUser.uuid}`,
+              `https://historic-arches-33577.herokuapp.com/api/jobs/details/${uuid}/${currentUser.uuid}`,
               values
             );
             delete data.uuid;

@@ -12,7 +12,7 @@ export function fetchUnpublished() {
   return async (dispatch, getState) => {
     const { currentUser } = getState().app;
     const { data } = await axios.get(
-      `/api/jobs/unpublished/user/${currentUser.uuid}`
+      `https://historic-arches-33577.herokuapp.com/api/jobs/unpublished/user/${currentUser.uuid}`
     );
 
     // fix this up
@@ -34,7 +34,7 @@ export function fetchPublished() {
   return async (dispatch, getState) => {
     const { currentUser } = getState().app;
     const { data } = await axios.get(
-      `/api/jobs/published/${currentUser.uuid}?page=1`
+      `https://historic-arches-33577.herokuapp.com/api/jobs/published/${currentUser.uuid}?page=1`
     );
 
     if (data.error) {

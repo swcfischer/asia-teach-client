@@ -4,31 +4,33 @@ const FETCH_POSTING = 'FETCH_POSTING';
 const CLEAR_DATA = 'CLEAR_DATA';
 
 export function fetchPosting(uuid) {
-  return async dispatch => {
-    const { data } = await axios.get(`/api/job/${uuid}`);
+  return async (dispatch) => {
+    const { data } = await axios.get(
+      `https://historic-arches-33577.herokuapp.com/api/job/${uuid}`
+    );
     if (data.error) {
       dispatch({
         type: 'ERROR',
-        payload: data.message
+        payload: data.message,
       });
     }
 
     dispatch({
       type: FETCH_POSTING,
-      payload: data.job
+      payload: data.job,
     });
   };
 }
 
 export function clearData() {
   return {
-    type: CLEAR_DATA
+    type: CLEAR_DATA,
   };
 }
 
 const initialState = {
   isLoading: true,
-  job: {}
+  job: {},
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -37,7 +39,7 @@ export default function reducer(state = initialState, { type, payload }) {
       return {
         ...state,
         isLoading: false,
-        job: payload
+        job: payload,
       };
     case CLEAR_DATA:
       return initialState;
