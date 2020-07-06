@@ -3,7 +3,7 @@ let backendPath;
 const hostname = window && window.location && window.location.hostname;
 
 if (hostname === 'localhost') {
-  backendPath = '';
+  backendPath = 'http://localhost:5000';
 } else {
   backendPath = 'https://historic-arches-33577.herokuapp.com';
 }

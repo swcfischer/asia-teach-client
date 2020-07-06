@@ -26,8 +26,10 @@ import {
   Confirmation,
   Nav,
   Footer,
-  ResumeSearch,
   PurchaseForm,
+  SubscriptionForm,
+  // ResumeSearch,
+  ResumeCheck,
 } from 'App/LazyLoader';
 
 import 'App/App.scss';
@@ -65,8 +67,9 @@ const LoggedInRoutes = () => {
       <Route path="/account" component={Account} />
       <Route path="/post-resume" component={PostResume} />
       <Route path="/post-job" component={JobRoutes} />
-      <Route path="/resume-board" component={ResumeSearch} />
+      <Route path="/resume-board" component={ResumeCheck} />
       <Route path="/purchase-form/:price" component={PurchaseForm} />
+      <Route path="/subscription" component={SubscriptionForm} />
       <Route path="*" render={() => <Redirect to="/" />} />
     </Switch>
   );

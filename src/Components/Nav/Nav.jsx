@@ -80,6 +80,7 @@ const LoggedInMenu = (props) => {
       <NavLink
         className="nav-item"
         activeClassName="selected"
+        // to="/subscription"
         to="/resume-board?page=1"
       >
         <MdViewList />

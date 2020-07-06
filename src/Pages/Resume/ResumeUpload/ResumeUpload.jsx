@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, Fragment } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -23,6 +23,7 @@ const RichText = (props) => {
   const [isShowEditor, setIsShowEditor] = useState(false);
   const [isFileTooLarge, setIsFileTooLarge] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
+  const [dbPdf, setDbPdf] = useState(null);
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   const inputEl = useRef(null);
@@ -53,8 +54,7 @@ const RichText = (props) => {
         API_ROOT + `/api/post-resume/resume/${userUuid}`
       );
 
-      console.log(data);
-      setUploadedFile(data);
+      setDbPdf(data.resumeUrl);
       setIsLoading(false);
     }
 
@@ -66,26 +66,30 @@ const RichText = (props) => {
   };
 
   const handleSave = async () => {
-    if (!uploadedFile) {
+    if (!uploadedFile && !isShowEditor) {
       return;
     }
-
-    const reader = new FileReader();
-
-    reader.onloadend = (event) => {
-      const { data } = axios.patch(
-        API_ROOT + `/api/post-resume/resume/${userUuid}`,
-        {
-          resumeUrl: reader.result,
-        }
+    if (isShowEditor) {
+      const descriptionHTML = draftToHtml(
+        convertToRaw(editorState.getCurrentContent())
       );
-    };
-    reader.readAsDataURL(uploadedFile);
+
+      // axios.post // /api/post-resume/resume/userUuid
+      // upload string of html
+    } else {
+      const reader = new FileReader();
+      reader.onloadend = (event) => {
+        const { data } = axios.patch(
+          API_ROOT + `/api/post-resume/resume/${userUuid}`,
+          {
+            resumeUrl: reader.result,
+          }
+        );
+      };
+      reader.readAsDataURL(uploadedFile);
+    }
 
     // ! break
-    // const descriptionHTML = draftToHtml(
-    //   convertToRaw(editorState.getCurrentContent())
-    // );
     // const response = await axios.post(`/api/job/richtext/${uuid}/${userUuid}`, {
     //   descriptionHTML,
     // });
@@ -133,7 +137,6 @@ const RichText = (props) => {
     );
   }
 
-  console.log('uploadedFile', uploadedFile);
   return (
     <div>
       <ul className="base-info-list bring-up">
@@ -147,7 +150,7 @@ const RichText = (props) => {
         {isFileTooLarge && <div>Your file is too large</div>}
         <div className="button-container">
           {!isShowEditor && (
-            <React.Fragment>
+            <Fragment>
               <label htmlFor="resume" className="invisble-input">
                 Resume Upload, accepts pdf or word file
                 <input
@@ -156,13 +159,19 @@ const RichText = (props) => {
                   name="resume"
                   id="resume"
                   type="file"
-                  accept=".pdf,.doc,.docx"
+                  accept=".pdf"
                 />
               </label>
               <button onClick={triggerFileUpload} className="btn btn-blue">
                 Upload
               </button>
-            </React.Fragment>
+            </Fragment>
+          )}
+
+          {!uploadedFile && dbPdf && !isShowEditor && (
+            <a href={dbPdf} target="_blank">
+              Current Resume PDF
+            </a>
           )}
 
           {uploadedFile && <p>{uploadedFile.name}</p>}
@@ -172,11 +181,6 @@ const RichText = (props) => {
         </div>
         {!isShowEditor && <div className="separator" />}
 
-        {uploadedFile && (
-          <a target="_blank" href={uploadedFile.resumeUrl}>
-            PDF
-          </a>
-        )}
         {isShowEditor && (
           <Editor
             editorState={editorState}

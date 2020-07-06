@@ -26,10 +26,13 @@ export { default as Posting } from 'Pages/Posting/Posting';
 export { default as Account } from 'Pages/Account';
 export { default as JobRoutes } from 'Pages/Jobs/';
 export { default as PostResume } from 'Pages/Resume/';
-export { default as ResumeSearch } from 'Pages/ResumeSearch/ResumeSearch';
 export { default as ForgotPassword } from 'Pages/ForgotPassword/ForgotPassword';
 export { default as Confirmation } from 'Pages/Confirmation/Confirmation';
 export { PurchaseForm } from 'Pages/PurchaseForm';
+// this is turning into one
+export { default as SubscriptionForm } from 'Pages/SubscriptionForm/SubscriptionForm';
+// export { default as ResumeSearch } from 'Pages/ResumeSearch/ResumeSearch';
+export { default as ResumeCheck } from 'Pages/ResumeSearch/ResumeCheck';
 
 // Component Imports  -- might not need code splitting here
 export { default as Nav } from 'Components/Nav';

@@ -24,6 +24,7 @@ export function fetchCurrentUser() {
         payload: data.message,
       });
     }
+
     dispatch({
       type: FETCH_CURRENT_USER,
       payload: data.currentUser,
