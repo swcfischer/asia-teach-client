@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -27,6 +27,8 @@ const ForgotPassword = (props) => {
         return toast.error(data.message);
       }
 
+      return toast.success(data.message);
+
       // Here is where I want to do the toast notification
       // I also want to have it have a lifespan longer of that of other oens
       // I think I should sennd them to the homepage props.history.push("/")
@@ -34,7 +36,7 @@ const ForgotPassword = (props) => {
   });
 
   return (
-    <React.Fragment>
+    <Fragment>
       <h1 className="base-header-styling">Forgot Password</h1>
       <form className="forgot-form" onSubmit={formik.handleSubmit}>
         <img className="logo" src="/assets/fan.png" alt="logo" />
@@ -63,7 +65,7 @@ const ForgotPassword = (props) => {
           Or just log in?
         </Link>
       </form>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

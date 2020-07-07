@@ -28,6 +28,7 @@ import {
   Footer,
   PurchaseForm,
   SubscriptionForm,
+  ChangePassword,
   // ResumeSearch,
   ResumeCheck,
 } from 'App/LazyLoader';
@@ -87,6 +88,7 @@ const LoggedOutRoutes = () => {
       <Route path="/post-job" component={JobRoutes} />
       <Route path="/forgot-password" component={ForgotPassword} />
       <Route path="/confirmation/:token" component={Confirmation} />
+      <Route path="/change-password/:token" component={ChangePassword} />
       <Route path="*" render={() => <Redirect to="/" />} />
     </Switch>
   );
