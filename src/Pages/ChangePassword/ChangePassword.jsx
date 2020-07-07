@@ -7,25 +7,32 @@ import { API_ROOT } from 'api-config';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
+import './ChangePassword.scss';
+
 const ChangePassword = (props) => {
+  const { token } = props.match.params;
   const formik = useFormik({
     initialValues: {
       password: '',
+      confirmPassword: '',
     },
     validationSchema: Yup.object({
       password: Yup.string()
         .min(6, 'Must be at least 6 characters in length')
         .max(22, 'No more than 22 characters')
         .required('Required'),
-      'confirm-password': Yup.string()
+      confirmPassword: Yup.string()
         .oneOf([Yup.ref('password'), null], "Passwords don't match!")
         .min(6, 'Must be at least 6 characters in length')
         .max(22, 'No more than 22 characters'),
     }),
     onSubmit: async (values) => {
-      const { data } = await axios.get(
-        API_ROOT + `/api/forgot-password?email=${values.email}`
-      );
+      console.log(values);
+      const { data } = await axios.post(API_ROOT + `/api/set-forgot-password`, {
+        ...values,
+        token,
+      });
+
       if (data.error) {
         return toast.error(data.message);
       }
@@ -40,8 +47,7 @@ const ChangePassword = (props) => {
 
   const isError = () => {
     return (
-      (formik.touched['confirm-password'] &&
-        formik.errors['confirm-password']) ||
+      (formik.touched.confirmPassword && formik.errors.confirmPassword) ||
       (formik.touched.email && formik.errors.email)
     );
   };
@@ -49,36 +55,36 @@ const ChangePassword = (props) => {
   return (
     <Fragment>
       <h1 className="base-header-styling">Forgot Password</h1>
-      <form className="forgot-form" onSubmit={formik.handleSubmit}>
+      <form className="change-password-form" onSubmit={formik.handleSubmit}>
         <img className="logo" src="/assets/fan.png" alt="logo" />
         <div className="input-container">
-          <label htmlFor="email">
+          <label htmlFor="password">
             <input
               type="password"
               name="password"
               id="password"
-              className="email"
+              className="password"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}
               placeholder="Password"
             />
           </label>
-          <label htmlFor="confirm-password">
+          <label htmlFor="confirmPassword">
             <input
               type="password"
-              name="confirm-password"
-              id="confirm-password"
-              className="email"
+              name="confirmPassword"
+              id="confirmPassword"
+              className="confirm-password"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values['confirm-password']}
+              value={formik.values.confirmPassword}
               placeholder="Confirm Password"
             />
           </label>
           {isError() && (
             <div className="error-form">
-              {formik.errors.email || formik.errors['confirm-password']}
+              {formik.errors.email || formik.errors.confirmPassword}
             </div>
           )}
         </div>

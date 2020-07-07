@@ -67,7 +67,7 @@ const Dashboard = (props) => {
         <TabPanel>ExpiredJobs</TabPanel>
       </Tabs>
       <div>
-        <Link to="/">Change Password</Link>
+        <Link to="/change-password">Change Password</Link>
         Will have to add a component and backend logic for this
       </div>
     </div>

@@ -1,5 +1,7 @@
 // import loadable from '@loadable/component';
 
+import { FaRoad } from 'react-icons/fa';
+
 // export const Home = loadable(() => import('../Pages/Home/Home'));
 // export const Search = loadable(() => import('../Pages/Search/Search'));
 // export const Register = loadable(() => import('../Pages/Register/Register'));
@@ -30,7 +32,7 @@ export { default as ForgotPassword } from 'Pages/ForgotPassword/ForgotPassword';
 export { default as Confirmation } from 'Pages/Confirmation/Confirmation';
 export { PurchaseForm } from 'Pages/PurchaseForm';
 export { default as ChangePassword } from 'Pages/ChangePassword';
-
+export { default as ResumeDetails } from 'Pages/ResumeDetails';
 export { default as SubscriptionForm } from 'Pages/SubscriptionForm/SubscriptionForm';
 export { default as ResumeCheck } from 'Pages/ResumeSearch/ResumeCheck';
 

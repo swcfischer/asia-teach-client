@@ -29,6 +29,7 @@ import {
   PurchaseForm,
   SubscriptionForm,
   ChangePassword,
+  ResumeDetails,
   // ResumeSearch,
   ResumeCheck,
 } from 'App/LazyLoader';
@@ -59,18 +60,14 @@ const LoggedInRoutes = () => {
       <Route path="/" exact component={Home} />
       <Route path="/jobs" component={Search} />
       <Route path="/posting/:uuid" component={Posting} />
-      <Route
-        path="/resume/:uuid"
-        render={() => {
-          return <div>Resume</div>;
-        }}
-      />
+      <Route path="/resume/:resumeUuid" component={ResumeDetails} />
       <Route path="/account" component={Account} />
       <Route path="/post-resume" component={PostResume} />
       <Route path="/post-job" component={JobRoutes} />
       <Route path="/resume-board" component={ResumeCheck} />
       <Route path="/purchase-form/:price" component={PurchaseForm} />
       <Route path="/subscription" component={SubscriptionForm} />
+      <Route path="/change-password/:token" component={ChangePassword} />
       <Route path="*" render={() => <Redirect to="/" />} />
     </Switch>
   );

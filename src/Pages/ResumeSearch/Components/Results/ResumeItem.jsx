@@ -24,18 +24,20 @@ export default function ResumeItem(props) {
     name,
     profileImage,
     lastUpdatedAt,
+    uuid,
+    desiredCountry,
+    desiredStartDate,
+    desiredAgeGroup,
   } = props;
   return (
-    <Link to={`/resume/${123}`} className="resume-link">
+    <Link to={`/resume/${uuid}`} className="resume-link">
       <div className="result-item">
         <div className="name">{name}</div>
         <div className="flex-container">
           <div className="thumbnail-container-width">
             <div className="thumbnail-container">
               {/* Will want to add more permanent conditional logic */}
-              <img src={`/assets/profile_photo.jpg`} alt="avatar" />
-              {/* profileImage && profileImage.includes('https')
-                  ? profileImage */}
+              <img src={profileImage} alt="avatar" />
             </div>
           </div>
           <div className="bottom-section">
@@ -43,19 +45,19 @@ export default function ResumeItem(props) {
               <div className="students">{nationality}</div>
             </Popper>
             <Popper text="Experience" popperClassName="text-popper">
-              <div className="students">{experience}</div>
+              <div className="students">{experience} years of experience</div>
             </Popper>
-            <Popper text="Start date" popperClassName="text-popper">
-              <div className="students">March</div>
+            <Popper text="Education" popperClassName="text-popper">
+              <div className="students">{education}</div>
             </Popper>
-            <Popper text="Contract duration" popperClassName="text-popper">
-              <div className="students">12 months</div>
+            <Popper text="Desired country" popperClassName="text-popper">
+              <div className="students">{desiredCountry}Japan</div>
             </Popper>
-            <Popper text="Salary" popperClassName="text-popper">
-              <div className="students pay">10,000 reminbi</div>
+            <Popper text="Desired start date" popperClassName="text-popper">
+              <div className="students">{desiredStartDate}March</div>
             </Popper>
-            <Popper text="Class size" popperClassName="text-popper">
-              <div className="students class-size">30 students</div>
+            <Popper text="Desired age group" popperClassName="text-popper">
+              <div className="students">{desiredAgeGroup}Adults</div>
             </Popper>
           </div>
           <div className="date">{moment(lastUpdatedAt).fromNow()}</div>

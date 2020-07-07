@@ -13,12 +13,15 @@ const ResumePreview = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const { data } = axios.get(
-      API_ROOT + `/api/post-resume/preview/${userUuid}`
-    );
+    async function fetchData() {
+      const { data } = await axios.get(
+        API_ROOT + `/api/post-resume/preview/${userUuid}`
+      );
 
-    setResumeData(data);
-    setLoading(false);
+      setResumeData(data);
+      setLoading(false);
+    }
+    fetchData();
   }, []);
   if (isLoading) {
     return <div>Loading...</div>;
