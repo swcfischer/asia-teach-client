@@ -51,13 +51,13 @@ export default function ResumeItem(props) {
               <div className="students">{education}</div>
             </Popper>
             <Popper text="Desired country" popperClassName="text-popper">
-              <div className="students">{desiredCountry}Japan</div>
+              <div className="students">{desiredCountry || 'Japan'}</div>
             </Popper>
             <Popper text="Desired start date" popperClassName="text-popper">
-              <div className="students">{desiredStartDate}March</div>
+              <div className="students">{desiredStartDate || 'March'}</div>
             </Popper>
             <Popper text="Desired age group" popperClassName="text-popper">
-              <div className="students">{desiredAgeGroup}Adults</div>
+              <div className="students">{desiredAgeGroup || 'College'}</div>
             </Popper>
           </div>
           <div className="date">{moment(lastUpdatedAt).fromNow()}</div>

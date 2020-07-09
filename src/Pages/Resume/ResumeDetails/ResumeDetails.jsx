@@ -7,10 +7,16 @@ import { useParams, Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { SelectField, TextField } from 'Components/FormFields';
+import {
+  nationalities,
+  educationOptions,
+  experienceOptions,
+  ageGroups,
+  desireStartDateOptions,
+  desiredCountry,
+} from './inputData';
 
 import { API_ROOT } from 'api-config';
-// import ProfileCrop from '../ProfileCrop';
-// import ResumeText from './ResumeText';
 
 import './ResumeDetails.scss';
 
@@ -20,6 +26,9 @@ const initialValues = {
   nationality: '',
   experience: '',
   education: '',
+  desiredCountry: '',
+  desiredStartDate: '',
+  desiredAgeGroup: '',
 };
 // right now I have two different types of state
 const Details = (props) => {
@@ -60,7 +69,10 @@ const Details = (props) => {
           Create a new email address if you do not want to use your primary
           email
         </li>
-        <li>Feedback is always appreciated</li>
+        <li>
+          Feedback is always appreciated and can be done through the Contact Us
+          link at the bottom
+        </li>
       </ul>
 
       <div className="base-container resume-container">
@@ -71,12 +83,16 @@ const Details = (props) => {
             name: Yup.string().required('Required'),
             education: Yup.string().required('Required'),
             experience: Yup.string().required('Required'),
+            desiredAgeGroup: Yup.string().required('Required'),
+            desiredCountry: Yup.string().required('Required'),
+            desiredStartDate: Yup.string().required('Required'),
             email: Yup.string()
               .email('Invalid email address')
               .required('Required'),
           })}
           onSubmit={(values, { setSubmitting }) => {
             // setSubmitting figure out what this does
+            console.log('values', values);
             async function saveForm() {
               const { data } = await axios.put(
                 API_ROOT + `/api/post-resume/details/${userUuid}`,
@@ -97,47 +113,43 @@ const Details = (props) => {
               name="nationality"
               label="Nationality"
               placeholder=""
-              options={[
-                { label: 'United States of America', value: 'usa' },
-                { label: 'United Kingdom', value: 'uk' },
-                { label: 'Canada', value: 'canada' },
-                { label: 'Ireland', value: 'ireland' },
-                { label: 'South Africa', value: 'southAfrica' },
-                { label: 'New Zealand', value: 'newZealand' },
-                { label: 'Australia', value: 'australia' },
-              ]}
+              options={nationalities}
             />
+            <br />
             <br />
             <br />
             <SelectField
               name="education"
               label="Education"
-              placeholder=""
-              options={[
-                { label: 'High School or equivalent', value: 'hs' },
-                { label: 'Bachelors', value: 'bachelors' },
-                { label: 'Masters', value: 'masters' },
-                { label: 'Phd', value: 'phd' },
-              ]}
+              options={educationOptions}
             />
             <SelectField
               name="experience"
-              label="Years of experience"
-              placeholder=""
-              options={[
-                { label: '0', value: '0' },
-                { label: '1', value: '1' },
-                { label: '2', value: '2' },
-                { label: '3', value: '3' },
-                { label: '4', value: '4' },
-                { label: '5', value: '5' },
-                { label: '6', value: '6' },
-                { label: '7', value: '7' },
-                { label: '8', value: '8' },
-                { label: '9', value: '9' },
-                { label: '10+', value: '10+ ' },
-              ]}
+              label="Years of Experience"
+              options={experienceOptions}
             />
+            <SelectField
+              name="desiredCountry"
+              label="Desired Country"
+              options={desiredCountry}
+            />
+            <br />
+            <br />
+            <br />
+            <SelectField
+              name="desiredStartDate"
+              label="Desired Start Date"
+              options={desireStartDateOptions}
+            />
+            <SelectField
+              name="desiredAgeGroup"
+              label="Desired Age Group"
+              options={ageGroups}
+            />
+            <br />
+            <br />
+            <br />
+            <br />
             <div className="btn-container">
               <button className="btn btn-green" type="submit">
                 Save
@@ -154,6 +166,7 @@ const Details = (props) => {
 const ConditionalNextBtn = (props) => {
   const { userUuid } = props;
   const { values } = useFormikContext();
+  console.log('ConditionalNextBtn -> values', values);
 
   const isValidBtn = useCallback(() => {
     let isValid = true;
