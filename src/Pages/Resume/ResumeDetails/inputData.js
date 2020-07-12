@@ -33,7 +33,7 @@ export const nationalities = [
   { label: 'United States of America', value: 'United States' },
   { label: 'United Kingdom', value: 'United Kingdom' },
   { label: 'Canada', value: 'Canada' },
-  { label: 'Ireland', value: 'ireland' },
+  { label: 'Ireland', value: 'Ireland' },
   { label: 'South Africa', value: 'South Africa' },
   { label: 'New Zealand', value: 'New Zealand' },
   { label: 'Australia', value: 'Australia' },

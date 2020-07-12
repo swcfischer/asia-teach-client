@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ToastContainer } from 'react-toastify';
+import ReactLoading from 'react-loading';
 
 import { fetchCurrentUser } from 'App/appReducer';
 
@@ -41,7 +42,11 @@ const App = ({ fetchCurrentUser, currentUser, isLoading }) => {
     fetchCurrentUser();
   }, [fetchCurrentUser]);
   return isLoading ? (
-    <div className="initial-load"></div>
+    <div className="initial-load">
+      <div className="base-loading-container">
+        <ReactLoading color="#000" type="spin" />
+      </div>
+    </div>
   ) : (
     <Fragment>
       <Router>

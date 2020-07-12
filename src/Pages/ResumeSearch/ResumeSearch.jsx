@@ -17,16 +17,6 @@ import {
 
 import './ResumeSearch.scss';
 
-const countries = {
-  thailand: 'Thailand',
-  'south-korea': 'South Korea',
-  china: 'China',
-  japan: 'Japan',
-  taiwan: 'Taiwan',
-  vietnam: 'Vietnam',
-  indonesia: 'Indonesia',
-};
-
 class ResumeSearch extends React.Component {
   constructor(props) {
     super(props);
@@ -185,7 +175,7 @@ class ResumeSearch extends React.Component {
         {this.props.page > 1 && (
           <Link
             className="previous-page"
-            to={`/jobs?${this.constructBackPageLink()}`}
+            to={`/resume-board?${this.constructBackPageLink()}`}
           >
             <button>Previous Page</button>
           </Link>
@@ -193,7 +183,7 @@ class ResumeSearch extends React.Component {
         {this.isNextPage() && (
           <Link
             className="next-page"
-            to={`/jobs?${this.constructNextPageLink()}`}
+            to={`/resume-board?${this.constructNextPageLink()}`}
           >
             <button>Next Page</button>
           </Link>

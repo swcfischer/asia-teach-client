@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import ReactLoading from 'react-loading';
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
+import Subscription from './Subscription';
 
 import JobItem from './JobItem';
 
@@ -66,10 +67,8 @@ const Dashboard = (props) => {
         </TabPanel>
         <TabPanel>ExpiredJobs</TabPanel>
       </Tabs>
-      <div>
-        <Link to="/change-password">Change Password</Link>
-        Will have to add a component and backend logic for this
-      </div>
+
+      {currentUser.subscriptionId && <Subscription />}
     </div>
   );
 };

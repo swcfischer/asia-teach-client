@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactLoading from 'react-loading';
+import classNames from 'classnames';
 
 import { API_ROOT } from 'api-config';
 
@@ -40,6 +41,7 @@ function PurchaseForm({ userUuid, email }) {
   const { price } = useParams();
   const [total, setTotal] = useState(priceDictionary[price]);
   const [isLoading, setLoading] = useState(false);
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
 
@@ -49,6 +51,8 @@ function PurchaseForm({ userUuid, email }) {
     if (!stripe || !elements) {
       return;
     }
+
+    setButtonDisabled(true);
     const {
       data: { client_secret, customerId },
     } = await axios.post(API_ROOT + `/api/sub-intent/`, {
@@ -70,21 +74,23 @@ function PurchaseForm({ userUuid, email }) {
       userUuid,
     });
 
+    console.log('data', data);
+
     setLoading(false);
 
-    // if (data.error) {
-    //   // Show error to your customer (e.g., insufficient funds)
-    //   console.log(data.error.message);
-    // } else {
-    //   // The payment has been processed!
-    //   if (data.paymentIntent.status === 'succeeded') {
-    //     //     // Show a success message to your customer
-    //     //     // There's a risk of the customer closing the window before callback
-    //     //     // execution. Set up a webhook or plugin to listen for the
-    //     //     // payment_intent.succeeded event that handles any business critical
-    //     //     // post-payment actions.
-    //   }
-    // }
+    if (data.error) {
+      // Show error to your customer (e.g., insufficient funds)
+      console.log(data.error.message);
+    } else {
+      // The payment has been processed!
+      if (data.paymentIntent.status === 'succeeded') {
+        //     // Show a success message to your customer
+        //     // There's a risk of the customer closing the window before callback
+        //     // execution. Set up a webhook or plugin to listen for the
+        //     // payment_intent.succeeded event that handles any business critical
+        //     // post-payment actions.
+      }
+    }
   };
 
   if (isLoading) {
@@ -96,10 +102,11 @@ function PurchaseForm({ userUuid, email }) {
   }
 
   return (
-    <div className="purchase-form-container">
+    <div className="subscription-form-container">
       <h1 className="base-header-styling">Checkout</h1>
       <ul className="base-info-list">
         <li>$55 for one month's access</li>
+        <li>Can update subscription status in Account page</li>
       </ul>
       <div className="form-container">
         <div className="checkout-info">Subscribe to Resume Board</div>
@@ -111,7 +118,14 @@ function PurchaseForm({ userUuid, email }) {
           <CardElement options={cardElementOpts} />
 
           <div className="btn-container">
-            <button className="btn-blue btn purchase-btn">Pay $55</button>
+            <button
+              disabled={isButtonDisabled}
+              className={classNames('btn-blue btn purchase-btn', {
+                disabled: isButtonDisabled,
+              })}
+            >
+              Pay $55
+            </button>
           </div>
         </form>
       </div>

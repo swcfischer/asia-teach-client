@@ -5,7 +5,7 @@ export const countryOptions = [
   { label: 'South Korea', value: 'south-korea' },
   { label: 'Taiwan', value: 'taiwan' },
   { label: 'Thailand', value: 'thailand' },
-  { label: 'Vietnam', value: 'vietnam' }
+  { label: 'Vietnam', value: 'vietnam' },
 ];
 
 export const startDateOptions = [
@@ -20,20 +20,21 @@ export const startDateOptions = [
   { label: 'September', value: '9' },
   { label: 'October', value: '10' },
   { label: 'November', value: '11' },
-  { label: 'December', value: '12' }
+  { label: 'December', value: '12' },
 ];
 
 export const classSizeOptions = [
   { label: '1 - 10', value: '1 - 10' },
   { label: '11 - 20', value: '11 - 20' },
   { label: '21 - 30', value: '21 - 30' },
-  { label: 'Greater than 30', value: 'Greater than 30' }
+  { label: 'Greater than 30', value: 'Greater than 30' },
 ];
 
 export const ageGroupOptions = [
-  { label: 'Children', value: 'children' },
-  { label: 'Adolescents', value: 'adolescents' },
-  { label: 'Adults', value: 'adults' }
+  { label: 'Children', value: 'Children' },
+  { label: 'Adolescents', value: 'Adolescents' },
+  { label: 'College', value: 'College' },
+  { label: 'Adults', value: 'Adults' },
 ];
 
 export const durationOptions = [
@@ -48,7 +49,7 @@ export const durationOptions = [
   { label: '9 Months', value: '9' },
   { label: '10 Months', value: '10' },
   { label: '11 Months', value: '11' },
-  { label: '1 Year', value: '12' }
+  { label: '1 Year', value: '12' },
 ];
 
 export const initialValues = {
@@ -62,5 +63,5 @@ export const initialValues = {
   classSize: '',
   startDate: '',
   phone: '',
-  link: ''
+  link: '',
 };

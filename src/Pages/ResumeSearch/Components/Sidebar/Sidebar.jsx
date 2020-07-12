@@ -21,6 +21,53 @@ const educationOptions = [
   { label: 'Phd', value: 'Phd' },
 ];
 
+// make this search 0 - 2 3 - 7 7+
+const yearsOfExperience = [
+  { label: '1', value: '1' },
+  { label: '2', value: '2' },
+  { label: '3', value: '3' },
+  { label: '4', value: '4' },
+  { label: '5', value: '5' },
+  { label: '6', value: '6' },
+  { label: '7', value: '7' },
+  { label: '8', value: '8' },
+  { label: '9', value: '9' },
+  { label: '10+', value: '10+' },
+];
+
+const desiredCountryOptions = [
+  { label: 'China', value: 'China' },
+  { label: 'Indonesia', value: 'Indonesia' },
+  { label: 'Japan', value: 'Japan' },
+  { label: 'South Korea', value: 'South Korea' },
+  { label: 'Taiwan', value: 'Taiwan' },
+  { label: 'Thailand', value: 'Thailand' },
+  { label: 'Vietnam', value: 'Vietnam' },
+];
+
+export const desireStartDateOptions = [
+  { label: 'January', value: 'January' },
+  { label: 'February', value: 'February' },
+  { label: 'March', value: 'March' },
+  { label: 'April', value: 'April' },
+  { label: 'May', value: 'May' },
+  { label: 'June', value: 'June' },
+  { label: 'July', value: 'July' },
+  { label: 'August', value: 'August' },
+  { label: 'September', value: 'September' },
+  { label: 'October', value: 'October' },
+  { label: 'November', value: 'November' },
+  { label: 'December', value: 'December' },
+  { label: 'January', value: 'January' },
+];
+
+const desiredAgeGroupOptions = [
+  { label: 'Children', value: 'Children' },
+  { label: 'Adolescent', value: 'Adolescent' },
+  { label: 'College', value: 'College' },
+  { label: 'Adult', value: 'Adult' },
+];
+
 const Sidebar = (props) => (
   <div className="sidebar">
     <Select
@@ -51,16 +98,52 @@ const Sidebar = (props) => (
     <br />
     <br />
     <Select
-      placeholder="Experience"
-      options={[]}
+      placeholder="Years of Experience"
+      options={yearsOfExperience}
       value={
-        props.params.ageGroup
-          ? { label: props.params.ageGroup, value: props.params.ageGroup }
+        props.params.experience
+          ? { label: props.params.experience, value: props.params.experience }
           : ''
       }
       className="react-select-container"
       classNamePrefix="search-select"
-      onChange={props.handleSearchQuery('ageGroup')}
+      onChange={props.handleSearchQuery('experience')}
+      isClearable
+    />
+    <br />
+    <br />
+    <Select
+      placeholder="Desired Country"
+      options={desiredCountryOptions}
+      value={
+        props.params.desiredCountry
+          ? {
+              label: props.params.desiredCountry,
+              value: props.params.desiredCountry,
+            }
+          : ''
+      }
+      className="react-select-container"
+      classNamePrefix="search-select"
+      onChange={props.handleSearchQuery('desiredCountry')}
+      isClearable
+    />
+    <br />
+    <br />
+    <Select
+      placeholder="Desired Start Date"
+      options={desireStartDateOptions}
+      value={
+        props.params.desiredStartDate
+          ? {
+              label: props.params.desiredStartDate,
+              value: props.params.desiredStartDate,
+            }
+          : ''
+      }
+      className="react-select-container"
+      classNamePrefix="search-select"
+      onChange={props.handleSearchQuery('desiredStartDate')}
       isClearable
     />
     <br />
