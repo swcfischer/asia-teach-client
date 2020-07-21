@@ -131,7 +131,9 @@ function ProfileCrop(props) {
   const handleCloseModal = useCallback(
     (event) => {
       event.preventDefault();
+
       setShowModal(false);
+      setBase64Image(null);
     },
     [setShowModal]
   );
@@ -156,6 +158,7 @@ function ProfileCrop(props) {
         }
 
         setIsLoading(false);
+        setShowModal(false);
         // ! not doing anyting with the return data
         console.log('data', data);
       }
@@ -223,9 +226,6 @@ function ProfileCrop(props) {
           )}
         </div>
         <div className="inner-btn-container">
-          <button onClick={handleImageSave} className="btn btn-green">
-            Save
-          </button>
           <Link
             className="btn btn-orange"
             to={`/post-resume/details/${userUuid}`}
@@ -244,6 +244,7 @@ function ProfileCrop(props) {
           onCropChange={onCropChange}
           onCropComplete={onCropComplete}
           handleCloseModal={handleCloseModal}
+          handleImageSave={handleImageSave}
         />
       </div>
     </div>
@@ -260,6 +261,7 @@ const CropModal = ({
   onCropChange,
   onCropComplete,
   handleCloseModal,
+  handleImageSave,
 }) => {
   return (
     <ReactModal
@@ -281,6 +283,9 @@ const CropModal = ({
       )}
       <button className="close-btn" onClick={handleCloseModal}>
         <IoIosCloseCircleOutline className="close-btn-icon" />
+      </button>
+      <button className="save-btn btn btn-green" onClick={handleImageSave}>
+        Save
       </button>
     </ReactModal>
   );

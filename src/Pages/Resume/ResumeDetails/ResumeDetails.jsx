@@ -92,7 +92,6 @@ const Details = (props) => {
           })}
           onSubmit={(values, { setSubmitting }) => {
             // setSubmitting figure out what this does
-            console.log('values', values);
             async function saveForm() {
               const { data } = await axios.put(
                 API_ROOT + `/api/post-resume/details/${userUuid}`,

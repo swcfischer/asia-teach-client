@@ -19,6 +19,8 @@ const ResumeDetails = () => {
     fetchData();
   }, []);
 
+  console.log('details', details);
+
   return <div>ResumeDetails</div>;
 };
 
