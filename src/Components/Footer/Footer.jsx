@@ -21,13 +21,18 @@ const Footer = ({ currentUser }) => {
         </div>
         <ul className="link-container">
           <li className="link">
-            <Link onClick={toTop} to="/">
-              Home
+            <Link onClick={toTop} to="/contact-us">
+              Contact Us
             </Link>
           </li>
           <li className="link">
-            <Link onClick={toTop} to="/contact-us">
-              Contact Us
+            <Link onClick={toTop} to="/about-us">
+              About Us
+            </Link>
+          </li>
+          <li className="link">
+            <Link onClick={toTop} to="/">
+              Home
             </Link>
           </li>
           <li className="link">
