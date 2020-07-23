@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { API_ROOT } from 'api-config';
 
+import Popper from 'Components/Popper';
+
 import './ResumeDetails.scss';
 
 const ResumeDetails = () => {
@@ -21,36 +23,11 @@ const ResumeDetails = () => {
     fetchData();
   }, []);
 
-  console.log('details', details);
-
   return (
     <div className="resume-view-container">
       <h1 className="base-header-styling">{details.name}</h1>
       <div className="base-container">
         <div className="upper-container">
-          <div>
-            <div>
-              <strong>Email:</strong> {details.email}
-            </div>
-            <div>
-              <strong>Nationality:</strong> {details.nationality}
-            </div>
-            <div>
-              <strong>Education:</strong> {details.education}
-            </div>
-            <div>
-              <strong>Experience:</strong> {details.experience} years
-            </div>
-            <div>
-              <strong>Desired Country:</strong> {details.desiredCountry}
-            </div>
-            <div>
-              <strong>Desired Start Date:</strong> {details.desiredStartDate}
-            </div>
-            <div>
-              <strong>Desired Age Group:</strong> {details.desiredAgeGroup}
-            </div>
-          </div>
           <div className="image-container">
             <img
               className="profile-image"
@@ -58,9 +35,57 @@ const ResumeDetails = () => {
               alt="profile"
             />
           </div>
+          <ul className="resume-info-list">
+            <li>
+              <Popper popperClassName="resume-popper" text="Email">
+                {details.email}
+              </Popper>
+            </li>
+            <li>
+              <Popper popperClassName="resume-popper" text="Nationality">
+                {details.nationality}
+              </Popper>
+            </li>
+            <li>
+              <Popper popperClassName="resume-popper" text="Education">
+                {details.education}
+              </Popper>
+            </li>
+            <li>
+              <Popper popperClassName="resume-popper" text="Experience">
+                {details.experience} years
+              </Popper>
+            </li>
+            <li>
+              <Popper popperClassName="resume-popper" text="Desired Country">
+                {details.desiredCountry}
+              </Popper>
+            </li>
+            <li>
+              <Popper popperClassName="resume-popper" text="Desired Start Date">
+                {details.desiredStartDate}
+              </Popper>
+            </li>
+            <li>
+              <Popper popperClassName="resume-popper" text="Desired Age Group">
+                {details.desiredAgeGroup}
+              </Popper>
+            </li>
+          </ul>
         </div>
-
-        <p>{JSON.stringify(details, null, 4)}</p>
+        <div className="divider"></div>
+        {details.resumeHtml ? (
+          <div
+            className="resume-html-wrapper"
+            dangerouslySetInnerHTML={{ __html: details.resumeHtml }}
+          ></div>
+        ) : (
+          <div className="resume-link-wrapper">
+            <a href={details.resumeUrl} target="_blank">
+              PDF URL
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

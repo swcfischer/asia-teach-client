@@ -31,6 +31,8 @@ import {
   SubscriptionForm,
   ChangePassword,
   ResumeDetails,
+  AboutUs,
+  ContactUs,
   // ResumeSearch,
   ResumeCheck,
 } from 'App/LazyLoader';
@@ -73,6 +75,8 @@ const LoggedInRoutes = () => {
       <Route path="/purchase-form/:price" component={PurchaseForm} />
       <Route path="/subscription" component={SubscriptionForm} />
       <Route path="/change-password/:token" component={ChangePassword} />
+      <Route path="/about-us" component={AboutUs} />
+      <Route path="/contact-us" component={ContactUs} />
       <Route path="*" render={() => <Redirect to="/" />} />
     </Switch>
   );
@@ -91,6 +95,8 @@ const LoggedOutRoutes = () => {
       <Route path="/forgot-password" component={ForgotPassword} />
       <Route path="/confirmation/:token" component={Confirmation} />
       <Route path="/change-password/:token" component={ChangePassword} />
+      <Route path="/about-us" component={AboutUs} />
+      <Route path="/contact-us" component={ContactUs} />
       <Route path="*" render={() => <Redirect to="/" />} />
     </Switch>
   );

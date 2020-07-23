@@ -27,6 +27,10 @@ class Home extends Component {
     window.scrollTo({ top: 0 });
   }
 
+  componentWillUnmount() {
+    window.scrollTo({ top: 0 });
+  }
+
   render() {
     return (
       <div className="homepage-parent">

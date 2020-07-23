@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Route, Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import ReactLoading from 'react-loading';
 import ReactModal from 'react-modal';
 import { IoIosImages } from 'react-icons/io';
-// import { GoClippy } from 'react-icons/go';
+import { FiCopy } from 'react-icons/fi';
 
 import ImageCarousel from './components/ImageCarousel';
 
@@ -36,6 +36,19 @@ class Posting extends Component {
 
   handleCarouselClose = () => {
     this.setState({ isOpen: false });
+  };
+
+  copyToClipboard = () => {
+    const str = this.props.job.email;
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
   };
 
   render() {
@@ -71,9 +84,9 @@ class Posting extends Component {
         <div className="job-description">
           <div className="header">
             <div>
-              <div>
-                <strong>Email: </strong>
+              <div className="email-wrapper">
                 <a href={`mailto:${email}`}>{email}</a>
+                <FiCopy onClick={this.copyToClipboard} className="email-copy" />
               </div>
               {link && (
                 <div>

@@ -16,6 +16,18 @@
   .header {
     display: flex;
     justify-content: space-between;
+
+    .email-wrapper {
+      display: flex;
+      align-items: center;
+
+      .email-copy {
+        margin-left: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+
     .images-container {
       position: relative;
       width: 200px;

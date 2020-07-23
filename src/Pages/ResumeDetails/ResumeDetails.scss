@@ -1,16 +1,57 @@
 .resume-view-container {
   .upper-container {
     display: flex;
-    justify-content: space-between;
+    .resume-info-list {
+      list-style-type: none;
+
+      li + li {
+        margin-top: 7px;
+      }
+
+      li {
+        font-weight: bold;
+        cursor: default;
+      }
+      .resume-popper {
+        top: -10px;
+        left: 0px;
+        transform: translateX(-110%);
+      }
+    }
     .image-container {
       width: 200px;
+      margin: 0px 100px 0px 25px;
 
       .profile-image {
         width: 100%;
         height: auto;
         border-radius: 50%;
         border: 1px solid #a2a2a2;
+        min-width: 190px;
       }
+    }
+  }
+
+  .divider {
+    height: 1px;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.15);
+    margin: 50px auto 0px auto;
+  }
+
+  .resume-html-wrapper {
+    width: 600px;
+    margin: 50px auto 0px auto;
+  }
+
+  .resume-link-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+
+    a {
+      font-weight: bold;
+      font-style: italic;
     }
   }
 }

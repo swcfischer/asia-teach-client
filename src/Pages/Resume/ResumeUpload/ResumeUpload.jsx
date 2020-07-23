@@ -9,13 +9,10 @@ import htmlToDraft from 'html-to-draftjs';
 import ReactLoading from 'react-loading';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { pdfjs, Document, Page } from 'react-pdf';
 
 import { API_ROOT } from 'api-config';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './ResumeUpload.scss';
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 const toolbarOptions = useToolbarOptions();
 
 const RichText = (props) => {
@@ -30,31 +27,27 @@ const RichText = (props) => {
 
   const { userUuid } = useParams();
 
-  // useEffect(() => {
-  //   async function fetchDescription() {
-  //     const { data } = await axios.get(`/api/job/richtext/${uuid}/${userUuid}`);
-
-  //     const blocksFromHtml = htmlToDraft(data.descriptionHTML || '');
-  //     const { contentBlocks, entityMap } = blocksFromHtml;
-  //     const contentState = ContentState.createFromBlockArray(
-  //       contentBlocks,
-  //       entityMap
-  //     );
-  //     const editorState = EditorState.createWithContent(contentState);
-  //     // turn into new editor state and save here
-  //     setIsLoading(false);
-  //     setEditorState(editorState);
-  //   }
-  //   fetchDescription();
-  // }, [userUuid, uuid]);
-
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get(
         API_ROOT + `/api/post-resume/resume/${userUuid}`
       );
 
-      setDbPdf(data.resumeUrl);
+      if (data.resumeHtml) {
+        const blocksFromHtml = htmlToDraft(data.resumeHtml || '');
+        const { contentBlocks, entityMap } = blocksFromHtml;
+        const contentState = ContentState.createFromBlockArray(
+          contentBlocks,
+          entityMap
+        );
+        const editorState = EditorState.createWithContent(contentState);
+        // turn into new editor state and save here
+        setEditorState(editorState);
+        setIsShowEditor(true);
+      } else {
+        setDbPdf(data.resumeUrl);
+      }
+
       setIsLoading(false);
     }
 
@@ -69,13 +62,20 @@ const RichText = (props) => {
     if (!uploadedFile && !isShowEditor) {
       return;
     }
+    const resumeHtml = draftToHtml(
+      convertToRaw(editorState.getCurrentContent())
+    );
     if (isShowEditor) {
-      const descriptionHTML = draftToHtml(
-        convertToRaw(editorState.getCurrentContent())
+      if (resumeHtml.length <= 8) {
+        return;
+      }
+      const { data } = axios.patch(
+        API_ROOT + `/api/post-resume/resume/${userUuid}`,
+        {
+          resumeHtml,
+          resumeUrl: null,
+        }
       );
-
-      // axios.post // /api/post-resume/resume/userUuid
-      // upload string of html
     } else {
       const reader = new FileReader();
       reader.onloadend = (event) => {
@@ -83,6 +83,7 @@ const RichText = (props) => {
           API_ROOT + `/api/post-resume/resume/${userUuid}`,
           {
             resumeUrl: reader.result,
+            resumeHtml: '',
           }
         );
       };
@@ -123,7 +124,7 @@ const RichText = (props) => {
       setEditorState(EditorState.createEmpty());
       setIsShowEditor(false);
     } else {
-      setUploadedFile(null);
+      // setUploadedFile(null);
       setIsShowEditor(true);
     }
   };
@@ -140,10 +141,10 @@ const RichText = (props) => {
   return (
     <div>
       <ul className="base-info-list bring-up">
-        <li>Upload your resume as a PDF or Word document.</li>
+        <li>Upload your resume as a PDF.</li>
         <li>
-          If that does not work for you, you can use a rich text editor to
-          create your resume.
+          <strong>Or</strong>, if that does not work, you can use a rich text
+          editor button on the right to create your resume.
         </li>
       </ul>
       <div className="resume-container base-container">
@@ -211,35 +212,6 @@ const RichText = (props) => {
     </div>
   );
 };
-
-class PDF extends React.Component {
-  state = {
-    numPages: null,
-    pageNumber: 1,
-  };
-
-  onDocumentLoadSuccess = ({ numPages }) => {
-    console.log('is this shit on???');
-    this.setState({ numPages });
-  };
-
-  render() {
-    const { pdfUrl } = this.props;
-    const { pageNumber, numPages } = this.state;
-
-    console.log('pdf', pdfUrl);
-    return (
-      <div>
-        <Document file={pdfUrl} onLoadSuccess={this.onDocumentLoadSuccess}>
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
-      </div>
-    );
-  }
-}
 
 function useToolbarOptions() {
   return {

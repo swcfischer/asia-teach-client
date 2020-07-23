@@ -35,6 +35,8 @@ export { default as ChangePassword } from 'Pages/ChangePassword';
 export { default as ResumeDetails } from 'Pages/ResumeDetails';
 export { default as SubscriptionForm } from 'Pages/SubscriptionForm/SubscriptionForm';
 export { default as ResumeCheck } from 'Pages/ResumeSearch/ResumeCheck';
+export { default as AboutUs } from 'Pages/AboutUs';
+export { default as ContactUs } from 'Pages/ContactUs';
 
 // Component Imports  -- might not need code splitting here
 export { default as Nav } from 'Components/Nav';
