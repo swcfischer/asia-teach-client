@@ -1,0 +1,42 @@
+.base-container.subscription-container {
+  margin: 0px auto 50px auto;
+  min-height: 180px;
+
+  .lower-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    .deactivate-btn {
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      position: relative;
+
+      .email {
+        display: block;
+        width: 250px;
+        padding: 8px 15px;
+        background: rgb(250, 250, 250);
+        border: 1px solid rgb(219, 219, 219);
+        border-radius: 3px;
+        font-size: 15px;
+      }
+      .error-form {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        color: red;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.divider {
+  width: 800px;
+  height: 2px;
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}

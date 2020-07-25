@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import ReactLoading from 'react-loading';
 
 import ResumeItem from '../../ResumeSearch/Components/Results/ResumeItem';
 import ResumeView from '../../ResumeDetails/ResumeView';
@@ -45,7 +46,11 @@ const ResumePreview = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="base-loading-container">
+        <ReactLoading type="spin" color="#333" />
+      </div>
+    );
   }
   return (
     <div className="resume-preview-container">

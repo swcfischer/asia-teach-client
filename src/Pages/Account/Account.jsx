@@ -38,7 +38,7 @@ const Dashboard = (props) => {
           <button className="btn btn-blue">Buy more jobs</button>
         </Link>
       </div>
-      {currentUser.subscriptionId && <Subscription />}
+      {currentUser.subscriptionId && <Subscription currentUser={currentUser} />}
       <Tabs>
         <TabList>
           <Tab>Unpublished</Tab>
