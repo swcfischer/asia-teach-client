@@ -12,10 +12,21 @@
         font-weight: bold;
         cursor: default;
       }
+
       .resume-popper {
         top: -10px;
         left: 0px;
         transform: translateX(-110%);
+      }
+      .email-wrapper {
+        display: flex;
+        align-items: center;
+
+        .email-copy {
+          margin-left: 10px;
+          font-size: 20px;
+          cursor: pointer;
+        }
       }
     }
     .image-container {

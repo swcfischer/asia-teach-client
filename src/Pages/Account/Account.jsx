@@ -38,6 +38,7 @@ const Dashboard = (props) => {
           <button className="btn btn-blue">Buy more jobs</button>
         </Link>
       </div>
+      {currentUser.subscriptionId && <Subscription />}
       <Tabs>
         <TabList>
           <Tab>Unpublished</Tab>
@@ -67,8 +68,6 @@ const Dashboard = (props) => {
         </TabPanel>
         <TabPanel>ExpiredJobs</TabPanel>
       </Tabs>
-
-      {currentUser.subscriptionId && <Subscription />}
     </div>
   );
 };

@@ -13,7 +13,7 @@ import './PurchaseForm.scss';
 
 const stripePromise = loadStripe('pk_test_Cm3mbl5Qa4v6DZXHtRTS29Kp00hn4kDF06');
 
-const priceDictionary = { one: 20, five: 17 * 5, ten: 15 * 10 };
+const priceDictionary = { one: 65, five: 275, ten: 450 };
 
 const quantityDictionary = { one: 1, five: 5, ten: 10 };
 

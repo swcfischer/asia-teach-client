@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { API_ROOT } from 'api-config';
 
 import Popper from 'Components/Popper';
+
+import { FiCopy } from 'react-icons/fi';
 
 import './ResumeDetails.scss';
 
@@ -21,7 +23,21 @@ const ResumeDetails = () => {
     }
 
     fetchData();
+    window.scrollTo({ top: 0 });
   }, []);
+
+  const copyToClipboard = useCallback(() => {
+    const str = details.email;
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  }, [details.email]);
 
   return (
     <div className="resume-view-container">
@@ -38,7 +54,10 @@ const ResumeDetails = () => {
           <ul className="resume-info-list">
             <li>
               <Popper popperClassName="resume-popper" text="Email">
-                {details.email}
+                <div className="email-wrapper">
+                  <a href={`mailto:${details.email}`}>{details.email}</a>
+                  <FiCopy onClick={copyToClipboard} className="email-copy" />
+                </div>
               </Popper>
             </li>
             <li>
