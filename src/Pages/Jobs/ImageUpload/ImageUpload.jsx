@@ -4,13 +4,16 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import ReactLoading from 'react-loading';
 
 import { API_ROOT } from 'api-config';
 
 import './ImageUpload.scss';
+import { toast } from 'react-toastify';
 
 function ImageUpload(props) {
   const [defaultPictures, setDefaultPictures] = useState([]);
+  const [isLoading, setLoading] = useState(true);
   const [pictures, setPictures] = useState([]);
   const { uuid } = useParams();
   const { uuid: userUuid } = props.currentUser;
@@ -21,7 +24,7 @@ function ImageUpload(props) {
         API_ROOT + `/api/job/image-upload/${uuid}/${userUuid}`
       );
       setDefaultPictures(data.images);
-      console.log('data', data);
+      setLoading(false);
     }
     fetchImages();
   }, [uuid, userUuid]);
@@ -55,16 +58,28 @@ function ImageUpload(props) {
 
   const handleSave = async (e) => {
     e.preventDefault();
-    console.log('pictures', pictures);
-
+    setLoading(true);
     const { data } = await axios.post(
       API_ROOT + `/api/job/image-upload/${uuid}/${userUuid}`,
       {
         images: pictures,
       }
     );
-    console.log('data', data);
+    setLoading(false);
+
+    if (data.error) {
+      return toast.error(data.message);
+    }
+    return toast.success(data.message);
   };
+
+  if (isLoading) {
+    return (
+      <div className="base-loading-container">
+        <ReactLoading type="spin" color="#333" />
+      </div>
+    );
+  }
 
   return (
     <div className="upload-container">

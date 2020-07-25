@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import { EditorState, convertToRaw, ContentState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
@@ -62,13 +63,17 @@ const RichText = (props) => {
       convertToRaw(editorState.getCurrentContent())
     );
 
-    const response = await axios.post(
+    const { data } = await axios.post(
       API_ROOT + `/api/job/richtext/${uuid}/${userUuid}`,
       {
         descriptionHTML,
       }
     );
-    console.log('RichText -> handleSave -> response', response);
+
+    if (data.error) {
+      return toast.error(data.message);
+    }
+    return toast.success(data.message);
   };
 
   if (isLoading) {

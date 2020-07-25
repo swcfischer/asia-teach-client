@@ -15,23 +15,11 @@ function Purchase(props) {
   return (
     <Fragment>
       <ul className="base-info-list purchase">
-        {!props.currentUser && (
-          <li>
-            <strong>Must create an account and be logged in</strong>
-          </li>
-        )}
-        <li>
-          Lasts for <strong>45 days</strong>
-        </li>
-        <li>
-          <strong>15 photos</strong>, plus a <strong>tile image</strong>
-        </li>
-        <li>
-          <strong>Always</strong> editable from account page
-        </li>
-        <li>
-          <strong>Preview</strong> job before posting
-        </li>
+        {!props.currentUser && <li>Must create an account</li>}
+        <li>Lasts for 45 days</li>
+        <li>15 photos, plus a tile image</li>
+        <li>Always editable from account page</li>
+        <li>Preview job before posting</li>
       </ul>
       <div className="purchase-container">
         {pricing.map((el) => (

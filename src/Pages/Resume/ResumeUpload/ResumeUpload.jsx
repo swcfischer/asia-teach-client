@@ -9,6 +9,7 @@ import htmlToDraft from 'html-to-draftjs';
 import ReactLoading from 'react-loading';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { toast } from 'react-toastify';
 
 import { API_ROOT } from 'api-config';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
@@ -69,23 +70,32 @@ const RichText = (props) => {
       if (resumeHtml.length <= 8) {
         return;
       }
-      const { data } = axios.patch(
+      const { data } = await axios.patch(
         API_ROOT + `/api/post-resume/resume/${userUuid}`,
         {
           resumeHtml,
           resumeUrl: null,
         }
       );
+      if (data.error) {
+        return toast.error(data.message);
+      }
+      return toast.success(data.message);
     } else {
       const reader = new FileReader();
-      reader.onloadend = (event) => {
-        const { data } = axios.patch(
+      reader.onloadend = async (event) => {
+        const { data } = await axios.patch(
           API_ROOT + `/api/post-resume/resume/${userUuid}`,
           {
             resumeUrl: reader.result,
             resumeHtml: '',
           }
         );
+
+        if (data.error) {
+          return toast.error(data.message);
+        }
+        return toast.success(data.message);
       };
       reader.readAsDataURL(uploadedFile);
     }

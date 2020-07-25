@@ -7,6 +7,7 @@ import { Form, Formik, useFormikContext } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import classNames from 'classnames';
+import { toast } from 'react-toastify';
 
 import { TextField, SelectCity, SelectField } from 'Components/FormFields';
 
@@ -37,7 +38,6 @@ const Details = (props) => {
       const { data } = await axios.get(
         API_ROOT + `/api/jobs/details/${uuid}/${currentUser.uuid}`
       );
-      console.log('data', data);
       const newDataObj = turnNullValuesToStrings(data);
       setFormState(newDataObj);
 
@@ -74,14 +74,16 @@ const Details = (props) => {
         onSubmit={(values, { setSubmitting }) => {
           // setSubmitting figure out what this does
           async function saveForm() {
-            const token = localStorage.getItem('token');
             const { data } = await axios.post(
               API_ROOT + `/api/jobs/details/${uuid}/${currentUser.uuid}`,
               values
             );
-            delete data.uuid;
-            delete data.updatedAt;
-            setFormState(data);
+
+            if (data.error) {
+              return toast.error(data.message);
+            }
+
+            return toast.success(data.message);
           }
           saveForm();
         }}

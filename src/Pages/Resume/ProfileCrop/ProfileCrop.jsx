@@ -151,16 +151,13 @@ function ProfileCrop(props) {
           }
         );
 
-        if (data.error) {
-          toast.error(data.message);
-        } else {
-          toast.info(data.message);
-        }
-
         setIsLoading(false);
         setShowModal(false);
         // ! not doing anyting with the return data
-        console.log('data', data);
+        if (data.error) {
+          return toast.error(data.message);
+        }
+        return toast.success(data.message);
       }
     },
     [base64Image, userUuid]

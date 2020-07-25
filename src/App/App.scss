@@ -67,8 +67,10 @@ body {
   list-style: none;
   background: #ffeacf;
   padding: 15px;
+  padding-left: 25px;
   border-radius: 3px;
   box-shadow: 0 -3px 0 0 #ffc87f inset;
+  padding-bottom: 10px;
 
   &.bring-up {
     margin-top: -30px;
@@ -79,12 +81,21 @@ body {
     margin: 50px auto 20px auto;
   }
 
-  li {
+  & > li {
+    position: relative;
     font-size: 20px;
+    padding: 10px 10px 10px 10px;
     &:before {
-      content: '•';
+      position: absolute;
+      top: 17px;
+      left: -6px;
+      content: '';
+      z-index: 10;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
       margin: 0 0.5rem 0 0;
-      color: #ff8a00;
+      background: #ff8a00;
     }
   }
 
@@ -92,17 +103,15 @@ body {
     box-shadow: none;
     margin: 0;
     width: auto;
-
+    padding-bottom: 0px;
     li {
       &:before {
-        content: '-';
-        margin: 0 0.5rem 0 0;
-        color: #281500;
+        top: 20px;
+        height: 2px;
+        width: 8px;
+        background: #2f3233;
       }
     }
-  }
-  li + li {
-    padding-top: 15px;
   }
 }
 

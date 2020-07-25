@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import classNames from 'classnames';
+import { toast } from 'react-toastify';
 
 import { SelectField, TextField } from 'Components/FormFields';
 import {
@@ -97,7 +98,10 @@ const Details = (props) => {
                 API_ROOT + `/api/post-resume/details/${userUuid}`,
                 values
               );
-              setFormState(data);
+              if (data.error) {
+                return toast.error(data.message);
+              }
+              return toast.success(data.message);
               // delete data.uuid;
               // delete data.updatedAt;
               // setFormState(data);

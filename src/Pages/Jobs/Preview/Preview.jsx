@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { API_ROOT } from 'api-config';
+import ReactLoading from 'react-loading';
 
 import ResultItem from 'Pages/Search/components/Results/ResultItem';
 import Posting from 'Pages/Posting/Posting';
@@ -37,14 +39,22 @@ const Preview = (props) => {
         API_ROOT + `/api/job/publish/${uuid}/${userUuid}`
       );
 
-      console.log(data);
+      if (data.error) {
+        return toast.error(data.message);
+      } else {
+        return toast.success(data.message);
+      }
     }
 
     postData();
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="base-loading-container">
+        <ReactLoading type="spin" color="#333" />
+      </div>
+    );
   }
   return (
     <div className="preview-container">

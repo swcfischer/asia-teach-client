@@ -152,14 +152,13 @@ function ImageCrop(props) {
         });
 
         if (data.success) {
-          toast.info(data.message);
+          toast.success(data.message);
         } else {
           toast.error(data.message);
         }
 
         setIsLoading(false);
         // ! not doing anyting with the return data
-        console.log('data', data);
       }
     },
     [base64Image, uuid, userUuid]

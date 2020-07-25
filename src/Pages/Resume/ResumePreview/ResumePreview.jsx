@@ -8,6 +8,7 @@ import ResumeView from '../../ResumeDetails/ResumeView';
 import { API_ROOT } from 'api-config';
 
 import './ResumePreview.scss';
+import { toast } from 'react-toastify';
 
 const ResumePreview = () => {
   const { userUuid } = useParams();
@@ -34,6 +35,11 @@ const ResumePreview = () => {
         API_ROOT + `/api/post-resume/publish/${userUuid}`
       );
       // setLoading(false);
+
+      if (data.error) {
+        return toast.error(data.message);
+      }
+      return toast.success(data.message);
     }
     postData();
   };
