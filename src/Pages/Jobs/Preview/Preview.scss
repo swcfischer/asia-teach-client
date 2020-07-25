@@ -1,0 +1,22 @@
+.preview-container {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .posting-link {
+      margin: 0;
+    }
+
+    .divider {
+      width: 60%;
+      height: 1px;
+      margin-top: 50px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .publish-btn {
+      margin-top: 50px;
+    }
+  }
+}

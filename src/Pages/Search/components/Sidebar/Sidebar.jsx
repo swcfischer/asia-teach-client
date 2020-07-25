@@ -15,9 +15,10 @@ const options = [
 ];
 
 const ageGroupOptions = [
-  { label: 'Adults', value: 'adults' },
-  { label: 'Adolescents', value: 'adolescents' },
-  { label: 'Children', value: 'children' },
+  { label: 'Adults', value: 'Adults' },
+  { label: 'University', value: 'University' },
+  { label: 'Adolescents', value: 'Adolescents' },
+  { label: 'Children', value: 'Children' },
 ];
 
 const Sidebar = (props) => (

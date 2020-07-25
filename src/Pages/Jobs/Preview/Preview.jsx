@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { API_ROOT } from 'api-config';
 
+import ResultItem from 'Pages/Search/components/Results/ResultItem';
+import Posting from 'Pages/Posting/Posting';
+
 import './Preview.scss';
 
 const Preview = (props) => {
@@ -27,10 +30,45 @@ const Preview = (props) => {
     fetchData();
   }, [userUuid, uuid]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    async function postData() {
+      const { data } = await axios.post(
+        API_ROOT + `/api/job/publish/${uuid}/${userUuid}`
+      );
+
+      console.log(data);
+    }
+
+    postData();
+  };
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  return <div>{JSON.stringify(previewData, null, 4)}</div>;
+  return (
+    <div className="preview-container">
+      <ul className="base-info-list">
+        <li>
+          You are looking at your tile, which appears in the search and
+          underneath that is your page
+        </li>
+        <li>The publish button is at the bottom</li>
+        <li>Click the circles above to return to previous step</li>
+      </ul>
+      <form onSubmit={handleSubmit}>
+        <div style={{ pointerEvents: 'none' }}>
+          <ResultItem {...previewData} />
+        </div>
+        <div className="divider"></div>
+
+        <Posting job={{ ...previewData }} />
+        <button type="submit" className="btn btn-blue publish-btn">
+          Publish
+        </button>
+      </form>
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => ({

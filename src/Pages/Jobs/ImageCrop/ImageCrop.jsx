@@ -119,18 +119,6 @@ function ImageCrop(props) {
     [setCrop]
   );
 
-  const handlePublish = useCallback(
-    (event) => {
-      event.preventDefault();
-      // I am going to want to store the cropped image
-      // and the carousel images in s3 and then save the strings
-
-      // for now, I'm just going to switch the job to isPublished: true
-      axios.post(API_ROOT + `/api/job/publish/${uuid}/${userUuid}`);
-    },
-    [uuid, userUuid]
-  );
-
   const handleImageUploadClick = useCallback(
     (event) => {
       event.preventDefault();
@@ -247,7 +235,6 @@ function ImageCrop(props) {
             Edit
           </button>
         </div>
-        <button onClick={handlePublish}>published</button>
         <CropModal
           isShowModal={isShowModal}
           src={src}

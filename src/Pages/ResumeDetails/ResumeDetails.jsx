@@ -3,11 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { API_ROOT } from 'api-config';
 
-import Popper from 'Components/Popper';
-
-import { FiCopy } from 'react-icons/fi';
-
-import './ResumeDetails.scss';
+import ResumeView from './ResumeView';
 
 const ResumeDetails = () => {
   const { resumeUuid } = useParams();
@@ -26,88 +22,7 @@ const ResumeDetails = () => {
     window.scrollTo({ top: 0 });
   }, []);
 
-  const copyToClipboard = useCallback(() => {
-    const str = details.email;
-    const el = document.createElement('textarea');
-    el.value = str;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-  }, [details.email]);
-
-  return (
-    <div className="resume-view-container">
-      <h1 className="base-header-styling">{details.name}</h1>
-      <div className="base-container">
-        <div className="upper-container">
-          <div className="image-container">
-            <img
-              className="profile-image"
-              src={details.profileImage}
-              alt="profile"
-            />
-          </div>
-          <ul className="resume-info-list">
-            <li>
-              <Popper popperClassName="resume-popper" text="Email">
-                <div className="email-wrapper">
-                  <a href={`mailto:${details.email}`}>{details.email}</a>
-                  <FiCopy onClick={copyToClipboard} className="email-copy" />
-                </div>
-              </Popper>
-            </li>
-            <li>
-              <Popper popperClassName="resume-popper" text="Nationality">
-                {details.nationality}
-              </Popper>
-            </li>
-            <li>
-              <Popper popperClassName="resume-popper" text="Education">
-                {details.education}
-              </Popper>
-            </li>
-            <li>
-              <Popper popperClassName="resume-popper" text="Experience">
-                {details.experience} years
-              </Popper>
-            </li>
-            <li>
-              <Popper popperClassName="resume-popper" text="Desired Country">
-                {details.desiredCountry}
-              </Popper>
-            </li>
-            <li>
-              <Popper popperClassName="resume-popper" text="Desired Start Date">
-                {details.desiredStartDate}
-              </Popper>
-            </li>
-            <li>
-              <Popper popperClassName="resume-popper" text="Desired Age Group">
-                {details.desiredAgeGroup}
-              </Popper>
-            </li>
-          </ul>
-        </div>
-        <div className="divider"></div>
-        {details.resumeHtml ? (
-          <div
-            className="resume-html-wrapper"
-            dangerouslySetInnerHTML={{ __html: details.resumeHtml }}
-          ></div>
-        ) : (
-          <div className="resume-link-wrapper">
-            <a href={details.resumeUrl} target="_blank">
-              PDF URL
-            </a>
-          </div>
-        )}
-      </div>
-    </div>
-  );
+  return <ResumeView {...details} />;
 };
 
 export default ResumeDetails;

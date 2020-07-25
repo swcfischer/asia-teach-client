@@ -1,7 +1,7 @@
 export const ageGroups = [
   { label: 'Children', value: 'Children' },
   { label: 'Adolescents', value: 'Adolescents' },
-  { label: 'College', value: 'College' },
+  { label: 'University', value: 'University' },
   { label: 'Adults', value: 'Adults' },
 ];
 

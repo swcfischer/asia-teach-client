@@ -63,9 +63,9 @@ export const desireStartDateOptions = [
 
 const desiredAgeGroupOptions = [
   { label: 'Children', value: 'Children' },
-  { label: 'Adolescent', value: 'Adolescent' },
-  { label: 'College', value: 'College' },
-  { label: 'Adult', value: 'Adult' },
+  { label: 'Adolescents', value: 'Adolescents' },
+  { label: 'University', value: 'University' },
+  { label: 'Adults', value: 'Adults' },
 ];
 
 const Sidebar = (props) => (
@@ -98,7 +98,7 @@ const Sidebar = (props) => (
     <br />
     <br />
     <Select
-      placeholder="Years of Experience"
+      placeholder="Years of experience"
       options={yearsOfExperience}
       value={
         props.params.experience
@@ -113,7 +113,7 @@ const Sidebar = (props) => (
     <br />
     <br />
     <Select
-      placeholder="Desired Country"
+      placeholder="Desired country"
       options={desiredCountryOptions}
       value={
         props.params.desiredCountry
@@ -131,7 +131,7 @@ const Sidebar = (props) => (
     <br />
     <br />
     <Select
-      placeholder="Desired Start Date"
+      placeholder="Desired start date"
       options={desireStartDateOptions}
       value={
         props.params.desiredStartDate
@@ -148,17 +148,15 @@ const Sidebar = (props) => (
     />
     <br />
     <br />
-    {/*  
-      <Select
-        placeholder="Select a subject"
-        options={ageGroupOptions}
-        value={props.params.students}
-        className="react-select-container"
-        classNamePrefix="search-select"
-        onChange={props.handleAgeGroupQuery}
-        isClearable={true}
-      />
-    */}
+    <Select
+      placeholder="Desired Age Group"
+      options={desiredAgeGroupOptions}
+      value={props.params.students}
+      className="react-select-container"
+      classNamePrefix="search-select"
+      onChange={props.handleSearchQuery('desiredAgeGroup')}
+      isClearable={true}
+    />
   </div>
 );
 export default withRouter(Sidebar);

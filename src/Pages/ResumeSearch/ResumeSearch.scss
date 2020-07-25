@@ -1,4 +1,4 @@
-.search-container {
+.resume-search-container {
   background: #f8f8f8;
 
   .container-width {
@@ -64,6 +64,14 @@
     .next-page,
     .previous-page {
       left: calc(100vw / 3.5);
+    }
+  }
+  @media screen and (max-height: 816px) {
+    .to-top,
+    .next-page,
+    .previous-page {
+      left: initial;
+      right: 20px;
     }
   }
 }

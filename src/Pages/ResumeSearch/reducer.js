@@ -7,6 +7,7 @@ const CLEAR_STATE = 'CLEAR_STATE';
 const STORE_PARAMS = 'STORE_PARAMS';
 const RESET_PAGE = 'RESET_PAGE';
 const STORE_PAGE = 'STORE_PAGE';
+const SET_SCROLL = 'SET_SCROLL';
 // I want to have only one search function
 // or one for when I mount
 // and one that is a conditional for componentDidUpdate
@@ -73,6 +74,13 @@ export function setLoading(isLoading = true) {
   };
 }
 
+export function setScroll(payload = 0) {
+  return {
+    type: SET_SCROLL,
+    payload,
+  };
+}
+
 /*
   The params object will eventually contain
   all the filter criteria
@@ -85,6 +93,7 @@ const initialState = {
   },
   page: 1,
   results: [],
+  scrollPosition: 0,
 };
 
 export default function (state = initialState, { type, payload }) {
@@ -109,6 +118,11 @@ export default function (state = initialState, { type, payload }) {
       return {
         ...state,
         page: 1,
+      };
+    case SET_SCROLL:
+      return {
+        ...state,
+        scrollPosition: payload,
       };
     case SET_LOADING:
       return {

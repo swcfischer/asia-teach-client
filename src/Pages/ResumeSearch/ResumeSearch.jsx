@@ -13,6 +13,7 @@ import {
   setLoading,
   storeParams,
   storePage,
+  setScroll,
 } from './reducer';
 
 import './ResumeSearch.scss';
@@ -20,7 +21,6 @@ import './ResumeSearch.scss';
 class ResumeSearch extends React.Component {
   constructor(props) {
     super(props);
-    this.resultsContainerRef = React.createRef();
   }
 
   componentDidMount() {
@@ -32,11 +32,8 @@ class ResumeSearch extends React.Component {
       // this.props.storeParams(params);
       this.props.handleSearchQuery(params);
     }
-    if (this.resultsContainerRef && this.resultsContainerRef.current) {
-      this.resultsContainerRef.current.scrollTo({
-        top: this.props.scrollPosition,
-      });
-    }
+
+    window.scroll({ top: this.props.scrollPosition, behavior: 'smooth' });
 
     const paramsPageNumber = Number(params.page);
 
@@ -46,6 +43,7 @@ class ResumeSearch extends React.Component {
 
     this.setTabTitle();
   }
+
   componentDidUpdate(prevProps) {
     const prevParams = this.parseQueryParameters(prevProps);
     const currentParams = this.parseQueryParameters(this.props);
@@ -56,7 +54,7 @@ class ResumeSearch extends React.Component {
         this.props.storePage(currentParams.page);
       }
       this.props.handleSearchQuery(currentParams);
-      window.scroll({ top: 0, behavior: 'smooth' });
+      window.scroll({ top: this.props.scrollPosition, behavior: 'smooth' });
       this.setTabTitle();
     }
   }
@@ -91,7 +89,7 @@ class ResumeSearch extends React.Component {
     if (queryName === 'country') {
       delete newQueryStringsObj.city;
     }
-
+    this.props.setScroll(0);
     this.props.history.push(
       '/resume-board?' + queryString.stringify(newQueryStringsObj)
     );
@@ -138,6 +136,10 @@ class ResumeSearch extends React.Component {
     return this.props.results && this.props.results.length === 12;
   };
 
+  componentWillUnmount() {
+    this.props.setScroll(window.scrollY);
+  }
+
   render() {
     if (this.props.isLoading) {
       return (
@@ -147,7 +149,7 @@ class ResumeSearch extends React.Component {
       );
     }
     return (
-      <div className="search-container">
+      <div className="resume-search-container">
         <div className="container-width">
           <Sidebar
             params={this.props.params}
@@ -205,6 +207,7 @@ const mapDispatchToProps = (dispatch) =>
       setLoading,
       storeParams,
       storePage,
+      setScroll,
     },
     dispatch
   );
