@@ -32,7 +32,7 @@ class Nav extends Component {
           <Link to="/">
             <div className="header-container">
               <div className="logo"></div>
-              <h1 className="logo-text">Asia Teach</h1>
+              <h1 className="logo-text">Asia-Teach</h1>
             </div>
           </Link>
           {!isLoading && (

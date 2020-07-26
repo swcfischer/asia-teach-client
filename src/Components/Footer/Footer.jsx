@@ -17,7 +17,7 @@ const Footer = ({ currentUser }) => {
           <div className="fan-logo">
             <img src="/assets/fan.png" alt="fan" />
           </div>
-          <h2 className="site-title">Asia Teach</h2>
+          <h2 className="site-title">Asia-Teach</h2>
         </div>
         <ul className="link-container">
           <li className="link">

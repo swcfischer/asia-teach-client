@@ -22,7 +22,7 @@ const options = [
 
 class Home extends Component {
   componentDidMount() {
-    document.title = 'Asia Teach';
+    document.title = 'Asia-Teach';
     this.props.clearState();
     window.scrollTo({ top: 0 });
   }
