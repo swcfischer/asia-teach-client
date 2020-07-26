@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
@@ -58,7 +58,7 @@ const Subscription = (props) => {
   });
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div className="base-container subscription-container">
         <form onSubmit={formik.handleSubmit}>
           <h3>Subscription Info</h3>
@@ -91,7 +91,7 @@ const Subscription = (props) => {
         </form>
       </div>
       <div className="divider"></div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

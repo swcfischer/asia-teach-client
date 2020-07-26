@@ -133,8 +133,9 @@ function ImageCrop(props) {
     (event) => {
       event.preventDefault();
       setIsShowModal(false);
+      setBase64Image(null);
     },
-    [setIsShowModal]
+    [setIsShowModal, setBase64Image]
   );
 
   const handleImageSave = useCallback(
@@ -176,9 +177,9 @@ function ImageCrop(props) {
   return (
     <div className="image-crop-container">
       <div className="btn-container">
-        <button onClick={handleImageSave} className="btn btn-green save-btn">
+        {/* <button onClick={handleImageSave} className="btn btn-green save-btn">
           Save
-        </button>
+        </button> */}
         <Link to={`/post-job/stepper/description/${uuid}`}>
           <button className="btn btn-orange back-btn">Back</button>
         </Link>
@@ -242,6 +243,7 @@ function ImageCrop(props) {
           onCropChange={onCropChange}
           onCropComplete={onCropComplete}
           handleCloseModal={handleCloseModal}
+          handleImageSave={handleImageSave}
         />
       </div>
     </div>
@@ -258,6 +260,7 @@ const CropModal = ({
   onCropChange,
   onCropComplete,
   handleCloseModal,
+  handleImageSave,
 }) => {
   return (
     <ReactModal
@@ -278,6 +281,9 @@ const CropModal = ({
       )}
       <button className="close-btn" onClick={handleCloseModal}>
         <IoIosCloseCircleOutline className="close-btn-icon" />
+      </button>
+      <button onClick={handleImageSave} className="btn btn-green save-btn">
+        Save
       </button>
     </ReactModal>
   );

@@ -82,7 +82,7 @@ const Details = (props) => {
             if (data.error) {
               return toast.error(data.message);
             }
-
+            setFormState(data.job);
             return toast.success(data.message);
           }
           saveForm();
