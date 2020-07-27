@@ -59,6 +59,7 @@ const Subscription = (props) => {
 
   return (
     <Fragment>
+      <h1 className="base-header-styling">Subscription</h1>
       <div className="base-container subscription-container">
         <form onSubmit={formik.handleSubmit}>
           <h3>Subscription Info</h3>
@@ -90,7 +91,6 @@ const Subscription = (props) => {
           </div>
         </form>
       </div>
-      <div className="divider"></div>
     </Fragment>
   );
 };

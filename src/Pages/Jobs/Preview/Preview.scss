@@ -1,7 +1,9 @@
 .preview-container {
+  min-height: 1200px;
   form {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 
     .posting-link {
@@ -9,10 +11,14 @@
     }
 
     .divider {
-      width: 60%;
+      width: 300px;
       height: 1px;
       margin-top: 50px;
       background: rgba(0, 0, 0, 0.1);
+    }
+
+    .post-container {
+      min-height: initial;
     }
 
     .publish-btn {

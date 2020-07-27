@@ -33,12 +33,13 @@ const Dashboard = (props) => {
   return (
     <div className="job-dashboard">
       <div className="header-container">
-        <h1 className="base-header-styling">Dashboard</h1>
+        {/* <h1 className="base-header-styling">Dashboard</h1> */}
         <Link to="/post-job/purchase-jobs" className="purchase-job-posting">
           <button className="btn btn-blue">Buy more jobs</button>
         </Link>
       </div>
       {currentUser.subscriptionId && <Subscription currentUser={currentUser} />}
+      <h1 className="base-header-styling">Jobs</h1>
       <Tabs>
         <TabList>
           <Tab>Unpublished</Tab>

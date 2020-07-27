@@ -90,6 +90,10 @@ const LinkComponent = (props) => {
 
 const Title = ({ linkArray, type }) => {
   const text = linkArray.find((linkObj) => linkObj.stepperType === type)?.text;
+  if (!text) {
+    return null;
+  }
 
+  console.log('text', text);
   return <h1 className="base-header-styling">{text}</h1>;
 };

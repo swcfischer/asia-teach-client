@@ -89,7 +89,7 @@ class Posting extends Component {
                 <FiCopy onClick={this.copyToClipboard} className="email-copy" />
               </div>
               {link && (
-                <div className="email-wrapper">
+                <div className="link-wrapper">
                   <a href={link} target="_blank">
                     Link
                   </a>
