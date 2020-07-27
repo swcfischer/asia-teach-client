@@ -79,6 +79,7 @@ const Sidebar = (props) => (
       className="react-select-container"
       classNamePrefix="search-select"
       onChange={props.handleSearchQuery('nationality')}
+      isClearable
     />
     <br />
     <br />
