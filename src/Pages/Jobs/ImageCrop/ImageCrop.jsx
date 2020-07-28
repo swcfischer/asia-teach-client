@@ -159,6 +159,7 @@ function ImageCrop(props) {
         }
 
         setIsLoading(false);
+        setIsShowModal(false);
         // ! not doing anyting with the return data
       }
     },
