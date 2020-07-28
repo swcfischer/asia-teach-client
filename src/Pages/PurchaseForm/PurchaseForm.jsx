@@ -9,6 +9,9 @@ import { bindActionCreators } from 'redux';
 import { toast } from 'react-toastify';
 import classNames from 'classnames';
 
+import { FaStripe } from 'react-icons/fa';
+import AcceptCard from 'assets/accepted_cards.png';
+
 import { API_ROOT } from 'api-config';
 
 import './PurchaseForm.scss';
@@ -89,6 +92,13 @@ function PurchaseForm({ userUuid }) {
     <div className="purchase-form-container">
       <h1 className="base-header-styling">Checkout</h1>
       <div className="form-container">
+        <div className="stripe-icon-container">
+          <FaStripe />
+        </div>
+
+        <div className="accepted-cards">
+          <img src={AcceptCard} />
+        </div>
         <div className="checkout-info">
           {quantityDictionary[price]} Job Credit{price !== 'one' && 's'}
         </div>

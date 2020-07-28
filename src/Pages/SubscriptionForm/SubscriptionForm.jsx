@@ -10,6 +10,9 @@ import ReactLoading from 'react-loading';
 import classNames from 'classnames';
 import { toast } from 'react-toastify';
 
+import { FaStripe } from 'react-icons/fa';
+import AcceptCard from 'assets/accepted_cards.png';
+
 import { API_ROOT } from 'api-config';
 
 import './SubscriptionForm.scss';
@@ -101,6 +104,12 @@ function PurchaseForm({ userUuid, email }) {
       </ul>
       <div className="form-container">
         <div className="checkout-info">Subscribe to Resume Board</div>
+        <div className="stripe-icon">
+          <FaStripe />
+        </div>
+        <div className="card-payments">
+          <img src={AcceptCard} />
+        </div>
         <form
           className="form-element"
           onSubmit={handleSubmit}

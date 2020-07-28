@@ -1,5 +1,6 @@
 .subscription-form-container {
   .form-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -10,7 +11,29 @@
     padding: 25px;
     box-shadow: #212a35 0px 0px 2px;
     background: #fff;
+
+    .stripe-icon {
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      svg {
+        color: #646fdf;
+        font-size: 60px;
+      }
+    }
+
+    .card-payments {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 150px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
     .checkout-info {
+      padding-top: 50px;
       text-transform: capitalize;
       font-size: 30px;
       font-style: italic;
@@ -22,6 +45,7 @@
       flex-direction: column;
       justify-content: space-between;
       height: 150px;
+      padding-top: 40px;
 
       .btn-container {
         display: flex;
