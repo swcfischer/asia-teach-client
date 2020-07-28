@@ -209,6 +209,7 @@ function ImageCrop(props) {
               src={
                 base64Image ? base64Image : `${databaseSrc}?random=${uuidv4()}`
               }
+              loading="lazy"
               onClick={handleImageUploadClick}
             />
           ) : (

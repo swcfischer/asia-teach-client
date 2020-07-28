@@ -37,7 +37,7 @@ export default function ResumeItem(props) {
           <div className="thumbnail-container-width">
             <div className="thumbnail-container">
               {/* Will want to add more permanent conditional logic */}
-              <img src={profileImage} alt="avatar" />
+              <img src={profileImage} alt="avatar" loading="lazy" />
             </div>
           </div>
           <div className="bottom-section">

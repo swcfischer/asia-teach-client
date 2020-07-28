@@ -3,13 +3,14 @@ import axios from 'axios';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactLoading from 'react-loading';
 import classNames from 'classnames';
 import { toast } from 'react-toastify';
 
+import { storeSubscriptionId } from 'App/appReducer';
 import { FaStripe } from 'react-icons/fa';
 import AcceptCard from 'assets/accepted_cards.png';
 
@@ -41,8 +42,9 @@ const cardElementOpts = {
   hidePostalCode: true,
 };
 
-function PurchaseForm({ userUuid, email }) {
+function PurchaseForm({ userUuid, email, storeSubscriptionId }) {
   const { price } = useParams();
+  const history = useHistory();
   const [total, setTotal] = useState(priceDictionary[price]);
   const [isLoading, setLoading] = useState(false);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
@@ -81,7 +83,9 @@ function PurchaseForm({ userUuid, email }) {
     setLoading(false);
 
     if (data.status === 'active') {
-      return toast.success('Payment was sucessful');
+      storeSubscriptionId(data.id);
+      toast.success('Payment was sucessful \n May take a moment to go through');
+      history.push('/');
     } else {
       return toast.error('Payment did not go through');
     }
@@ -133,10 +137,13 @@ function PurchaseForm({ userUuid, email }) {
   );
 }
 
-const SubscriptionForm = ({ userUuid }) => {
+const SubscriptionForm = ({ userUuid, storeSubscriptionId }) => {
   return (
     <Elements stripe={stripePromise}>
-      <PurchaseForm userUuid={userUuid} />
+      <PurchaseForm
+        userUuid={userUuid}
+        storeSubscriptionId={storeSubscriptionId}
+      />
     </Elements>
   );
 };
@@ -148,6 +155,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({}, dispatch);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ storeSubscriptionId }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SubscriptionForm);

@@ -44,6 +44,7 @@ export default function ResultItem(props) {
                     ? thumbnail
                     : `/assets/${thumbnail}`
                 }
+                loading="lazy"
                 alt="school thumbnail"
               />
             </div>
