@@ -10,6 +10,7 @@ import './Subscription.scss';
 const Subscription = (props) => {
   const { currentUser } = props;
   const [isActive, setActive] = useState();
+  const [isRenew, setRenew] = useState();
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get(
@@ -17,7 +18,8 @@ const Subscription = (props) => {
           `/api/subscription/${currentUser.uuid}/${currentUser.subscriptionId}`
       );
 
-      setActive(data.isActive === 'active');
+      setActive(data.status);
+      setRenew(data.isRenew);
 
       // const result = await axios.get('/something something');
     }
@@ -34,28 +36,20 @@ const Subscription = (props) => {
         .matches(props.email)
         .required('Must match current email'),
     }),
-    onSubmit: async (values) => {
-      if (isActive) {
-        axios
-          .post(
-            API_ROOT +
-              `/api/subscription/cancel/${currentUser.uuid}/${currentUser.subscriptionId}`
-          )
-          .then((result) => {
-            if (result.data.error) {
-              return toast.error(result.data.message);
-            } else {
-              return toast.success(result.data.message);
-            }
-          });
-      } else {
-        const { data } = await axios.post(
-          API_ROOT +
-            `/api/subscription/renew/${currentUser.uuid}/${currentUser.subscriptionId}`
-        );
-      }
+    onSubmit: async (values, actions) => {
+      const { data } = await axios.post(
+        API_ROOT +
+          `/api/subscription/toggle/${currentUser.uuid}/${currentUser.subscriptionId}`
+      );
+
+      setRenew(data.isRenew);
+      actions.resetForm();
     },
   });
+
+  if (isActive !== 'active') {
+    return null;
+  }
 
   return (
     <Fragment>
@@ -64,8 +58,7 @@ const Subscription = (props) => {
         <form onSubmit={formik.handleSubmit}>
           <h3>Subscription Info</h3>
           <p>
-            You subscription to the resume board is{' '}
-            <strong>{isActive ? 'active' : 'not active'}</strong>
+            Your subscription to the resume board is <strong>{isActive}</strong>
           </p>
           <div className="lower-container">
             <div className="input-container">
@@ -86,7 +79,7 @@ const Subscription = (props) => {
               )}
             </div>
             <button className="deactivate-btn btn btn-orange">
-              {isActive ? 'De-activate subscription' : 'Activate'}
+              {isRenew ? 'Cancel Recurring' : 'Enable Recurring'}
             </button>
           </div>
         </form>

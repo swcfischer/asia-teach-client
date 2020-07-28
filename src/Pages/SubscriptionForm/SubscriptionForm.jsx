@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactLoading from 'react-loading';
 import classNames from 'classnames';
+import { toast } from 'react-toastify';
 
 import { API_ROOT } from 'api-config';
 
@@ -74,22 +75,12 @@ function PurchaseForm({ userUuid, email }) {
       userUuid,
     });
 
-    console.log('data', data);
-
     setLoading(false);
 
-    if (data.error) {
-      // Show error to your customer (e.g., insufficient funds)
-      console.log(data.error.message);
+    if (data.status === 'active') {
+      return toast.success('Payment was sucessful');
     } else {
-      // The payment has been processed!
-      if (data.paymentIntent.status === 'succeeded') {
-        //     // Show a success message to your customer
-        //     // There's a risk of the customer closing the window before callback
-        //     // execution. Set up a webhook or plugin to listen for the
-        //     // payment_intent.succeeded event that handles any business critical
-        //     // post-payment actions.
-      }
+      return toast.error('Payment did not go through');
     }
   };
 

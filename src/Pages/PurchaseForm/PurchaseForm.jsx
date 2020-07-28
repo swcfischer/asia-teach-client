@@ -6,6 +6,8 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { toast } from 'react-toastify';
+import classNames from 'classnames';
 
 import { API_ROOT } from 'api-config';
 
@@ -40,7 +42,9 @@ const cardElementOpts = {
 function PurchaseForm({ userUuid }) {
   const { price } = useParams();
   const [total, setTotal] = useState(priceDictionary[price]);
+  const [isDisabled, setDisabled] = useState(false);
   const stripe = useStripe();
+
   const elements = useElements();
 
   const handleSubmit = async (event) => {
@@ -49,6 +53,7 @@ function PurchaseForm({ userUuid }) {
     if (!stripe || !elements) {
       return;
     }
+    setDisabled(true);
     const {
       data: { client_secret },
     } = await axios.post(API_ROOT + `/api/payments-jobs/`, {
@@ -61,13 +66,14 @@ function PurchaseForm({ userUuid }) {
         card: elements.getElement(CardElement),
       },
     });
-
     if (result.error) {
+      setDisabled(false);
+      return toast.error('Payment did not go through.');
       // Show error to your customer (e.g., insufficient funds)
-      console.log(result.error.message);
     } else {
       // The payment has been processed!
       if (result.paymentIntent.status === 'succeeded') {
+        return toast.success('Payment was successful');
         // Show a success message to your customer
         // There's a risk of the customer closing the window before callback
         // execution. Set up a webhook or plugin to listen for the
@@ -94,7 +100,14 @@ function PurchaseForm({ userUuid }) {
           <CardElement options={cardElementOpts} />
 
           <div className="btn-container">
-            <button className="btn-blue btn purchase-btn">Pay ${total}</button>
+            <button
+              disabled={isDisabled}
+              className={classNames('btn-blue btn purchase-btn', {
+                disabled: isDisabled,
+              })}
+            >
+              Pay ${total}
+            </button>
           </div>
         </form>
       </div>

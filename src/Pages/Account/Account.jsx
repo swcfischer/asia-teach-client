@@ -37,8 +37,8 @@ const Dashboard = (props) => {
         <Link to="/post-job/purchase-jobs" className="purchase-job-posting">
           <button className="btn btn-blue">Buy more jobs</button>
         </Link>
-      </div>
-      {currentUser.subscriptionId && <Subscription currentUser={currentUser} />}
+      </div>{' '}
+      <Subscription currentUser={currentUser} />
       <h1 className="base-header-styling">Jobs</h1>
       <Tabs>
         <TabList>

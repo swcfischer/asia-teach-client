@@ -27,7 +27,6 @@ const ChangePassword = (props) => {
         .max(22, 'No more than 22 characters'),
     }),
     onSubmit: async (values) => {
-      console.log(values);
       const { data } = await axios.post(API_ROOT + `/api/set-forgot-password`, {
         ...values,
         token,

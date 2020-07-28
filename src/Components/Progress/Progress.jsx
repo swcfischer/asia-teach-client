@@ -94,6 +94,5 @@ const Title = ({ linkArray, type }) => {
     return null;
   }
 
-  console.log('text', text);
   return <h1 className="base-header-styling">{text}</h1>;
 };
