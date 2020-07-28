@@ -90,9 +90,6 @@ const Details = (props) => {
         }}
       >
         <Form className="post-job-form">
-          <Link to="/post-job" className="btn btn-orange back-btn">
-            Back
-          </Link>
           <TextField label="Company Name" name="companyName" />
           <TextField label="Email" name="email" type="email" />
           <div className="separator-md" />
