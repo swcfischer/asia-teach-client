@@ -10,7 +10,7 @@ import './Subscription.scss';
 const Subscription = (props) => {
   const { currentUser } = props;
   const [isActive, setActive] = useState();
-  const [isRenew, setRenew] = useState();
+  const [isCancelAtEnd, setCancelAtEnd] = useState();
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get(
@@ -18,8 +18,9 @@ const Subscription = (props) => {
           `/api/subscription/${currentUser.uuid}/${currentUser.subscriptionId}`
       );
 
+      console.log(data);
       setActive(data.status);
-      setRenew(data.isRenew);
+      setCancelAtEnd(data.cancelAtPeriodEnd);
 
       // const result = await axios.get('/something something');
     }
@@ -42,7 +43,7 @@ const Subscription = (props) => {
           `/api/subscription/toggle/${currentUser.uuid}/${currentUser.subscriptionId}`
       );
 
-      setRenew(data.isRenew);
+      setCancelAtEnd(data.cancelAtPeriodEnd);
       actions.resetForm();
     },
   });
@@ -78,8 +79,8 @@ const Subscription = (props) => {
                 <div className="error-form">{formik.errors.email}</div>
               )}
             </div>
-            <button className="deactivate-btn btn btn-orange">
-              {isRenew ? 'Cancel Recurring' : 'Enable Recurring'}
+            <button type="submit" className="deactivate-btn btn btn-orange">
+              {isCancelAtEnd ? 'Enable Recurring' : 'Cancel Recurring'}
             </button>
           </div>
         </form>
