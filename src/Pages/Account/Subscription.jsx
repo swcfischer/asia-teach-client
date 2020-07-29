@@ -8,25 +8,7 @@ import { API_ROOT } from 'api-config';
 import './Subscription.scss';
 
 const Subscription = (props) => {
-  const { currentUser } = props;
-  const [isActive, setActive] = useState();
-  const [isCancelAtEnd, setCancelAtEnd] = useState();
-  useEffect(() => {
-    async function fetchData() {
-      const { data } = await axios.get(
-        API_ROOT +
-          `/api/subscription/${currentUser.uuid}/${currentUser.subscriptionId}`
-      );
-
-      console.log(data);
-      setActive(data.status);
-      setCancelAtEnd(data.cancelAtPeriodEnd);
-
-      // const result = await axios.get('/something something');
-    }
-
-    fetchData();
-  }, []);
+  const { currentUser, isActive, isCancelAtEnd, setCancelAtEnd } = props;
 
   const formik = useFormik({
     initialValues: {
@@ -47,10 +29,6 @@ const Subscription = (props) => {
       actions.resetForm();
     },
   });
-
-  if (isActive !== 'active') {
-    return null;
-  }
 
   return (
     <Fragment>

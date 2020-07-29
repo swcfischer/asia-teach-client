@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import ReactLoading from 'react-loading';
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
+import axios from 'axios';
+
 import Subscription from './Subscription';
 
 import JobItem from './JobItem';
 
+import { API_ROOT } from 'api-config';
 import { fetchUnpublished, fetchPublished } from './reducer';
 
 import './Account.scss';
@@ -15,15 +18,34 @@ import 'react-tabs/style/react-tabs.css';
 
 const Dashboard = (props) => {
   const { fetchPublished, fetchUnpublished, currentUser, isLoading } = props;
+  const [isActive, setActive] = useState();
+  const [isCancelAtEnd, setCancelAtEnd] = useState();
+  const [isLoadingLocal, setLoadingLocal] = useState(true);
 
   useEffect(() => {
     if (currentUser) {
       fetchPublished();
       fetchUnpublished();
     }
+
+    async function fetchData() {
+      const { data } = await axios.get(
+        API_ROOT +
+          `/api/subscription/${currentUser.uuid}/${currentUser.subscriptionId}`
+      );
+
+      console.log(data);
+      setActive(data.status);
+      setCancelAtEnd(data.cancelAtPeriodEnd);
+      setLoadingLocal(false);
+
+      // const result = await axios.get('/something something');
+    }
+
+    fetchData();
   }, [fetchPublished, fetchUnpublished, currentUser]);
 
-  if (isLoading) {
+  if (isLoading || isLoadingLocal) {
     return (
       <div className="base-loading-container">
         <ReactLoading color="#000" type="spin" />
@@ -38,7 +60,14 @@ const Dashboard = (props) => {
           <button className="btn btn-blue">Buy more jobs</button>
         </Link>
       </div>{' '}
-      <Subscription currentUser={currentUser} />
+      {isActive === 'active' && (
+        <Subscription
+          currentUser={currentUser}
+          isActive={isActive}
+          setCancelAtEnd={setCancelAtEnd}
+          isCancelAtEnd={isCancelAtEnd}
+        />
+      )}
       <h1 className="base-header-styling">Jobs</h1>
       <Tabs>
         <TabList>

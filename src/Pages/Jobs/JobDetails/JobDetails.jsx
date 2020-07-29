@@ -128,8 +128,12 @@ const Details = (props) => {
             options={startDateOptions}
           />
           <div className="separator-md" />
-          <TextField label="Phone" name="phone" />
-          <TextField label="Application Link" name="link" placeholder="" />
+          <TextField label="Phone (optional)" name="phone" />
+          <TextField
+            label="Application Link (optional)"
+            name="link"
+            placeholder=""
+          />
           {/* <TextField
             label="WeChat"
             name="wechat"
