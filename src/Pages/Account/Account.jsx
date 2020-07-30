@@ -37,12 +37,14 @@ const Dashboard = (props) => {
       console.log(data);
       setActive(data.status);
       setCancelAtEnd(data.cancelAtPeriodEnd);
-      setLoadingLocal(false);
 
       // const result = await axios.get('/something something');
     }
 
-    fetchData();
+    if (currentUser.subscriptionId) {
+      fetchData();
+    }
+    setLoadingLocal(false);
   }, [fetchPublished, fetchUnpublished, currentUser]);
 
   if (isLoading || isLoadingLocal) {
