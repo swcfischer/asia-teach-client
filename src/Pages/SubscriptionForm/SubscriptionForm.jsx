@@ -84,7 +84,7 @@ function PurchaseForm({ userUuid, email, storeSubscriptionId }) {
 
     if (data.status === 'active') {
       storeSubscriptionId(data.id);
-      toast.success('Payment was sucessful \n May take a moment to go through');
+      toast.success('Payment was sucessful. May take a moment to process');
       history.push('/');
     } else {
       return toast.error('Payment did not go through');
