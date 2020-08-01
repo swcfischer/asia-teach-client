@@ -13,6 +13,7 @@ const ContactUs = (props) => {
   const formik = useFormik({
     initialValues: {
       email: '',
+      subject: '',
       text: '',
     },
     validationSchema: Yup.object({
@@ -53,6 +54,18 @@ const ContactUs = (props) => {
             <div className="error-form">{formik.errors.email}</div>
           )}
         </div>
+        <label htmlFor="subject">
+          <input
+            type="text"
+            name="subject"
+            className="subject"
+            placeholder="Subject"
+            id="subject"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.subject}
+          />
+        </label>
         <div className="input-container">
           <label htmlFor="text">
             <textarea

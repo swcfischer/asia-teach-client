@@ -34,7 +34,6 @@ const Dashboard = (props) => {
           `/api/subscription/${currentUser.uuid}/${currentUser.subscriptionId}`
       );
 
-      console.log(data);
       setActive(data.status);
       setCancelAtEnd(data.cancelAtPeriodEnd);
 
