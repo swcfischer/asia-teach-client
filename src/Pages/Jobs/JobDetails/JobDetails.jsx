@@ -71,6 +71,7 @@ const Details = (props) => {
           ageGroup: Yup.string().required('Required'),
           startDate: Yup.string().required('Required'),
           link: Yup.string().url('Must include https://'),
+          duration: Yup.string().required('Required'),
         })}
         onSubmit={(values, { setSubmitting }) => {
           // setSubmitting figure out what this does

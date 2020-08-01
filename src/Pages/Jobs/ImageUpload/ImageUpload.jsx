@@ -62,7 +62,7 @@ function ImageUpload(props) {
     const { data } = await axios.post(
       API_ROOT + `/api/job/image-upload/${uuid}/${userUuid}`,
       {
-        images: pictures,
+        images: pictures.slice(0, 15),
       }
     );
     setLoading(false);
@@ -70,6 +70,7 @@ function ImageUpload(props) {
     if (data.error) {
       return toast.error(data.message);
     }
+    setDefaultPictures(data.images);
     return toast.success(data.message);
   };
 
