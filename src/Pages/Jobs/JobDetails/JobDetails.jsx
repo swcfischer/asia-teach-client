@@ -90,9 +90,6 @@ const Details = (props) => {
         }}
       >
         <Form className="post-job-form">
-          <Link to="/post-job" className="btn btn-orange back-btn">
-            Back
-          </Link>
           <TextField label="Company Name" name="companyName" />
           <TextField label="Email" name="email" type="email" />
           <div className="separator-md" />
@@ -131,8 +128,12 @@ const Details = (props) => {
             options={startDateOptions}
           />
           <div className="separator-md" />
-          <TextField label="Phone" name="phone" />
-          <TextField label="Application Link" name="link" placeholder="" />
+          <TextField label="Phone (optional)" name="phone" />
+          <TextField
+            label="Application Link (optional)"
+            name="link"
+            placeholder=""
+          />
           {/* <TextField
             label="WeChat"
             name="wechat"

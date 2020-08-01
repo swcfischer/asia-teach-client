@@ -50,6 +50,7 @@ export const durationOptions = [
   { label: '10 Months', value: '10' },
   { label: '11 Months', value: '11' },
   { label: '1 Year', value: '12' },
+  { label: 'More than 1 year', value: '13' },
 ];
 
 export const initialValues = {

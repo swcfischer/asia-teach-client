@@ -24,7 +24,6 @@ const Preview = (props) => {
       const { data } = await axios.get(
         API_ROOT + `/api/job/preview/${uuid}/${userUuid}`
       );
-      console.log('data', data);
       setPreviewData(data);
       setIsLoading(false);
     }

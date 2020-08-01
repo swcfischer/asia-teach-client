@@ -5,6 +5,7 @@ import { API_ROOT } from 'api-config';
 const FETCH_CURRENT_USER = 'FETCH_CURRENT_USER';
 const ERASE_CURRENT_USER = 'ERASE_CURRENT_USER';
 const STORE_CURRENT_USER = 'STORE_CURRENT_USER';
+const STORE_SUBSCRIPTION_ID = 'STORE_SUBSCRIPTION_ID';
 const ERROR = 'ERROR';
 
 export function fetchCurrentUser() {
@@ -29,6 +30,13 @@ export function fetchCurrentUser() {
       type: FETCH_CURRENT_USER,
       payload: data.currentUser,
     });
+  };
+}
+
+export function storeSubscriptionId(subscriptionId) {
+  return {
+    type: STORE_SUBSCRIPTION_ID,
+    payload: subscriptionId,
   };
 }
 
@@ -65,6 +73,15 @@ export default function (state = initialState, { type, payload }) {
       return {
         ...state,
         currentUser: null,
+      };
+
+    case STORE_SUBSCRIPTION_ID:
+      return {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          subscriptionId: payload,
+        },
       };
     case STORE_CURRENT_USER:
       return {

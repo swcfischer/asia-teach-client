@@ -8,22 +8,7 @@ import { API_ROOT } from 'api-config';
 import './Subscription.scss';
 
 const Subscription = (props) => {
-  const { currentUser } = props;
-  const [isActive, setActive] = useState();
-  useEffect(() => {
-    async function fetchData() {
-      const { data } = await axios.get(
-        API_ROOT +
-          `/api/subscription/${currentUser.uuid}/${currentUser.subscriptionId}`
-      );
-
-      setActive(data.isActive === 'active');
-
-      // const result = await axios.get('/something something');
-    }
-
-    fetchData();
-  }, []);
+  const { currentUser, isActive, isCancelAtEnd, setCancelAtEnd } = props;
 
   const formik = useFormik({
     initialValues: {
@@ -34,26 +19,14 @@ const Subscription = (props) => {
         .matches(props.email)
         .required('Must match current email'),
     }),
-    onSubmit: async (values) => {
-      if (isActive) {
-        axios
-          .post(
-            API_ROOT +
-              `/api/subscription/cancel/${currentUser.uuid}/${currentUser.subscriptionId}`
-          )
-          .then((result) => {
-            if (result.data.error) {
-              return toast.error(result.data.message);
-            } else {
-              return toast.success(result.data.message);
-            }
-          });
-      } else {
-        const { data } = await axios.post(
-          API_ROOT +
-            `/api/subscription/renew/${currentUser.uuid}/${currentUser.subscriptionId}`
-        );
-      }
+    onSubmit: async (values, actions) => {
+      const { data } = await axios.post(
+        API_ROOT +
+          `/api/subscription/toggle/${currentUser.uuid}/${currentUser.subscriptionId}`
+      );
+
+      setCancelAtEnd(data.cancelAtPeriodEnd);
+      actions.resetForm();
     },
   });
 
@@ -64,8 +37,7 @@ const Subscription = (props) => {
         <form onSubmit={formik.handleSubmit}>
           <h3>Subscription Info</h3>
           <p>
-            You subscription to the resume board is{' '}
-            <strong>{isActive ? 'active' : 'not active'}</strong>
+            Your subscription to the resume board is <strong>{isActive}</strong>
           </p>
           <div className="lower-container">
             <div className="input-container">
@@ -85,8 +57,8 @@ const Subscription = (props) => {
                 <div className="error-form">{formik.errors.email}</div>
               )}
             </div>
-            <button className="deactivate-btn btn btn-orange">
-              {isActive ? 'De-activate subscription' : 'Activate'}
+            <button type="submit" className="deactivate-btn btn btn-orange">
+              {isCancelAtEnd ? 'Enable Recurring' : 'Cancel Recurring'}
             </button>
           </div>
         </form>

@@ -3,11 +3,16 @@ import axios from 'axios';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactLoading from 'react-loading';
 import classNames from 'classnames';
+import { toast } from 'react-toastify';
+
+import { storeSubscriptionId } from 'App/appReducer';
+import { FaStripe } from 'react-icons/fa';
+import AcceptCard from 'assets/accepted_cards.png';
 
 import { API_ROOT } from 'api-config';
 
@@ -37,8 +42,9 @@ const cardElementOpts = {
   hidePostalCode: true,
 };
 
-function PurchaseForm({ userUuid, email }) {
+function PurchaseForm({ userUuid, email, storeSubscriptionId }) {
   const { price } = useParams();
+  const history = useHistory();
   const [total, setTotal] = useState(priceDictionary[price]);
   const [isLoading, setLoading] = useState(false);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
@@ -74,22 +80,14 @@ function PurchaseForm({ userUuid, email }) {
       userUuid,
     });
 
-    console.log('data', data);
-
     setLoading(false);
 
-    if (data.error) {
-      // Show error to your customer (e.g., insufficient funds)
-      console.log(data.error.message);
+    if (data.status === 'active') {
+      storeSubscriptionId(data.id);
+      toast.success('Payment was sucessful \n May take a moment to go through');
+      history.push('/');
     } else {
-      // The payment has been processed!
-      if (data.paymentIntent.status === 'succeeded') {
-        //     // Show a success message to your customer
-        //     // There's a risk of the customer closing the window before callback
-        //     // execution. Set up a webhook or plugin to listen for the
-        //     // payment_intent.succeeded event that handles any business critical
-        //     // post-payment actions.
-      }
+      return toast.error('Payment did not go through');
     }
   };
 
@@ -110,6 +108,12 @@ function PurchaseForm({ userUuid, email }) {
       </ul>
       <div className="form-container">
         <div className="checkout-info">Subscribe to Resume Board</div>
+        <div className="stripe-icon">
+          <FaStripe />
+        </div>
+        <div className="card-payments">
+          <img src={AcceptCard} />
+        </div>
         <form
           className="form-element"
           onSubmit={handleSubmit}
@@ -133,10 +137,13 @@ function PurchaseForm({ userUuid, email }) {
   );
 }
 
-const SubscriptionForm = ({ userUuid }) => {
+const SubscriptionForm = ({ userUuid, storeSubscriptionId }) => {
   return (
     <Elements stripe={stripePromise}>
-      <PurchaseForm userUuid={userUuid} />
+      <PurchaseForm
+        userUuid={userUuid}
+        storeSubscriptionId={storeSubscriptionId}
+      />
     </Elements>
   );
 };
@@ -148,6 +155,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({}, dispatch);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ storeSubscriptionId }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SubscriptionForm);

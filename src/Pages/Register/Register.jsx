@@ -9,8 +9,6 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { API_ROOT } from 'api-config';
 
-// import ReCAPTCHA from 'react-google-recaptcha';
-
 import './Register.scss';
 
 const Register = (props) => {
@@ -18,6 +16,7 @@ const Register = (props) => {
     initialValues: {
       email: '',
       password: '',
+      password2: '',
     },
     validationSchema: Yup.object({
       password: Yup.string()
@@ -84,13 +83,18 @@ const Register = (props) => {
             <div className="error-form">{formik.errors.password}</div>
           )}
         </div>
-        {/* <ReCAPTCHA
-          sitekey="6LfQlKoZAAAAANEbt5Q__iJD-NqvpJwUutyuSSAH"
-          onChange={(arg) => {
-            console.log('arg', arg);
-          }}
-          className="google-captcha"
-        /> */}
+        <label htmlFor="password2">
+          <input
+            type="password2"
+            name="password2"
+            id="password2"
+            className="password2"
+            placeholder="Password2"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password2}
+          />
+        </label>
         <button className="submit-button" type="submit">
           Sign up
         </button>
