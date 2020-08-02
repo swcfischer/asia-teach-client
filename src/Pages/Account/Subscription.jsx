@@ -20,6 +20,9 @@ const Subscription = (props) => {
         .required('Must match current email'),
     }),
     onSubmit: async (values, actions) => {
+      if (values.email !== currentUser.email) {
+        return toast.error('Email does not match.');
+      }
       const { data } = await axios.post(
         API_ROOT +
           `/api/subscription/toggle/${currentUser.uuid}/${currentUser.subscriptionId}`
