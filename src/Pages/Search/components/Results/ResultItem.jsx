@@ -61,12 +61,10 @@ export default function ResultItem(props) {
     classSize,
     startDate,
   } = props;
-  console.log('ResultItem -> duration', duration);
   let labelDate = '';
   labelDate = startDateOptions.find((el) => el.value === startDate)?.label;
   let labelDuration = '';
   labelDuration = durationOptions.find((el) => el.value === duration)?.label;
-  console.log('ResultItem -> labelDuration', labelDuration);
   return (
     <Link to={`/posting/${uuid}`} className="posting-link">
       <div className="result-item">
@@ -93,7 +91,7 @@ export default function ResultItem(props) {
               </div>
             </Popper>
             <Popper text="Start date" popperClassName="text-popper">
-              <div className="students">{labelDate}</div>
+              <div className="students">{labelDate || 'ASAP'}</div>
             </Popper>
             <Popper text="Student age" popperClassName="text-popper">
               <div className="students">{ageGroup}</div>
