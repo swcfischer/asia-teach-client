@@ -10,11 +10,17 @@ $search-border-radius: 2px;
     justify-content: center;
     align-items: center;
     height: 600px;
-    background: url('assets/hero.jpg');
+    background-image: url('assets/hero.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+
+    @media screen and (min-width: 1100px) {
+      background-size: 100%;
+      background-position-y: top;
+    }
+
     .gradient {
       position: absolute;
       top: 0px;
