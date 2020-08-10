@@ -25,8 +25,13 @@
       justify-content: center;
       .fan-logo {
         width: 100px;
+        background: #fff;
+        padding: 12px 10px;
+        border-radius: 50%;
+        border: 1px solid #000;
 
         img {
+          transform: translateY(5px);
           width: 100%;
           height: auto;
         }

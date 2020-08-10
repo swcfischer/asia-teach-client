@@ -14,6 +14,7 @@ export default function TextField(props) {
         <Field
           type={props.type || 'text'}
           name={props.name}
+          as={props.as || 'input'}
           className="text-field-input"
           placeholder={props.placeholder || ''}
         />
