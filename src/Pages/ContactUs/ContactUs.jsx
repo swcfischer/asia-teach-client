@@ -36,7 +36,7 @@ const ContactUs = (props) => {
     <React.Fragment>
       {/* <h1 className="base-header-styling">Contact Us</h1> */}
       <form className="contact-us-form" onSubmit={formik.handleSubmit}>
-        {/* <img className="logo" src="/assets/fan.png" alt="fan logo" /> */}
+        <img className="logo" src="/assets/fan.png" alt="fan logo" />
         <div className="input-container">
           <label htmlFor="email">
             <input
