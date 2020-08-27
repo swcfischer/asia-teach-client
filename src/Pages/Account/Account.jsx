@@ -97,7 +97,7 @@ const Dashboard = (props) => {
               ))}
           </div>
         </TabPanel>
-        <TabPanel>ExpiredJobs</TabPanel>
+        <TabPanel></TabPanel>
       </Tabs>
     </div>
   );

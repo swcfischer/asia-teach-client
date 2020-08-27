@@ -27,6 +27,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #f8f8f8;
+
+  @media screen and (max-width: 800px) {
+    padding: 0px;
+    min-width: initial;
+  }
 }
 
 .base-container {

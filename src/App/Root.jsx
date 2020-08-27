@@ -16,6 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 //   combineReducers,
 //   composeWithDevTools(applyMiddleware(reduxThunk, reduxLogger))
 // );
+
 const store = createStore(
   combineReducers,
   composeWithDevTools(applyMiddleware(reduxThunk))

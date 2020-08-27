@@ -78,4 +78,39 @@
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    top: initial;
+    bottom: 0px;
+    min-width: initial;
+    padding: 0px;
+    height: 70px;
+    border-top: 2px solid #dae0e6;
+
+    .nav-width-container {
+      width: 100%;
+      a.header-link {
+        display: none;
+      }
+
+      .nav-items-container {
+        width: 100%;
+        justify-content: center;
+        .nav-item {
+          .text {
+            font-size: 12px;
+          }
+
+          &:hover {
+          }
+
+          &.selected {
+          }
+          svg {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
 }

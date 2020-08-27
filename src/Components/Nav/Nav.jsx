@@ -29,7 +29,7 @@ class Nav extends Component {
     return (
       <div className="nav">
         <div className="nav-width-container">
-          <Link to="/">
+          <Link to="/" className="header-link">
             <div className="header-container">
               <div className="logo"></div>
               <h1 className="logo-text">Asia-Teach</h1>
