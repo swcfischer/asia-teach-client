@@ -46,6 +46,7 @@ class Home extends Component {
                 `/jobs?country=${selectedObj.value}&page=1`
               );
             }}
+            isSearchable={false}
           />
         </div>
         <h2 className="content-header">Where do you want to go?</h2>
