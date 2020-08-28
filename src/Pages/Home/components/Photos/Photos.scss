@@ -112,4 +112,14 @@
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    display: block;
+
+    .flex-styling {
+      margin-bottom: 10px;
+      border-bottom: none;
+      box-shadow: none;
+    }
+  }
 }

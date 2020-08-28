@@ -52,4 +52,42 @@
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    height: 500px;
+    padding: 25px;
+    align-items: flex-start;
+    .inner-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .left-side {
+        .site-title {
+          padding: 0px;
+        }
+      }
+
+      .link-container {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        .link {
+          margin-bottom: 3px;
+          a {
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-style: italic;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #45636f;
+            border-bottom: 2px solid #20212a;
+            &:hover {
+              color: #abc2cb;
+            }
+          }
+        }
+      }
+    }
+  }
 }

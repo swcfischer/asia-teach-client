@@ -74,75 +74,19 @@ $search-border-radius: 2px;
   }
 
   @media screen and (max-width: 800px) {
-    background: #fff;
     .search-box {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 600px;
-      background-image: url('assets/hero.jpg');
       background-size: cover;
       background-position-y: initial;
       background-repeat: initial;
-
-      box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
-
-      .gradient {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        background: rgba(0, 0, 0, 0.1);
-      }
-      .react-select-container {
-        width: 300px;
-        // box-shadow: rgb(196, 199, 204) 0px 0px 2px;
-        .home-select__control {
-          min-height: 50px;
-          padding-left: 10px;
-          .home-select__value-container {
-            input {
-              font-size: 24px !important;
-              color: #000 !important;
-              width: 200px !important;
-            }
-          }
-          .home-select__placeholder {
-            font-size: 24px;
-            color: #1d1b1b;
-          }
-          .home-select__single-value {
-            color: #000;
-            font-size: 24px;
-          }
-        }
-        .home-select__option {
-          font-size: 24px;
-        }
-      }
     }
 
     .content-header {
-      text-align: center;
-      color: #333;
-      font-size: 54px;
-      letter-spacing: 2px;
-      padding: 0;
-      margin: 30px 0px 15px 0px;
+      font-size: 32px;
     }
 
     .content-subheader {
-      max-width: 1000px;
-      margin: 0 auto 15px auto;
-      line-height: 45px;
-      text-align: center;
-      color: #555;
-      font-size: 32px;
-      padding: 0px 50px;
-      font-weight: lighter;
-      font-style: italic;
+      line-height: 26px;
+      font-size: 22px;
     }
   }
 }
