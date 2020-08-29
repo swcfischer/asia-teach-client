@@ -1,6 +1,5 @@
 .posting-link {
   display: block;
-  width: 650px;
   // margin-bottom: 15px;
   margin: 0 auto 15px 0;
   text-decoration: none;
@@ -52,11 +51,11 @@
         // width: 370px;
         .thumbnail-container {
           height: 190px;
-          width: 339px;
+          max-width: 339px;
           padding-right: 15px;
           img {
-            height: 100%;
-            width: auto;
+            height: auto;
+            width: 100%;
             border-radius: 3px;
           }
         }

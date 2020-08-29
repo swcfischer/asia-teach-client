@@ -30,6 +30,7 @@ const Sidebar = (props) => (
       className="react-select-container"
       classNamePrefix="search-select"
       onChange={props.handleSearchQuery('country')}
+      isSearchable={false}
     />
     <br />
     <br />
@@ -57,6 +58,7 @@ const Sidebar = (props) => (
           ? { label: props.params.ageGroup, value: props.params.ageGroup }
           : ''
       }
+      isSearchable={false}
       className="react-select-container"
       classNamePrefix="search-select"
       onChange={props.handleSearchQuery('ageGroup')}

@@ -33,4 +33,10 @@
       font-size: 24px;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    width: 100% !important;
+    display: block !important;
+    height: 280px !important;
+  }
 }

@@ -66,4 +66,32 @@
       left: calc(100vw / 3.5);
     }
   }
+
+  @media screen and (max-width: 800px) {
+    .previous-page {
+      bottom: 70px;
+      width: 80px;
+      left: 0px;
+    }
+
+    .to-top {
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+
+    .next-page {
+      right: 0px;
+      left: initial;
+      bottom: 70px;
+      width: 80px;
+    }
+    .container-width {
+      .results-container {
+        width: 100%;
+        padding: 0px 15px;
+      }
+    }
+  }
 }

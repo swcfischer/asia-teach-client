@@ -193,7 +193,7 @@ class Search extends React.Component {
             className="previous-page"
             to={`/jobs?${this.constructBackPageLink()}`}
           >
-            <button>Previous Page</button>
+            <button>Previous</button>
           </Link>
         )}
         {this.isNextPage() && (
@@ -201,7 +201,7 @@ class Search extends React.Component {
             className="next-page"
             to={`/jobs?${this.constructNextPageLink()}`}
           >
-            <button>Next Page</button>
+            <button>Next</button>
           </Link>
         )}
       </div>
