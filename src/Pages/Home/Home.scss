@@ -16,6 +16,10 @@ $search-border-radius: 2px;
     background-repeat: no-repeat;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
 
+    .mobile-nav {
+      display: none;
+    }
+
     .gradient {
       position: absolute;
       top: 0px;
@@ -78,6 +82,33 @@ $search-border-radius: 2px;
       background-size: cover;
       background-position-y: initial;
       background-repeat: initial;
+      .mobile-nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        background: #fff;
+        height: 55px;
+        padding-left: 25px;
+
+        .logo {
+          background: url(assets/fan.png);
+          background-size: cover;
+          width: 55px;
+          height: 45px;
+        }
+
+        .logo-text {
+          font-family: 'Merienda', cursive;
+          font-size: 28px;
+          font-weight: normal;
+          font-style: italic;
+          padding-left: 20px;
+        }
+      }
     }
 
     .content-header {

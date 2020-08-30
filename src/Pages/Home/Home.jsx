@@ -35,6 +35,10 @@ class Home extends Component {
     return (
       <div className="homepage-parent">
         <div className="search-box">
+          <div className="mobile-nav">
+            <div className="logo"></div>
+            <h1 className="logo-text">Asia-Teach</h1>
+          </div>
           <div className="gradient"></div>
           <Select
             placeholder="Select a country"
