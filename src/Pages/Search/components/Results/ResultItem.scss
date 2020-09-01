@@ -65,13 +65,27 @@
     .bottom-section {
       display: inline-block;
       height: 190px;
-      width: 260px;
+      max-width: 260px;
       vertical-align: top;
       padding-left: 25px;
-
-      .text-popper {
-        top: 0px;
-        transform: translateX(-110%);
+      .bottom-divider {
+        .text-popper {
+          top: 0px;
+          transform: translateX(-110%);
+        }
+      }
+      @media screen and (max-width: 510px) {
+        width: 100%;
+        max-width: initial;
+        padding-top: 30px;
+        height: initial;
+        .bottom-divider {
+          display: inline-block;
+          width: 50%;
+          .text-popper {
+            left: 200px;
+          }
+        }
       }
 
       .location {

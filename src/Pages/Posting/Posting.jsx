@@ -66,8 +66,8 @@ class Posting extends Component {
       thumbnail,
       link,
       email,
-      isLoading,
     } = this.props.job;
+    const { isLoading } = this.props;
 
     const { isOpen } = this.state;
 

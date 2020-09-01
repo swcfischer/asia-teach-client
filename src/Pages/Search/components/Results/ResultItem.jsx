@@ -85,26 +85,30 @@ export default function ResultItem(props) {
             </div>
           </div>
           <div className="bottom-section">
-            <Popper text="Location" popperClassName="text-popper">
-              <div className="students">
-                {city}, {countries[country]}
-              </div>
-            </Popper>
-            <Popper text="Start date" popperClassName="text-popper">
-              <div className="students">{labelDate || 'ASAP'}</div>
-            </Popper>
-            <Popper text="Student age" popperClassName="text-popper">
-              <div className="students">{ageGroup}</div>
-            </Popper>
-            <Popper text="Contract duration" popperClassName="text-popper">
-              <div className="students">{labelDuration}</div>
-            </Popper>
-            <Popper text="Salary" popperClassName="text-popper">
-              <div className="students pay">{pay}</div>
-            </Popper>
-            <Popper text="Class size" popperClassName="text-popper">
-              <div className="students class-size">{classSize}</div>
-            </Popper>
+            <div className="bottom-divider">
+              <Popper text="Location" popperClassName="text-popper">
+                <div className="students">
+                  {city}, {countries[country]}
+                </div>
+              </Popper>
+              <Popper text="Start date" popperClassName="text-popper">
+                <div className="students">{labelDate || 'ASAP'}</div>
+              </Popper>
+              <Popper text="Student age" popperClassName="text-popper">
+                <div className="students">{ageGroup}</div>
+              </Popper>
+            </div>
+            <div className="bottom-divider">
+              <Popper text="Contract duration" popperClassName="text-popper">
+                <div className="students">{labelDuration}</div>
+              </Popper>
+              <Popper text="Salary" popperClassName="text-popper">
+                <div className="students pay">{pay}</div>
+              </Popper>
+              <Popper text="Class size" popperClassName="text-popper">
+                <div className="students class-size">{classSize}</div>
+              </Popper>
+            </div>
           </div>
           <div className="date">{moment(publishedDate).fromNow()}</div>
         </div>
