@@ -1,6 +1,6 @@
-import React, { Component, useCallback } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, Route, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import ReactLoading from 'react-loading';
 import ReactModal from 'react-modal';
@@ -82,6 +82,16 @@ class Posting extends Component {
     return (
       <div className="post-container">
         <div className="job-description">
+          <div className="go-back-container">
+            <button
+              className="btn-blue btn go-back-btn"
+              onClick={() => {
+                this.props.history.goBack();
+              }}
+            >
+              Go back
+            </button>
+          </div>
           <div className="header">
             <div>
               <div className="email-wrapper">
@@ -95,7 +105,6 @@ class Posting extends Component {
                   </a>
                 </div>
               )}
-              {/* <GoClippy /> */}
             </div>
 
             <div className="images-container" onClick={this.handleCarouselOpen}>
