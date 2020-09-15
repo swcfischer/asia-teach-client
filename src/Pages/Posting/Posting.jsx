@@ -100,7 +100,7 @@ class Posting extends Component {
               </div>
               {link && (
                 <div className="link-wrapper">
-                  <a href={link} target="_blank">
+                  <a href={link} target="_blank" rel="noopener noreferrer">
                     Link
                   </a>
                 </div>

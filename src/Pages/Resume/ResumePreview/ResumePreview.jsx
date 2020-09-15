@@ -26,7 +26,7 @@ const ResumePreview = () => {
       setLoading(false);
     }
     fetchData();
-  }, []);
+  }, [userUuid]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

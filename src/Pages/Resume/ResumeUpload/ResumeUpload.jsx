@@ -180,7 +180,7 @@ const RichText = (props) => {
           )}
 
           {!uploadedFile && dbPdf && !isShowEditor && (
-            <a href={dbPdf} target="_blank">
+            <a href={dbPdf} target="_blank" rel="noopener noreferrer">
               Current Resume PDF
             </a>
           )}

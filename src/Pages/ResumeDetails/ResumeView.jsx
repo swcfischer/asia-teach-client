@@ -79,7 +79,7 @@ function ResumeView(props) {
           ></div>
         ) : (
           <div className="resume-link-wrapper">
-            <a href={props.resumeUrl} target="_blank">
+            <a href={props.resumeUrl} target="_blank" rel="noopener noreferrer">
               PDF URL
             </a>
           </div>

@@ -44,7 +44,7 @@ const cardElementOpts = {
 
 function PurchaseForm({ userUuid }) {
   const { price } = useParams();
-  const [total, setTotal] = useState(priceDictionary[price]);
+  const [total] = useState(priceDictionary[price]);
   const [isDisabled, setDisabled] = useState(false);
   const stripe = useStripe();
 
@@ -97,7 +97,7 @@ function PurchaseForm({ userUuid }) {
         </div>
 
         <div className="accepted-cards">
-          <img src={AcceptCard} />
+          <img src={AcceptCard} alt="cards accepted" />
         </div>
         <div className="checkout-info">
           {quantityDictionary[price]} Job Credit{price !== 'one' && 's'}

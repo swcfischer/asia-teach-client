@@ -19,10 +19,6 @@ import {
 import './ResumeSearch.scss';
 
 class ResumeSearch extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     // initial data call
     const params = queryString.parse(this.props.location.search);
@@ -96,7 +92,6 @@ class ResumeSearch extends React.Component {
   };
 
   setTabTitle = () => {
-    const queryStringObj = queryString.parse(this.props.location.search);
     document.title = 'Resumes';
   };
 

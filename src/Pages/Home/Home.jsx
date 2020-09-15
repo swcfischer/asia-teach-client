@@ -69,12 +69,3 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ clearState }, dispatch);
 
 export default withRouter(connect(null, mapDispatchToProps)(Home));
-
-// const mapStateToProps = state => {
-//   return state.home;
-// };
-
-// const mapDispatchToProps = dispatch =>
-//   bindActionCreators({ handleSearch, handleSubmit }, dispatch);
-
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));

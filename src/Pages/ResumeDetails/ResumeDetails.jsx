@@ -22,7 +22,7 @@ const ResumeDetails = () => {
 
     fetchData();
     window.scrollTo({ top: 0 });
-  }, []);
+  }, [resumeUuid]);
 
   if (isLoading) {
     return (

@@ -6,16 +6,6 @@ import Popper from '../../../../Components/Popper';
 
 import './ResumeItem.scss';
 
-const countries = {
-  thailand: 'Thailand',
-  'south-korea': 'South Korea',
-  china: 'China',
-  japan: 'Japan',
-  taiwan: 'Taiwan',
-  vietnam: 'Vietnam',
-  indonesia: 'Indonesia',
-};
-
 export default function ResumeItem(props) {
   const {
     nationality,

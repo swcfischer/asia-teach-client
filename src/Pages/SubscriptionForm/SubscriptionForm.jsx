@@ -3,7 +3,7 @@ import axios from 'axios';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useParams, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactLoading from 'react-loading';
@@ -19,8 +19,6 @@ import { API_ROOT } from 'api-config';
 import './SubscriptionForm.scss';
 
 const stripePromise = loadStripe('pk_test_Cm3mbl5Qa4v6DZXHtRTS29Kp00hn4kDF06');
-
-const priceDictionary = { one: 20, five: 17 * 5, ten: 15 * 10 };
 
 const iframeStyles = {
   base: {
@@ -43,9 +41,7 @@ const cardElementOpts = {
 };
 
 function PurchaseForm({ userUuid, email, storeSubscriptionId }) {
-  const { price } = useParams();
   const history = useHistory();
-  const [total, setTotal] = useState(priceDictionary[price]);
   const [isLoading, setLoading] = useState(false);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const stripe = useStripe();
@@ -112,7 +108,7 @@ function PurchaseForm({ userUuid, email, storeSubscriptionId }) {
           <FaStripe />
         </div>
         <div className="card-payments">
-          <img src={AcceptCard} />
+          <img src={AcceptCard} alt="cards accepted" />
         </div>
         <form
           className="form-element"
