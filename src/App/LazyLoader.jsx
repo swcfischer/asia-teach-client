@@ -1,20 +1,20 @@
-import loadable from '@loadable/component';
+// import loadable from '@loadable/component';
 
 // export const Home = loadable(() => import('../Pages/Home/Home'));
 // export const Search = loadable(() => import('../Pages/Search/Search'));
-export const Register = loadable(() => import('../Pages/Register/Register'));
-export const Login = loadable(() => import('../Pages/Login/Login'));
+// export const Register = loadable(() => import('../Pages/Register/Register'));
+// export const Login = loadable(() => import('../Pages/Login/Login'));
 // export const Posting = loadable(() => import('../Pages/Posting/Posting'));
-export const Account = loadable(() => import('../Pages/Account/Account'));
+// export const Account = loadable(() => import('../Pages/Account/Account'));
 // export const JobRoutes = loadable(() => import('../Pages/Jobs/'));
-export const ForgotPassword = loadable(() =>
-  import('../Pages/ForgotPassword/ForgotPassword')
-);
-export const Confirmation = loadable(() =>
-  import('../Pages/Confirmation/Confirmation')
-);
-export const PurchaseForm = loadable(() => import('../Pages/PurchaseForm'));
-export const ChangePassword = loadable(() => import('../Pages/ChangePassword'));
+// export const ForgotPassword = loadable(() =>
+//   import('../Pages/ForgotPassword/ForgotPassword')
+// );
+// export const Confirmation = loadable(() =>
+//   import('../Pages/Confirmation/Confirmation')
+// );
+// export const PurchaseForm = loadable(() => import('../Pages/PurchaseForm'));
+// export const ChangePassword = loadable(() => import('../Pages/ChangePassword'));
 // export const ResumeDetails = loadable(() => import('../Pages/ResumeDetails'));
 // export const SubscriptionForm = loadable(() =>
 //   import('../Pages/SubscriptionForm/SubscriptionForm')
@@ -23,29 +23,29 @@ export const ChangePassword = loadable(() => import('../Pages/ChangePassword'));
 //   import('../Pages/ResumeSearch/ResumeCheck')
 // );
 // export const PostResume = loadable(() => import('../Pages/Resume'));
-export const AboutUs = loadable(() => import('../Pages/AboutUs'));
-export const ContactUs = loadable(() => import('../Pages/ContactUs'));
+// export const AboutUs = loadable(() => import('../Pages/AboutUs'));
+// export const ContactUs = loadable(() => import('../Pages/ContactUs'));
 // Component Imports  -- might not need code splitting here
 // export const Nav = loadable(() => import('../Components/Nav'));
 // export const Footer = loadable(() => import('../Components/Footer/Footer'));
 
 export { default as Home } from 'Pages/Home/Home';
 export { default as Search } from 'Pages/Search/Search';
-// export { default as Register } from 'Pages/Register/Register';
-// export { default as Login } from 'Pages/Login/Login';
+export { default as Register } from 'Pages/Register/Register';
+export { default as Login } from 'Pages/Login/Login';
 export { default as Posting } from 'Pages/Posting/Posting';
-// export { default as Account } from 'Pages/Account';
+export { default as Account } from 'Pages/Account';
 export { default as JobRoutes } from 'Pages/Jobs/';
 export { default as PostResume } from 'Pages/Resume/';
-// export { default as ForgotPassword } from 'Pages/ForgotPassword/ForgotPassword';
-// export { default as Confirmation } from 'Pages/Confirmation/Confirmation';
-// export { PurchaseForm } from 'Pages/PurchaseForm';
-// export { default as ChangePassword } from 'Pages/ChangePassword';
+export { default as ForgotPassword } from 'Pages/ForgotPassword/ForgotPassword';
+export { default as Confirmation } from 'Pages/Confirmation/Confirmation';
+export { PurchaseForm } from 'Pages/PurchaseForm';
+export { default as ChangePassword } from 'Pages/ChangePassword';
 export { default as ResumeDetails } from 'Pages/ResumeDetails';
 export { default as SubscriptionForm } from 'Pages/SubscriptionForm/SubscriptionForm';
 export { default as ResumeCheck } from 'Pages/ResumeSearch/ResumeCheck';
-// export { default as AboutUs } from 'Pages/AboutUs';
-// export { default as ContactUs } from 'Pages/ContactUs';
+export { default as AboutUs } from 'Pages/AboutUs';
+export { default as ContactUs } from 'Pages/ContactUs';
 
 // Component Imports  -- might not need code splitting here
 export { default as Nav } from 'Components/Nav';
