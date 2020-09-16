@@ -93,6 +93,7 @@ $search-border-radius: 2px;
         background: #fff;
         height: 55px;
         padding-left: 25px;
+        z-index: 1000;
 
         .logo {
           background: url(assets/fan.png);
