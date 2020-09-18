@@ -110,49 +110,48 @@ const Details = (props) => {
           }}
         >
           <Form className="resume-form">
-            <TextField label="Name" name="name" type="text" />
-            <TextField label="Email" name="email" type="email" />
-            <SelectField
-              name="nationality"
-              label="Nationality"
-              placeholder=""
-              options={nationalities}
-            />
-            <br />
-            <br />
-            <br />
-            <SelectField
-              name="education"
-              label="Education"
-              options={educationOptions}
-            />
-            <SelectField
-              name="experience"
-              label="Years of Experience"
-              options={experienceOptions}
-            />
-            <SelectField
-              name="desiredCountry"
-              label="Desired Country"
-              options={desiredCountry}
-            />
-            <br />
-            <br />
-            <br />
-            <SelectField
-              name="desiredStartDate"
-              label="Desired Start Date"
-              options={desireStartDateOptions}
-            />
-            <SelectField
-              name="desiredAgeGroup"
-              label="Desired Age Group"
-              options={ageGroups}
-            />
-            <br />
-            <br />
-            <br />
-            <br />
+            <div className="row-one">
+              <TextField label="Name" name="name" type="text" />
+              <TextField label="Email" name="email" type="email" />
+              <SelectField
+                name="nationality"
+                label="Nationality"
+                placeholder=""
+                options={nationalities}
+              />
+              <div className="separator-md"></div>
+            </div>
+            <div className="row-two">
+              <SelectField
+                name="education"
+                label="Education"
+                options={educationOptions}
+              />
+              <SelectField
+                name="experience"
+                label="Years of Experience"
+                options={experienceOptions}
+              />
+              <SelectField
+                name="desiredCountry"
+                label="Desired Country"
+                options={desiredCountry}
+              />
+              <div className="separator-md"></div>
+            </div>
+            <div className="row-three">
+              <SelectField
+                name="desiredStartDate"
+                label="Desired Start Date"
+                options={desireStartDateOptions}
+              />
+              <SelectField
+                name="desiredAgeGroup"
+                label="Desired Age Group"
+                options={ageGroups}
+              />
+            </div>
+
             <div className="btn-container">
               <button className="btn btn-green" type="submit">
                 Save
@@ -169,7 +168,6 @@ const Details = (props) => {
 const ConditionalNextBtn = (props) => {
   const { userUuid } = props;
   const { values } = useFormikContext();
-  console.log('ConditionalNextBtn -> values', values);
 
   const isValidBtn = useCallback(() => {
     let isValid = true;

@@ -17,7 +17,7 @@ const linkArray = [
 
 const Routes = (props) => {
   return (
-    <Fragment>
+    <div style={{ marginBottom: '100px' }}>
       <Route path="/post-resume/:type/:uuid">
         <Progress
           linkArray={linkArray}
@@ -40,7 +40,7 @@ const Routes = (props) => {
           component={ResumePreview}
         />
       </Switch>
-    </Fragment>
+    </div>
   );
 };
 
