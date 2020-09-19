@@ -11,64 +11,61 @@ const Footer = ({ currentUser }) => {
   };
 
   return (
-    <Fragment>
-      <div className="white-padding"></div>
-      <div className="footer-container">
-        <div className="inner-container">
-          <div className="left-side">
-            <h2 className="site-title">Asia-Teach</h2>
-          </div>
-          <ul className="link-container">
-            <li className="link">
-              <Link onClick={toTop} to="/contact-us">
-                Contact Us
-              </Link>
-            </li>
-            {/* <li className="link">
+    <div className="footer-container">
+      <div className="inner-container">
+        <div className="left-side">
+          <h2 className="site-title">Asia-Teach</h2>
+        </div>
+        <ul className="link-container">
+          <li className="link">
+            <Link onClick={toTop} to="/contact-us">
+              Contact Us
+            </Link>
+          </li>
+          {/* <li className="link">
             <Link onClick={toTop} to="/about-us">
               About Us
             </Link>
           </li> */}
-            <li className="link">
-              <Link onClick={toTop} to="/">
-                Home
-              </Link>
-            </li>
-            <li className="link">
-              <Link onClick={toTop} to="/post-job/purchase-jobs">
-                Purchase Job Credits
-              </Link>
-            </li>
-            {currentUser ? (
-              <Fragment>
-                <li className="link">
-                  <Link onClick={toTop} to="/account">
-                    Account
-                  </Link>
-                </li>
-                <li className="link">
-                  <Link
-                    onClick={toTop}
-                    to={`/post-resume/details/${currentUser.uuid}`}
-                  >
-                    Post Resume
-                  </Link>
-                </li>
-              </Fragment>
-            ) : (
-              <Fragment>
-                <li onClick={toTop} className="link">
-                  <Link to="/login">Login</Link>
-                </li>
-                <li onClick={toTop} className="link">
-                  <Link to="/register">Create Account</Link>
-                </li>
-              </Fragment>
-            )}
-          </ul>
-        </div>
+          <li className="link">
+            <Link onClick={toTop} to="/">
+              Home
+            </Link>
+          </li>
+          <li className="link">
+            <Link onClick={toTop} to="/post-job/purchase-jobs">
+              Purchase Job Credits
+            </Link>
+          </li>
+          {currentUser ? (
+            <Fragment>
+              <li className="link">
+                <Link onClick={toTop} to="/account">
+                  Account
+                </Link>
+              </li>
+              <li className="link">
+                <Link
+                  onClick={toTop}
+                  to={`/post-resume/details/${currentUser.uuid}`}
+                >
+                  Post Resume
+                </Link>
+              </li>
+            </Fragment>
+          ) : (
+            <Fragment>
+              <li onClick={toTop} className="link">
+                <Link to="/login">Login</Link>
+              </li>
+              <li onClick={toTop} className="link">
+                <Link to="/register">Create Account</Link>
+              </li>
+            </Fragment>
+          )}
+        </ul>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

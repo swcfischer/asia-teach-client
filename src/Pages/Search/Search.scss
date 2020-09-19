@@ -60,6 +60,10 @@
     left: calc(100vw / 5);
   }
 
+  .white-bg {
+    display: none;
+  }
+
   @media screen and (min-width: 1575px) {
     .to-top,
     .next-page,
@@ -69,10 +73,20 @@
   }
 
   @media screen and (max-width: 800px) {
-    .previous-page {
-      bottom: 70px;
-      width: 80px;
+    .white-bg {
+      display: block;
+      position: fixed;
+      height: 60px;
+      width: 100vw;
+      bottom: 69px;
       left: 0px;
+      background: #fff;
+      border-top: 1px solid #dae0e6;
+    }
+    .previous-page {
+      bottom: 83px;
+      width: 80px;
+      left: 10px;
       background: #333;
       border: none;
       button {
@@ -84,7 +98,7 @@
 
     .to-top {
       background: #333;
-      bottom: 70px;
+      bottom: 83px;
       left: 50%;
       transform: translateX(-50%);
       width: 80px;
@@ -98,9 +112,9 @@
     }
 
     .next-page {
-      right: 0px;
+      right: 10px;
       left: initial;
-      bottom: 70px;
+      bottom: 83px;
       width: 80px;
       background: #333;
       border: none;

@@ -183,6 +183,7 @@ class Search extends React.Component {
             )}
           </div>
         </div>
+        <div className="white-bg"></div>
         {this.props.results && this.props.results.length > 5 && (
           <div onClick={this.handleToTop} className="to-top">
             <button>Top</button>
