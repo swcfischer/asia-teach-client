@@ -15,6 +15,8 @@ export function fetchPosting(uuid) {
       });
     }
 
+    document.title = data.companyName;
+
     dispatch({
       type: FETCH_POSTING,
       payload: data.job,

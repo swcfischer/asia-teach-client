@@ -7,6 +7,8 @@ const FETCH_PUBLISHED_JOBS = 'FETCH_PUBLISHED_JOBS';
 // remember to return to true
 const initialState = {
   isLoading: true,
+  publishedJobs: [],
+  unpublishedJobs: [],
 };
 
 export function fetchUnpublished() {
