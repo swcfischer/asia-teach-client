@@ -74,19 +74,6 @@
           transform: translateX(-110%);
         }
       }
-      @media screen and (max-width: 510px) {
-        width: 100%;
-        max-width: initial;
-        padding-top: 30px;
-        height: initial;
-        .bottom-divider {
-          display: inline-block;
-          width: 50%;
-          .text-popper {
-            left: 200px;
-          }
-        }
-      }
 
       .location {
         text-align: center;
@@ -102,11 +89,14 @@
         font-weight: bold;
       }
 
-      .students {
-        padding-top: 8px;
+      .result-item-text {
+        padding-top: 12px;
         text-transform: capitalize;
         color: #333;
         font-weight: bold;
+      }
+      .first-result-item-text {
+        padding-top: 0px;
       }
 
       .duration {
@@ -115,6 +105,26 @@
         right: 0px;
         color: #333;
         font-weight: bold;
+      }
+      @media screen and (max-width: 600px) {
+        display: flex;
+        width: 100%;
+        max-width: initial;
+        padding-top: 5px;
+        height: 110px;
+        .bottom-divider {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          width: 50%;
+          .first-result-item-text {
+            padding-top: 12px;
+          }
+          .text-popper {
+            left: 200px;
+          }
+        }
       }
     }
 

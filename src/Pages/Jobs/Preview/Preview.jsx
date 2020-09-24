@@ -58,13 +58,22 @@ const Preview = (props) => {
   return (
     <div className="preview-container">
       <ul className="base-info-list">
-        <li>You are looking at your tile, which appears in the search and</li>
-        <li>Underneath the tile is your page</li>
-        <li>The publish button is at the bottom</li>
+        <li>You are looking at your tile, which appears in the search </li>
+        <li>
+          Underneath the tile is your page, which will be seen after the user
+          clicks on the tile
+        </li>
         <li>Click the blue circles above to return to previous step</li>
+        <li>
+          <strong>
+            The Publish Button is at the bottom. Click it to make your job
+            posting live
+          </strong>
+          .
+        </li>
       </ul>
-      <form onSubmit={handleSubmit}>
-        <div style={{ pointerEvents: 'none' }}>
+      <form onSubmit={handleSubmit} className="form-container">
+        <div className="result-item-container">
           <ResultItem {...previewData} publishedDate={new Date()} />
         </div>
         <div className="divider"></div>

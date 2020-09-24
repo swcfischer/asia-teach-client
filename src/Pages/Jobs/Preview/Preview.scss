@@ -1,10 +1,15 @@
 .preview-container {
   min-height: 1200px;
-  form {
+  .form-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
+    .result-item-container {
+      pointer-events: none;
+      width: 700px;
+    }
 
     .posting-link {
       margin: 0;

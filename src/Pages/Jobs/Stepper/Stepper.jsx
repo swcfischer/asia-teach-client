@@ -18,7 +18,7 @@ const linkArray = [
 
 const JobStepper = () => {
   return (
-    <div>
+    <div style={{ paddingBottom: '50px' }}>
       <Route path="/post-job/stepper/:type/:uuid">
         <Progress linkArray={linkArray} baseLink="/post-job/stepper/" />
       </Route>

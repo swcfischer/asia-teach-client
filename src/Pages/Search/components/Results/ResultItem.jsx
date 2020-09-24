@@ -87,26 +87,26 @@ export default function ResultItem(props) {
           <div className="bottom-section">
             <div className="bottom-divider">
               <Popper text="Location" popperClassName="text-popper">
-                <div className="students">
+                <div className="result-item-text first-result-item-text">
                   {city}, {countries[country]}
                 </div>
               </Popper>
               <Popper text="Start date" popperClassName="text-popper">
-                <div className="students">{labelDate || 'ASAP'}</div>
+                <div className="result-item-text">{labelDate || 'ASAP'}</div>
               </Popper>
               <Popper text="Student age" popperClassName="text-popper">
-                <div className="students">{ageGroup}</div>
+                <div className="result-item-text">{ageGroup}</div>
               </Popper>
             </div>
             <div className="bottom-divider">
               <Popper text="Contract duration" popperClassName="text-popper">
-                <div className="students">{labelDuration}</div>
+                <div className="result-item-text">{labelDuration}</div>
               </Popper>
               <Popper text="Salary" popperClassName="text-popper">
-                <div className="students pay">{pay}</div>
+                <div className="result-item-text pay">{pay}</div>
               </Popper>
               <Popper text="Class size" popperClassName="text-popper">
-                <div className="students class-size">{classSize}</div>
+                <div className="result-item-text class-size">{classSize}</div>
               </Popper>
             </div>
           </div>

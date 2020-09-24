@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter, Link } from 'react-router-dom';
@@ -154,6 +154,14 @@ class Search extends React.Component {
     return this.props.results && this.props.results.length === 12;
   };
 
+  isBottomNavDisplayed = () => {
+    return (
+      this.isNextPage() ||
+      this.props.page > 1 ||
+      (this.props.results && this.props.results.length > 5)
+    );
+  };
+
   render() {
     if (this.props.isLoading) {
       return (
@@ -183,7 +191,7 @@ class Search extends React.Component {
             )}
           </div>
         </div>
-        <div className="white-bg"></div>
+        {this.isBottomNavDisplayed() && <div className="white-bg"></div>}
         {this.props.results && this.props.results.length > 5 && (
           <div onClick={this.handleToTop} className="to-top">
             <button>Top</button>
