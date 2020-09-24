@@ -18,6 +18,7 @@ import {
   Home,
   Search,
   Register,
+  RegisterWithFreeJob,
   Login,
   Posting,
   PostResume,
@@ -33,6 +34,7 @@ import {
   ResumeDetails,
   AboutUs,
   ContactUs,
+
   // ResumeSearch,
   ResumeCheck,
 } from 'App/LazyLoader';
@@ -88,6 +90,7 @@ const LoggedOutRoutes = () => {
       <Route path="/" exact component={Home} />
       <Route path="/jobs" component={Search} />
       <Route path="/login" component={Login} />
+      <Route path="/special-register/:uuid" component={RegisterWithFreeJob} />
       <Route path="/register" component={Register} />
       <Route path="/posting/:uuid" component={Posting} />
       <Route path="/post-resume" component={PostResume} />

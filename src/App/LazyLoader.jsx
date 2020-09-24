@@ -46,6 +46,7 @@ export { default as SubscriptionForm } from 'Pages/SubscriptionForm/Subscription
 export { default as ResumeCheck } from 'Pages/ResumeSearch/ResumeCheck';
 export { default as AboutUs } from 'Pages/AboutUs';
 export { default as ContactUs } from 'Pages/ContactUs';
+export { default as RegisterWithFreeJob } from 'Pages/RegisterWithFreeJob';
 
 // Component Imports  -- might not need code splitting here
 export { default as Nav } from 'Components/Nav';
