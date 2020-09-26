@@ -11,13 +11,19 @@ import Subscription from './Subscription';
 import JobItem from './JobItem';
 
 import { API_ROOT } from 'api-config';
-import { fetchUnpublished, fetchPublished } from './reducer';
+import { fetchUnpublished, fetchPublished, fetchExpired } from './reducer';
 
 import './Account.scss';
 import 'react-tabs/style/react-tabs.css';
 
 const Dashboard = (props) => {
-  const { fetchPublished, fetchUnpublished, currentUser, isLoading } = props;
+  const {
+    fetchPublished,
+    fetchUnpublished,
+    fetchExpired,
+    currentUser,
+    isLoading,
+  } = props;
   const [isActive, setActive] = useState();
   const [isCancelAtEnd, setCancelAtEnd] = useState();
   const [isLoadingLocal, setLoadingLocal] = useState(true);
@@ -26,6 +32,7 @@ const Dashboard = (props) => {
     if (currentUser) {
       fetchPublished();
       fetchUnpublished();
+      fetchExpired();
     }
 
     async function fetchData() {
@@ -45,6 +52,7 @@ const Dashboard = (props) => {
     }
     setLoadingLocal(false);
   }, [fetchPublished, fetchUnpublished, currentUser]);
+  console.log('Dashboard -> this.props', props);
 
   if (isLoading || isLoadingLocal) {
     return (
@@ -97,7 +105,14 @@ const Dashboard = (props) => {
               ))}
           </div>
         </TabPanel>
-        <TabPanel></TabPanel>
+        <TabPanel>
+          <div className="jobs-container base-container">
+            {props.expiredJobs &&
+              props.expiredJobs.map((job, idx) => (
+                <JobItem key={idx} idx={idx} uuid={job.uuid} {...job} />
+              ))}
+          </div>
+        </TabPanel>
       </Tabs>
     </div>
   );
@@ -105,12 +120,15 @@ const Dashboard = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    ...state.jobs,
+    ...state.account,
     currentUser: state.app.currentUser,
   };
 };
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ fetchUnpublished, fetchPublished }, dispatch);
+  bindActionCreators(
+    { fetchUnpublished, fetchPublished, fetchExpired },
+    dispatch
+  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
