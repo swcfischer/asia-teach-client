@@ -51,8 +51,7 @@ const Dashboard = (props) => {
       fetchData();
     }
     setLoadingLocal(false);
-  }, [fetchPublished, fetchUnpublished, currentUser]);
-  console.log('Dashboard -> this.props', props);
+  }, [fetchPublished, fetchUnpublished, currentUser, fetchExpired]);
 
   if (isLoading || isLoadingLocal) {
     return (

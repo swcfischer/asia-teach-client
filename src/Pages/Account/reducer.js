@@ -92,7 +92,6 @@ export default function (state = initialState, { type, payload }) {
         publishedJobs: payload,
       };
     case FETCH_EXPIRED_JOBS:
-      console.log('is this being called', payload);
       return {
         ...state,
         isLoading: false,
