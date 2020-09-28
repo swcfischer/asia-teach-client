@@ -85,4 +85,16 @@
     text-decoration: none;
     font-size: 13px;
   }
+
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+    margin: 30px auto;
+
+    .input-container {
+      .email,
+      .text {
+        width: 90%;
+      }
+    }
+  }
 }

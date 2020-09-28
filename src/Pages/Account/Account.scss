@@ -40,7 +40,7 @@
       margin: 0px auto;
       border-bottom: 1px solid #dae0e6;
       .react-tabs__tab {
-        width: 125px;
+        width: 33vw;
         height: 50px;
         font-size: 16px;
         text-align: center;
@@ -117,6 +117,15 @@
 
   @media screen and (max-width: 800px) {
     width: 100vw;
+    .header-container {
+      .purchase-job-posting {
+        position: static;
+        button {
+          margin: 10px auto 10px auto;
+          display: block;
+        }
+      }
+    }
 
     .jobs-container {
       width: 100vw;
