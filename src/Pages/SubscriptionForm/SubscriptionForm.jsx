@@ -18,7 +18,8 @@ import { API_ROOT } from 'api-config';
 
 import './SubscriptionForm.scss';
 
-const stripePromise = loadStripe('pk_test_Cm3mbl5Qa4v6DZXHtRTS29Kp00hn4kDF06');
+// const stripePromise = loadStripe('pk_test_Cm3mbl5Qa4v6DZXHtRTS29Kp00hn4kDF06');
+const stripePromise = loadStripe('pk_live_20UYqDxIye4WGPS1cqr025GK00hnVogbae');
 // 'pk_live_20UYqDxIye4WGPS1cqr025GK00hnVogbae'
 
 const iframeStyles = {
