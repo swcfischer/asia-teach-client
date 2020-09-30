@@ -31,7 +31,7 @@ const mockJson = [
   },
   {
     name: 'Taiwan',
-    info: 'The best of both worlds!',
+    info: 'A small island with a lot to offer!',
     className: 'taiwan',
     link: 'taiwan',
   },
