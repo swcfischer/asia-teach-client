@@ -30,6 +30,7 @@ import {
   Footer,
   PurchaseForm,
   SubscriptionForm,
+  TermsOfService,
   ChangePassword,
   ResumeDetails,
   AboutUs,
@@ -79,6 +80,7 @@ const LoggedInRoutes = () => {
       <Route path="/change-password/:token" component={ChangePassword} />
       <Route path="/about-us" component={AboutUs} />
       <Route path="/contact-us" component={ContactUs} />
+      <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="*" render={() => <Redirect to="/" />} />
     </Switch>
   );
@@ -100,6 +102,7 @@ const LoggedOutRoutes = () => {
       <Route path="/change-password/:token" component={ChangePassword} />
       <Route path="/about-us" component={AboutUs} />
       <Route path="/contact-us" component={ContactUs} />
+      <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="*" render={() => <Redirect to="/" />} />
     </Switch>
   );

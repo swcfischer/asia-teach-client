@@ -58,6 +58,9 @@ const Footer = ({ currentUser }) => {
               </li>
             </Fragment>
           )}
+          <li onClick={toTop} className="link">
+            <Link to="/terms-of-service">Terms Of Service</Link>
+          </li>
           {/* <li className="link">
             <Link onClick={toTop} to="/about-us">
               About
