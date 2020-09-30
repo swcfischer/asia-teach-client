@@ -14,7 +14,7 @@ const Footer = ({ currentUser }) => {
     <div className="footer-container">
       <div className="inner-container">
         <div className="left-side">
-          <h2 className="site-title">Asia-Teach</h2>
+          <h2 className="site-title">© Asia-Teach</h2>
         </div>
         <ul className="link-container">
           <li className="link">
