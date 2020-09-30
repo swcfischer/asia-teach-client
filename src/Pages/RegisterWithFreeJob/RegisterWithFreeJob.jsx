@@ -49,15 +49,15 @@ const RegisterWithFreeJob = (props) => {
 
   return (
     <React.Fragment>
-      <h1 className="base-header-styling">Register</h1>
-      <ul className="base-info-list">
+      {/* <h1 className="base-header-styling">Register</h1> */}
+      <ul className="base-info-list free-job">
         <li>
-          <strong>Must have an account in order to </strong>
-          <ul className="base-info-list">
-            <li>Post a resume</li>
-            <li>Buy job credits</li>
-            <li>Access to Resume Board</li>
-          </ul>
+          After providing an email and password you will be redirected to the
+          account page where you will see your free job posting{' '}
+        </li>
+        <li>
+          There is a forgot password link at the login page if you forget your
+          password <strong>:)</strong>
         </li>
       </ul>
       <form className="special-register-form" onSubmit={formik.handleSubmit}>
@@ -112,9 +112,6 @@ const RegisterWithFreeJob = (props) => {
         <button className="submit-button" type="submit">
           Sign up
         </button>
-        <Link className="login-link" to="/login">
-          Or just log in?
-        </Link>
       </form>
     </React.Fragment>
   );

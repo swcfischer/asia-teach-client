@@ -61,6 +61,12 @@ const Footer = ({ currentUser }) => {
           <li onClick={toTop} className="link">
             <Link to="/terms-of-service">Terms Of Service</Link>
           </li>
+          <li onClick={toTop} className="link">
+            <a href="https://twitter.com/TheAsiaTeach" target="_blank">
+              Twitter
+            </a>
+          </li>
+
           {/* <li className="link">
             <Link onClick={toTop} to="/about-us">
               About
