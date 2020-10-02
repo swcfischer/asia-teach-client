@@ -27,6 +27,7 @@ const Login = (props) => {
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
     onSubmit: async (values) => {
+      values.email = values.email.toLowerCase();
       axios.post(API_ROOT + '/api/login', values).then((result) => {
         if (result.data.error) {
           return toast.error(result.data.message);

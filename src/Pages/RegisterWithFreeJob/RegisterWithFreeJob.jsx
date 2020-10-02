@@ -27,6 +27,7 @@ const RegisterWithFreeJob = (props) => {
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
     onSubmit: async (values) => {
+      values.email = values.email.toLowerCase();
       const result = await axios.post(
         API_ROOT + '/api/coupon/create-account-with-job',
         { ...values, code: uuid }
