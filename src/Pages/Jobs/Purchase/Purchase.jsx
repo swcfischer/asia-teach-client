@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 import './Purchase.scss';
 
 const pricing = [
-  { price: 65, quantity: 1, color: 'red', link: 'one', total: 65 },
-  { price: 55, quantity: 5, color: 'blue', link: 'five', total: 55 * 5 },
-  { price: 45, quantity: 10, color: 'gold', link: 'ten', total: 45 * 10 },
+  { price: 20, quantity: 1, color: 'red', link: 'one', total: 20 },
+  { price: 15, quantity: 5, color: 'blue', link: 'five', total: 15 * 5 },
+  { price: 10, quantity: 10, color: 'gold', link: 'ten', total: 10 * 10 },
 ];
 
 function Purchase(props) {

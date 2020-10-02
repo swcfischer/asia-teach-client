@@ -101,7 +101,7 @@ function PurchaseForm({ userUuid, email, storeSubscriptionId }) {
     <div className="subscription-form-container">
       <h1 className="base-header-styling">Checkout</h1>
       <ul className="base-info-list">
-        <li>$55 for one month's access</li>
+        <li>$25 for one month's access</li>
         <li>Can update subscription status in Account page</li>
       </ul>
       <div className="form-container">
@@ -126,7 +126,7 @@ function PurchaseForm({ userUuid, email, storeSubscriptionId }) {
                 disabled: isButtonDisabled,
               })}
             >
-              Pay $55
+              Pay $25
             </button>
           </div>
         </form>

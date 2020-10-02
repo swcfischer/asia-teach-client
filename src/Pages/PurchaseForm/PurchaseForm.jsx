@@ -19,7 +19,7 @@ import './PurchaseForm.scss';
 const stripePromise = loadStripe('pk_live_20UYqDxIye4WGPS1cqr025GK00hnVogbae');
 // 'pk_live_20UYqDxIye4WGPS1cqr025GK00hnVogbae'
 
-const priceDictionary = { one: 65, five: 275, ten: 450 };
+const priceDictionary = { one: 20, five: 75, ten: 100 };
 
 const quantityDictionary = { one: 1, five: 5, ten: 10 };
 
