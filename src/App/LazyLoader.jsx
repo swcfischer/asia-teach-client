@@ -48,6 +48,7 @@ export { default as AboutUs } from 'Pages/AboutUs';
 export { default as ContactUs } from 'Pages/ContactUs';
 export { default as RegisterWithFreeJob } from 'Pages/RegisterWithFreeJob';
 export { default as TermsOfService } from 'Pages/TermsOfService';
+export { default as Metrics } from 'Pages/Metrics';
 
 // Component Imports  -- might not need code splitting here
 export { default as Nav } from 'Components/Nav';

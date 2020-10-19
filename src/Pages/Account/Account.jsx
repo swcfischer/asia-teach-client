@@ -92,6 +92,7 @@ const Dashboard = (props) => {
                   key={idx}
                   companyName={companyName}
                   idx={idx}
+                  isUnpublished={true}
                 />
               ))}
           </div>
@@ -100,7 +101,13 @@ const Dashboard = (props) => {
           <div className="jobs-container base-container">
             {props.publishedJobs &&
               props.publishedJobs.map((job, idx) => (
-                <JobItem key={idx} idx={idx} uuid={job.uuid} {...job} />
+                <JobItem
+                  key={idx}
+                  idx={idx}
+                  uuid={job.uuid}
+                  isUnpublished={false}
+                  {...job}
+                />
               ))}
           </div>
         </TabPanel>
@@ -108,7 +115,13 @@ const Dashboard = (props) => {
           <div className="jobs-container base-container">
             {props.expiredJobs &&
               props.expiredJobs.map((job, idx) => (
-                <JobItem key={idx} idx={idx} uuid={job.uuid} {...job} />
+                <JobItem
+                  key={idx}
+                  idx={idx}
+                  uuid={job.uuid}
+                  isUnpublished={false}
+                  {...job}
+                />
               ))}
           </div>
         </TabPanel>

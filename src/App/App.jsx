@@ -35,6 +35,7 @@ import {
   ResumeDetails,
   AboutUs,
   ContactUs,
+  Metrics,
 
   // ResumeSearch,
   ResumeCheck,
@@ -81,6 +82,7 @@ const LoggedInRoutes = () => {
       <Route path="/about-us" component={AboutUs} />
       <Route path="/contact-us" component={ContactUs} />
       <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/job/metrics/:uuid" component={Metrics} />
       <Route path="*" render={() => <Redirect to="/" />} />
     </Switch>
   );

@@ -39,7 +39,6 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "reset-css": "^5.0.1",
     "smoothscroll-polyfill": "^0.4.4",
     "uuid": "^8.1.0",
     "yup": "^0.28.1"
