@@ -6,12 +6,21 @@ import ReactLoading from 'react-loading';
 import ReactModal from 'react-modal';
 import { IoIosImages } from 'react-icons/io';
 import { FiCopy } from 'react-icons/fi';
+import axios from 'axios';
+import { API_ROOT } from 'api-config';
+import { toast } from 'react-toastify';
 
 import ImageCarousel from './components/ImageCarousel';
 
 import './Posting.scss';
 
-import { clearData, fetchPosting } from './reducer';
+import {
+  clearData,
+  fetchPosting,
+  updateLikes,
+  logClick,
+  logTimeSpent,
+} from './reducer';
 
 // ! I thought I noticed a slight perf reductrion when I iterated to create image list versus non-list iterated img tags
 
@@ -19,14 +28,29 @@ import { clearData, fetchPosting } from './reducer';
 ReactModal.setAppElement('body');
 
 class Posting extends Component {
+  constructor(props) {
+    super(props);
+    this.timeSpent = 0;
+    this.timeSpentId = setInterval(() => {
+      this.timeSpent++;
+    }, 1000);
+  }
+
   state = {
     isOpen: false,
   };
   componentDidMount() {
+    this.props.logClick(this.props.match.params.uuid);
     this.props.fetchPosting(this.props.match.params.uuid);
     window.scrollTo({ top: 0 });
   }
+
   componentWillUnmount() {
+    // log time tracking
+    const { uuid } = this.props.match.params;
+    this.props.logTimeSpent({ uuid, timeSpent: this.timeSpent });
+    window.clearInterval(this.timeSpentId);
+
     this.props.clearData();
   }
 
@@ -66,8 +90,11 @@ class Posting extends Component {
       thumbnail,
       link,
       email,
+      favoritedBy,
+      uuid: jobUuid,
     } = this.props.job;
-    const { isLoading } = this.props;
+
+    const { isLoading, userUuid } = this.props;
 
     const { isOpen } = this.state;
 
@@ -82,7 +109,7 @@ class Posting extends Component {
     return (
       <div className="post-container">
         <div className="job-description">
-          <div className="go-back-container">
+          <div className="back-btn-container">
             <button
               className="btn-blue btn go-back-btn"
               onClick={() => {
@@ -93,7 +120,7 @@ class Posting extends Component {
             </button>
           </div>
           <div className="header">
-            <div>
+            <div className="link-email-wrapper">
               <div className="email-wrapper">
                 <a href={`mailto:${email}`}>{email}</a>
                 <FiCopy onClick={this.copyToClipboard} className="email-copy" />
@@ -101,7 +128,7 @@ class Posting extends Component {
               {link && (
                 <div className="link-wrapper">
                   <a href={link} target="_blank" rel="noopener noreferrer">
-                    Link
+                    Application Link
                   </a>
                 </div>
               )}
@@ -125,6 +152,34 @@ class Posting extends Component {
             className="description"
             dangerouslySetInnerHTML={{ __html: descriptionHTML }}
           ></div>
+          <div className="save-btn-container">
+            <button
+              className="save-btn btn btn-green"
+              onClick={async (event) => {
+                event.preventDefault();
+
+                if (!this.props.userUuid) {
+                  return toast.error('Must be logged in to save');
+                }
+                // create api endpoint to like a job,
+                // must send two uuids, job uuid and user uuid
+                // axios blah blah
+                const { data } = await axios.post(
+                  `${API_ROOT}/api/favorites/${userUuid}/${jobUuid}`
+                );
+
+                if (data.error) {
+                  toast.error(data.message);
+                } else {
+                  toast.success(data.message);
+                }
+
+                this.props.updateLikes(data.favoritedBy);
+              }}
+            >
+              {favoritedBy.includes(userUuid) ? 'Unsave' : 'Save'}
+            </button>
+          </div>
         </div>
 
         <ReactModal
@@ -141,11 +196,17 @@ class Posting extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return state.posting;
+  return {
+    ...state.posting,
+    userUuid: state.app.currentUser && state.app.currentUser.uuid,
+  };
 };
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ clearData, fetchPosting }, dispatch);
+  bindActionCreators(
+    { clearData, fetchPosting, updateLikes, logClick, logTimeSpent },
+    dispatch
+  );
 
 export default withRouter(
   connect(mapStateToProps, mapDispatchToProps)(Posting)

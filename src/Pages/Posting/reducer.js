@@ -4,6 +4,7 @@ import { API_ROOT } from 'api-config';
 
 const FETCH_POSTING = 'FETCH_POSTING';
 const CLEAR_DATA = 'CLEAR_DATA';
+const UPDATE_LIKES = 'UPDATE_LIKES';
 
 export function fetchPosting(uuid) {
   return async (dispatch) => {
@@ -30,6 +31,32 @@ export function clearData() {
   };
 }
 
+export function updateLikes(payload) {
+  return {
+    type: UPDATE_LIKES,
+    payload,
+  };
+}
+
+export function logClick(jobUuid) {
+  return async (_, __) => {
+    const { data } = await axios.post(`${API_ROOT}/api/job/clicks`, {
+      uuid: jobUuid,
+    });
+  };
+}
+
+export function logTimeSpent({ timeSpent, uuid }) {
+  return async (_, __) => {
+    const { data } = await axios.post(`${API_ROOT}/api/job/time`, {
+      uuid,
+      timeSpent,
+    });
+
+    console.log('data', data);
+  };
+}
+
 const initialState = {
   isLoading: true,
   job: {},
@@ -42,6 +69,14 @@ export default function reducer(state = initialState, { type, payload }) {
         ...state,
         isLoading: false,
         job: payload,
+      };
+    case UPDATE_LIKES:
+      return {
+        ...state,
+        job: {
+          ...state.job,
+          favoritedBy: payload,
+        },
       };
     case CLEAR_DATA:
       return initialState;

@@ -60,7 +60,7 @@ const App = ({ fetchCurrentUser, currentUser, isLoading }) => {
         {currentUser ? <LoggedInRoutes /> : <LoggedOutRoutes />}
         <Footer />
       </Router>
-      <ToastContainer className="base-toast-container" autoClose={6000} />
+      <ToastContainer className="base-toast-container" autoClose={5000} />
     </Fragment>
   );
 };

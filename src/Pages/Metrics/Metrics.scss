@@ -1,0 +1,24 @@
+.metrics-container {
+  .metrics-base-container {
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+
+    .metrics-list {
+      font-size: 26px;
+      dt {
+        padding-bottom: 10px;
+        text-align: center;
+      }
+
+      dd {
+        padding: 0px;
+        margin-inline-start: 0px;
+        font-weight: bold;
+        padding-bottom: 35px;
+        text-align: center;
+        font-size: 26px;
+      }
+    }
+  }
+}

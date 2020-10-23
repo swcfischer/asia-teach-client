@@ -9,9 +9,16 @@ import axios from 'axios';
 import Subscription from './Subscription';
 
 import JobItem from './JobItem';
+import FavoriteItem from './FavoriteItem';
 
 import { API_ROOT } from 'api-config';
-import { fetchUnpublished, fetchPublished, fetchExpired } from './reducer';
+import {
+  fetchUnpublished,
+  fetchPublished,
+  fetchExpired,
+  fetchFavoriteJobs,
+  unsaveJob,
+} from './reducer';
 
 import './Account.scss';
 import 'react-tabs/style/react-tabs.css';
@@ -21,6 +28,8 @@ const Dashboard = (props) => {
     fetchPublished,
     fetchUnpublished,
     fetchExpired,
+    fetchFavoriteJobs,
+    unsaveJob,
     currentUser,
     isLoading,
   } = props;
@@ -33,6 +42,7 @@ const Dashboard = (props) => {
       fetchPublished();
       fetchUnpublished();
       fetchExpired();
+      fetchFavoriteJobs();
     }
 
     async function fetchData() {
@@ -51,7 +61,13 @@ const Dashboard = (props) => {
       fetchData();
     }
     setLoadingLocal(false);
-  }, [fetchPublished, fetchUnpublished, currentUser, fetchExpired]);
+  }, [
+    fetchPublished,
+    fetchUnpublished,
+    currentUser,
+    fetchExpired,
+    fetchFavoriteJobs,
+  ]);
 
   if (isLoading || isLoadingLocal) {
     return (
@@ -126,6 +142,13 @@ const Dashboard = (props) => {
           </div>
         </TabPanel>
       </Tabs>
+      <h2 className="base-header-styling">Saved jobs</h2>
+      <div className="saved-container">
+        {props.favoriteJobs.map((job) => (
+          <FavoriteItem {...job} key={job.uuid} unsaveJob={unsaveJob} />
+        ))}
+        {props.favoriteJobs.length === 0 && <p>You have no jobs saved</p>}
+      </div>
     </div>
   );
 };
@@ -139,7 +162,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
-    { fetchUnpublished, fetchPublished, fetchExpired },
+    {
+      fetchUnpublished,
+      fetchPublished,
+      fetchExpired,
+      fetchFavoriteJobs,
+      unsaveJob,
+    },
     dispatch
   );
 

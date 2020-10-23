@@ -95,6 +95,7 @@
       border-bottom: none;
       background: #fff;
       padding: 10px 0px;
+      cursor: pointer;
 
       &:last-of-type {
         border: 1px solid #dae0e6;
@@ -106,6 +107,9 @@
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
       }
+      &:hover {
+        border: 1px solid #888;
+      }
 
       .job-company-name {
         padding: 0px;
@@ -113,25 +117,6 @@
         font-size: 24px;
         height: 100%;
         border: none;
-
-        &:hover {
-          color: #0a5eb8;
-        }
-      }
-
-      .metrics-link {
-        padding-right: 40px;
-        padding-top: 5px;
-        svg {
-          font-size: 28px;
-          color: #000;
-        }
-
-        &:hover {
-          svg {
-            color: #0a5eb8;
-          }
-        }
       }
 
       .metrics-icon {
@@ -142,6 +127,69 @@
 
         &:hover {
           color: #0a5eb8;
+        }
+      }
+    }
+  }
+  .saved-container {
+    width: 650px;
+    margin: 0 auto;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    margin-bottom: 40px;
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    .saved-item {
+      display: flex;
+      cursor: pointer;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 70px;
+      border: 1px solid #dae0e6;
+      border-bottom: none;
+      background: #fff;
+      padding: 10px 0px;
+
+      &:last-of-type {
+        border: 1px solid #dae0e6;
+        border-bottom: 1px solid #dae0e6;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+      &:first-of-type {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+      }
+      &:hover {
+        border: 1px solid #999;
+      }
+
+      .lefthand-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        padding-bottom: 10px;
+
+        .job-company-name {
+          padding: 0px;
+          padding-bottom: 20px;
+          font-size: 24px;
+          height: 100%;
+          border: none;
+        }
+
+        .capitalize {
+          text-transform: capitalize;
+        }
+      }
+
+      .righthand-wrapper {
+        margin-right: 20px;
+        .unsave-btn {
         }
       }
     }

@@ -1,19 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
 import { GoGraph } from 'react-icons/go';
 import Popper from 'Components/Popper';
 
 export default function JobItem(props) {
   const { idx, uuid, companyName, isUnpublished } = props;
+  const history = useHistory();
+
+  const handleClick = useCallback(
+    (event) => {
+      event.preventDefault();
+      let nodeClassName = event.target.className;
+      if (typeof nodeClassName === 'object') {
+        nodeClassName = 'metrics-icon';
+      }
+      if (!isUnpublished && nodeClassName.match(/metrics-icon/)) {
+        history.push(`/job/metrics/${uuid}`);
+      } else {
+        history.push(`/post-job/stepper/details/${uuid}`);
+      }
+    },
+    [isUnpublished, uuid, history]
+  );
+
   return (
-    <div className="job-item">
-      <Link key={idx} to={`/post-job/stepper/details/${uuid}`}>
-        <div className="job-company-name">
-          {companyName ? companyName : 'Click this text to post job'}
-        </div>
-      </Link>
-      {/* <Metric isUnpublished={isUnpublished} uuid={uuid} /> */}
-      {/* <div>Job Id: {uuid}</div> */}
+    <div onClick={handleClick} key={idx} className="job-item">
+      <div className="job-company-name">
+        {companyName ? companyName : 'Click this text to post job'}
+      </div>
+      <Metric isUnpublished={isUnpublished} uuid={uuid} />
     </div>
   );
 }
@@ -26,11 +41,7 @@ function Metric({ isUnpublished, uuid }) {
       </Popper>
     );
   }
-  return (
-    <Link className="metrics-link" to={`/job/metrics/${uuid}`}>
-      <GoGraph />
-    </Link>
-  );
+  return <GoGraph className="metrics-icon" />;
 }
 
 /*
