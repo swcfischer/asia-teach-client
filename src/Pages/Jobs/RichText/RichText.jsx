@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import classNames from 'classnames';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -30,9 +31,12 @@ const toolbarOptions = {
 
 const RichText = (props) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [topLimit, setTopLimit] = useState(0);
+  const [isFixed, setIsFixed] = useState(false);
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const { uuid: userUuid } = props.currentUser;
   const { uuid } = useParams();
+  const containerRef = useRef(null);
 
   useEffect(() => {
     async function fetchDescription() {
@@ -51,8 +55,26 @@ const RichText = (props) => {
       setIsLoading(false);
       setEditorState(editorState);
     }
+
     fetchDescription();
   }, [userUuid, uuid]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', (e) => {
+      console.log('window.scrollY', window.scrollY);
+      if (window.scrollY > topLimit) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    });
+  }, [topLimit]);
+
+  useEffect(() => {
+    const top =
+      containerRef && containerRef.current && containerRef.current.offsetTop;
+    setTopLimit(top);
+  }, [isLoading]);
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
@@ -87,7 +109,7 @@ const RichText = (props) => {
 
   return (
     <div>
-      <div className="rich-text-container">
+      <div ref={containerRef} className="rich-text-container">
         <button className="btn btn-green rich-text-save" onClick={handleSave}>
           Save
         </button>
@@ -105,7 +127,7 @@ const RichText = (props) => {
         </Link>
         <Editor
           editorState={editorState}
-          wrapperClassName="demo-wrapper"
+          wrapperClassName={classNames('demo-wrapper', { fixed: isFixed })}
           editorClassName="demo-editor"
           onEditorStateChange={onEditorStateChange}
           toolbar={toolbarOptions}

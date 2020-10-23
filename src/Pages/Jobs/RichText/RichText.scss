@@ -23,6 +23,18 @@
   .demo-wrapper {
     // width: 800px;
     // margin: 0 auto;
+    &.fixed {
+      .rdw-editor-toolbar {
+        position: fixed;
+        left: 0px;
+        top: 50px;
+        background: #fff;
+        transform: translateX(-50%);
+        margin-left: 50%;
+        z-index: 100;
+        padding: 10px 110px 10px 110px;
+      }
+    }
 
     .rdw-editor-toolbar {
       justify-content: flex-start !important;
