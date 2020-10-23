@@ -91,6 +91,7 @@ class Posting extends Component {
       link,
       email,
       favoritedBy,
+      images,
       uuid: jobUuid,
     } = this.props.job;
 
@@ -133,20 +134,24 @@ class Posting extends Component {
                 </div>
               )}
             </div>
-
-            <div className="images-container" onClick={this.handleCarouselOpen}>
-              <div className="gradient">
-                <IoIosImages />
+            {images && images.length > 0 && (
+              <div
+                className="images-container"
+                onClick={this.handleCarouselOpen}
+              >
+                <div className="gradient">
+                  <IoIosImages />
+                </div>
+                <img
+                  src={
+                    thumbnail && thumbnail.includes('https')
+                      ? thumbnail
+                      : `/assets/${thumbnail}`
+                  }
+                  alt="stock school"
+                />
               </div>
-              <img
-                src={
-                  thumbnail && thumbnail.includes('https')
-                    ? thumbnail
-                    : `/assets/${thumbnail}`
-                }
-                alt="stock school"
-              />
-            </div>
+            )}
           </div>
           <div
             className="description"
