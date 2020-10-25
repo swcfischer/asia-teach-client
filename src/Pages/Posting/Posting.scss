@@ -25,6 +25,7 @@
       .link-wrapper {
         display: flex;
         align-items: center;
+        text-transform: capitalize;
 
         .email-copy {
           margin-left: 10px;
@@ -100,21 +101,21 @@
 
     .description {
       padding-top: 50px;
-    }
 
-    ul,
-    ol {
-      padding: 0;
-      text-indent: 0;
-      margin: 16px 0;
-    }
+      ul,
+      ol {
+        padding: 0;
+        text-indent: 0;
+        margin: 16px 0;
+      }
 
-    li {
-      padding-top: 10px;
-      padding-left: 20px;
-    }
-    p {
-      margin: 16px 20px;
+      li {
+        padding-top: 10px;
+        padding-left: 20px;
+      }
+      p {
+        margin: 16px 20px;
+      }
     }
   }
 

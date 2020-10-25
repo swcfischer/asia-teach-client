@@ -61,7 +61,6 @@ const RichText = (props) => {
 
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
-      console.log('window.scrollY', window.scrollY);
       if (window.scrollY > topLimit) {
         setIsFixed(true);
       } else {
