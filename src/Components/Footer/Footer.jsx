@@ -29,22 +29,22 @@ const Footer = ({ currentUser }) => {
           </li>
           <li className="link">
             <Link onClick={toTop} to="/post-job/purchase-jobs">
-              Purchase Job Credits
+              Post Job
             </Link>
           </li>
           {currentUser ? (
             <Fragment>
-              <li className="link">
-                <Link onClick={toTop} to="/account">
-                  Account
-                </Link>
-              </li>
               <li className="link">
                 <Link
                   onClick={toTop}
                   to={`/post-resume/details/${currentUser.uuid}`}
                 >
                   Post Resume
+                </Link>
+              </li>
+              <li className="link">
+                <Link onClick={toTop} to="/account">
+                  Account
                 </Link>
               </li>
             </Fragment>

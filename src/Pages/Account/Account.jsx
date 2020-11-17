@@ -1,18 +1,19 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import ReactLoading from 'react-loading';
+import axios from 'axios';
+
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-import ReactLoading from 'react-loading';
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
-import axios from 'axios';
 
 import Subscription from './Subscription';
-
 import JobItem from './JobItem';
 import FavoriteItem from './FavoriteItem';
 
 import { API_ROOT } from 'api-config';
+
 import {
   fetchUnpublished,
   fetchPublished,
@@ -30,6 +31,9 @@ const tabRouteMap = {
   expired: 2,
 };
 
+const constructCurrentTabIndex = (routeTabName) =>
+  routeTabName && tabRouteMap[routeTabName] ? tabRouteMap[routeTabName] : 0;
+
 const Dashboard = (props) => {
   const {
     fetchPublished,
@@ -40,15 +44,16 @@ const Dashboard = (props) => {
     currentUser,
     isLoading,
   } = props;
+
   const history = useHistory();
   const {
     params: { selectedTab },
   } = useRouteMatch();
+
   const [isActive, setActive] = useState();
   const [isCancelAtEnd, setCancelAtEnd] = useState();
   const [isLoadingLocal, setLoadingLocal] = useState(true);
-  const currentTabIndex =
-    selectedTab && tabRouteMap[selectedTab] ? tabRouteMap[selectedTab] : 0;
+  const currentTabIndex = constructCurrentTabIndex(selectedTab);
 
   const [tabIndex, setTabIndex] = useState(currentTabIndex);
 
@@ -68,8 +73,6 @@ const Dashboard = (props) => {
 
       setActive(data.status);
       setCancelAtEnd(data.cancelAtPeriodEnd);
-
-      // const result = await axios.get('/something something');
     }
 
     if (currentUser.subscriptionId) {
@@ -95,10 +98,9 @@ const Dashboard = (props) => {
   }, [tabIndex]);
 
   useEffect(() => {
-    const currentTabIndex =
-      selectedTab && tabRouteMap[selectedTab] ? tabRouteMap[selectedTab] : 0;
+    const nextTabIndex = constructCurrentTabIndex(selectedTab);
 
-    setTabIndex(currentTabIndex);
+    setTabIndex(nextTabIndex);
   }, [selectedTab]);
 
   const handleSelect = useCallback(
@@ -122,7 +124,8 @@ const Dashboard = (props) => {
         <Link to="/post-job/purchase-jobs" className="purchase-job-posting">
           <button className="btn btn-blue">Buy more jobs</button>
         </Link>
-      </div>{' '}
+      </div>
+
       {isActive === 'active' && (
         <Subscription
           currentUser={currentUser}
@@ -131,7 +134,9 @@ const Dashboard = (props) => {
           isCancelAtEnd={isCancelAtEnd}
         />
       )}
+
       <h1 className="base-header-styling">Jobs</h1>
+
       <Tabs selectedIndex={tabIndex} onSelect={handleSelect}>
         <TabList>
           <Tab>Unpublished</Tab>
