@@ -72,7 +72,7 @@ const LoggedInRoutes = () => {
       <Route path="/jobs" component={Search} />
       <Route path="/posting/:uuid" component={Posting} />
       <Route path="/resume/:resumeUuid" component={ResumeDetails} />
-      <Route path="/account" component={Account} />
+      <Route path="/account/:selectedTab?" component={Account} />
       <Route path="/post-resume" component={PostResume} />
       <Route path="/post-job" component={JobRoutes} />
       <Route path="/resume-board" component={ResumeCheck} />

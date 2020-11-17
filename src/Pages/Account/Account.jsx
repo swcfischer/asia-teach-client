@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
@@ -23,6 +24,12 @@ import {
 import './Account.scss';
 import 'react-tabs/style/react-tabs.css';
 
+const tabRouteMap = {
+  unpublished: 0,
+  published: 1,
+  expired: 2,
+};
+
 const Dashboard = (props) => {
   const {
     fetchPublished,
@@ -36,6 +43,10 @@ const Dashboard = (props) => {
   const [isActive, setActive] = useState();
   const [isCancelAtEnd, setCancelAtEnd] = useState();
   const [isLoadingLocal, setLoadingLocal] = useState(true);
+  const [tabIndex, setTabIndex] = useState(0);
+
+  const history = useHistory();
+  const { params } = useRouteMatch();
 
   useEffect(() => {
     if (currentUser) {
@@ -44,6 +55,13 @@ const Dashboard = (props) => {
       fetchExpired();
       fetchFavoriteJobs();
     }
+
+    const { selectedTab } = params;
+
+    const currentTabIndex =
+      selectedTab && tabRouteMap[selectedTab] ? tabRouteMap[selectedTab] : 0;
+
+    setTabIndex(currentTabIndex);
 
     async function fetchData() {
       const { data } = await axios.get(
@@ -69,6 +87,18 @@ const Dashboard = (props) => {
     fetchFavoriteJobs,
   ]);
 
+  const handleSelect = useCallback(
+    (index) => {
+      const tabRoute = Object.keys(tabRouteMap).find(
+        (key) => tabRouteMap[key] === index
+      );
+
+      history.push(`/account/${tabRoute}`);
+      setTabIndex(index);
+    },
+    [tabIndex]
+  );
+
   if (isLoading || isLoadingLocal) {
     return (
       <div className="base-loading-container">
@@ -93,7 +123,7 @@ const Dashboard = (props) => {
         />
       )}
       <h1 className="base-header-styling">Jobs</h1>
-      <Tabs>
+      <Tabs selectedIndex={tabIndex} onSelect={handleSelect}>
         <TabList>
           <Tab>Unpublished</Tab>
           <Tab>Published</Tab>
