@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { IoIosCloseCircleOutline } from 'react-icons/io';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import ReactCrop from 'react-image-crop';
 import ReactModal from 'react-modal';
@@ -10,6 +9,7 @@ import { toast } from 'react-toastify';
 import classNames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 import { API_ROOT } from 'api-config';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 
 import 'react-image-crop/dist/ReactCrop.css';
 

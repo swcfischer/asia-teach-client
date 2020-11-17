@@ -46,18 +46,27 @@
     .flex-container {
       display: block;
       position: relative;
-      padding-bottom: 15px;
       .thumbnail-container-width {
         display: inline-block;
         // width: 370px;
         .thumbnail-container {
           height: 190px;
-          max-width: 339px;
+          width: 339px;
           padding-right: 15px;
           img {
             height: auto;
             width: 100%;
             border-radius: 3px;
+          }
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        padding-bottom: 20px;
+        .thumbnail-container-width {
+          .thumbnail-container {
+            width: initial;
+            max-width: 339px;
           }
         }
       }
