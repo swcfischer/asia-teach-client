@@ -40,13 +40,17 @@ const Dashboard = (props) => {
     currentUser,
     isLoading,
   } = props;
+  const history = useHistory();
+  const {
+    params: { selectedTab },
+  } = useRouteMatch();
   const [isActive, setActive] = useState();
   const [isCancelAtEnd, setCancelAtEnd] = useState();
   const [isLoadingLocal, setLoadingLocal] = useState(true);
-  const [tabIndex, setTabIndex] = useState(0);
+  const currentTabIndex =
+    selectedTab && tabRouteMap[selectedTab] ? tabRouteMap[selectedTab] : 0;
 
-  const history = useHistory();
-  const { params } = useRouteMatch();
+  const [tabIndex, setTabIndex] = useState(currentTabIndex);
 
   useEffect(() => {
     if (currentUser) {
@@ -55,13 +59,6 @@ const Dashboard = (props) => {
       fetchExpired();
       fetchFavoriteJobs();
     }
-
-    const { selectedTab } = params;
-
-    const currentTabIndex =
-      selectedTab && tabRouteMap[selectedTab] ? tabRouteMap[selectedTab] : 0;
-
-    setTabIndex(currentTabIndex);
 
     async function fetchData() {
       const { data } = await axios.get(
@@ -87,13 +84,25 @@ const Dashboard = (props) => {
     fetchFavoriteJobs,
   ]);
 
+  useEffect(() => {
+    const tabRoute = Object.keys(tabRouteMap).find(
+      (key) => tabRouteMap[key] === tabIndex
+    );
+
+    if (tabRoute !== selectedTab) {
+      history.push(`/account/${tabRoute}`);
+    }
+  }, [tabIndex]);
+
+  useEffect(() => {
+    const currentTabIndex =
+      selectedTab && tabRouteMap[selectedTab] ? tabRouteMap[selectedTab] : 0;
+
+    setTabIndex(currentTabIndex);
+  }, [selectedTab]);
+
   const handleSelect = useCallback(
     (index) => {
-      const tabRoute = Object.keys(tabRouteMap).find(
-        (key) => tabRouteMap[key] === index
-      );
-
-      history.push(`/account/${tabRoute}`);
       setTabIndex(index);
     },
     [tabIndex]
