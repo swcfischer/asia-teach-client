@@ -1,14 +1,8 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 export default function JobItem(props) {
   const { companyName, city, uuid, country, unsaveJob } = props;
-
-  const handleUnsave = useCallback((e) => {
-    e.preventDefault();
-    // api call and remove this item
-  }, []);
 
   return (
     <Link className="saved-item" to={`/posting/${uuid}`}>
@@ -19,14 +13,16 @@ export default function JobItem(props) {
           <span className="capitalize">{city}</span>
         </div>
       </div>
-      <div
-        onClick={(event) => {
-          event.preventDefault();
-          unsaveJob(uuid);
-        }}
-        className="righthand-wrapper"
-      >
-        <button className="btn btn-orange unsave-btn">Unsave</button>
+      <div className="righthand-wrapper">
+        <button
+          className="btn btn-orange unsave-btn"
+          onClick={(event) => {
+            event.preventDefault();
+            unsaveJob(uuid);
+          }}
+        >
+          Unsave
+        </button>
       </div>
     </Link>
   );
