@@ -9,6 +9,7 @@ import {
   FaUser,
   FaGlobeAsia,
 } from 'react-icons/fa';
+import { BiNews } from 'react-icons/bi';
 import { IoIosDocument } from 'react-icons/io';
 import { MdViewList } from 'react-icons/md';
 import { GiTeacher } from 'react-icons/gi';
@@ -57,6 +58,10 @@ const LoggedInMenu = (props) => {
   const { userUuid } = props;
   return (
     <div className="nav-items-container">
+      <a className="nav-item" href="https://blog.asia-teach.com">
+        <BiNews />
+        <span className="text">Blog</span>
+      </a>
       <NavLink exact className="nav-item" activeClassName="selected" to="/">
         <FaGlobeAsia />
         <span className="text">Countries</span>
@@ -109,6 +114,10 @@ const LoggedInMenu = (props) => {
 const LoggedOutMenu = () => {
   return (
     <div className="nav-items-container">
+      <a className="nav-item" href="https://blog.asia-teach.com">
+        <BiNews />
+        <span className="text">Blog</span>
+      </a>
       <NavLink exact className="nav-item" activeClassName="selected" to="/">
         <FaGlobeAsia />
         <span className="text">Countries</span>
