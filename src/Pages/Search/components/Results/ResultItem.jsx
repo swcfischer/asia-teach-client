@@ -82,23 +82,17 @@ export default function ResultItem(props) {
   labelDate = startDateOptions.find((el) => el.value === startDate)?.label;
   let labelDuration = '';
   labelDuration = durationOptions.find((el) => el.value === duration)?.label;
-
-  const handlePhoto = useCallback(() => {
-    // For now, this will not handle the local static file
-    if (!thumbnail) {
-      return mapCountryToStockPhoto[country];
-    } else {
-      return thumbnail;
-    }
-
-    /* Previous logic
+  /* Previous logic
         thumbnail && thumbnail.includes('https')
           ? thumbnail
           : thumbnail
           ? `/assets/${thumbnail}`
           : 'https://static-files-asia-teach.s3.amazonaws.com/korea-bg-2.jpg'
     */
-  }, [country, thumbnail]);
+  const handlePhoto = useCallback(
+    () => (!thumbnail ? mapCountryToStockPhoto[country] : thumbnail),
+    [country, thumbnail]
+  );
 
   return (
     <Link to={`/posting/${uuid}`} className="posting-link">
