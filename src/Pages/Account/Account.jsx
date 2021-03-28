@@ -122,7 +122,7 @@ const Dashboard = (props) => {
     <div className="job-dashboard">
       <div className="header-container">
         <Link to="/post-job/purchase-jobs" className="purchase-job-posting">
-          <button className="btn btn-blue">Buy more jobs</button>
+          <button className="btn btn-blue">Post more jobs</button>
         </Link>
       </div>
 

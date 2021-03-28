@@ -42,8 +42,8 @@ const Register = (props) => {
           <strong>Must have an account in order to </strong>
           <ul className="base-info-list">
             <li>Post a resume</li>
-            <li>Buy job credits</li>
-            <li>Access to Resume Board</li>
+            <li>Post a job</li>
+            <li>Access Resume Board</li>
           </ul>
         </li>
       </ul>

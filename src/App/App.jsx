@@ -38,6 +38,7 @@ import {
   Metrics,
 
   // ResumeSearch,
+  ResumeSearch,
   ResumeCheck,
 } from 'App/LazyLoader';
 
