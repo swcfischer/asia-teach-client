@@ -16,6 +16,8 @@ import { GiTeacher } from 'react-icons/gi';
 import { eraseCurrentUser } from 'App/appReducer';
 import { bindActionCreators } from 'redux';
 
+import fanPng from '../../assets/fan.png';
+
 import './Nav.scss';
 
 class Nav extends Component {
@@ -32,7 +34,13 @@ class Nav extends Component {
         <div className="nav-width-container">
           <Link to="/" className="header-link">
             <div className="header-container">
-              <div className="logo"></div>
+              <div
+                className="logo"
+                style={{
+                  background: `url(${fanPng})`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
               <h1 className="logo-text">Asia-Teach</h1>
             </div>
           </Link>

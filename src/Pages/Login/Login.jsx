@@ -12,6 +12,8 @@ import * as Yup from 'yup';
 import { API_ROOT } from 'api-config';
 import { storeCurrentUser } from '../../App/appReducer';
 
+import fanPng from '../../assets/fan.png';
+
 import './Login.scss';
 
 const Login = (props) => {
@@ -52,7 +54,7 @@ const Login = (props) => {
     <React.Fragment>
       <h1 className="base-header-styling">Login</h1>
       <form className="login-form" onSubmit={formik.handleSubmit}>
-        <img className="logo" src="/assets/fan.png" alt="fan logo" />
+        <img className="logo" src={fanPng} alt="fan logo" />
         <div className="input-container">
           <label htmlFor="email">
             <input

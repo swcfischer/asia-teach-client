@@ -9,6 +9,8 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { API_ROOT } from 'api-config';
 
+import fanPng from '../../assets/fan.png';
+
 import './Register.scss';
 
 const Register = (props) => {
@@ -48,7 +50,7 @@ const Register = (props) => {
         </li>
       </ul>
       <form className="register-form" onSubmit={formik.handleSubmit}>
-        <img className="logo" src="/assets/fan.png" alt="logo" />
+        <img className="logo" src={fanPng} alt="logo" />
         <div className="input-container">
           <label htmlFor="email">
             <input
