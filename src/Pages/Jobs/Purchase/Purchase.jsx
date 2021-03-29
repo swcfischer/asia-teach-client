@@ -25,11 +25,10 @@ function Purchase(props) {
           API_ROOT + '/api/jobs/create/' + props?.currentUser?.uuid
         );
 
-        if (data.error) {
-          if ((data.errorType = 'already_has_job')) {
-            toast.error('You already have an unpublished job');
-            return history.push('/account');
-          }
+        if (data.errorType === 'HAS_JOB') {
+          toast.error('You already have an unpublished job');
+          return history.push('/account');
+        } else if (data.errorType === 'CATCH') {
           history.push('/register');
           return toast.error('You must login or create an account first');
         }
@@ -54,7 +53,7 @@ function Purchase(props) {
         <li>Always editable from account page</li>
         <li>Preview job before posting</li>
       </ul>
-      <div className="purchase-button-container">
+      <div className="purchase-button-container increased-size">
         <button className="btn-blue btn purchase" onClick={handleCreateJob}>
           Create Job
         </button>
