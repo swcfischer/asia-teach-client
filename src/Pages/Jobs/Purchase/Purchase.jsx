@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { API_ROOT } from 'api-config';
 import { toast } from 'react-toastify';
+import { VscDiffAdded } from 'react-icons/vsc';
 
 import './Purchase.scss';
 
@@ -28,7 +29,7 @@ function Purchase(props) {
         if (data.errorType === 'HAS_JOB') {
           toast.error('You already have an unpublished job');
           return history.push('/account');
-        } else if (data.errorType === 'CATCH') {
+        } else if (data.error) {
           history.push('/register');
           return toast.error('You must login or create an account first');
         }
@@ -55,7 +56,11 @@ function Purchase(props) {
       </ul>
       <div className="purchase-button-container increased-size">
         <button className="btn-blue btn purchase" onClick={handleCreateJob}>
-          Create Job
+          Create Job{' '}
+          <span className="plus">
+            {' '}
+            <VscDiffAdded />
+          </span>
         </button>
       </div>
       {/* <div className="purchase-container">

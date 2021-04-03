@@ -40,6 +40,7 @@ class Home extends Component {
             <h1 className="logo-text">Asia-Teach</h1>
           </div>
           <div className="gradient"></div>
+          <h1 className="home-title">Discover Your New Job</h1>
           <Select
             placeholder="Select a country"
             options={options}
