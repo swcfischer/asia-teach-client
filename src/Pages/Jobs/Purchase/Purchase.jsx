@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { API_ROOT } from 'api-config';
 import { toast } from 'react-toastify';
-import { VscDiffAdded } from 'react-icons/vsc';
 
 import './Purchase.scss';
 
@@ -56,11 +55,7 @@ function Purchase(props) {
       </ul>
       <div className="purchase-button-container increased-size">
         <button className="btn-blue btn purchase" onClick={handleCreateJob}>
-          Create Job{' '}
-          <span className="plus">
-            {' '}
-            <VscDiffAdded />
-          </span>
+          Create Job <span className="plus"></span>
         </button>
       </div>
       {/* <div className="purchase-container">
