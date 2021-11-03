@@ -46,6 +46,7 @@ function Purchase(props) {
 
   return (
     <Fragment>
+      <h1 className="base-header-styling">Post Job</h1>
       <ul className="base-info-list purchase">
         {!props.currentUser && <li>Must create an account</li>}
         <li>Lasts for 45 days</li>
