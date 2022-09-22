@@ -7,6 +7,8 @@ import { API_ROOT } from 'api-config';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
+import fanPng from '../../assets/fan.png';
+
 import './ChangePassword.scss';
 
 const ChangePassword = (props) => {
@@ -55,7 +57,7 @@ const ChangePassword = (props) => {
     <Fragment>
       <h1 className="base-header-styling">Forgot Password</h1>
       <form className="change-password-form" onSubmit={formik.handleSubmit}>
-        <img className="logo" src="/assets/fan.png" alt="logo" />
+        <img className="logo" src={fanPng} alt="logo" />
         <div className="input-container">
           <label htmlFor="password">
             <input

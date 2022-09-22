@@ -7,6 +7,8 @@ import * as Yup from 'yup';
 
 import { API_ROOT } from 'api-config';
 
+import fanPng from '../../assets/fan.png';
+
 import './ContactUs.scss';
 
 const ContactUs = (props) => {
@@ -36,7 +38,7 @@ const ContactUs = (props) => {
     <React.Fragment>
       {/* <h1 className="base-header-styling">Contact Us</h1> */}
       <form className="contact-us-form" onSubmit={formik.handleSubmit}>
-        <img className="logo" src="/assets/fan.png" alt="fan logo" />
+        <img className="logo" src={fanPng} alt="fan logo" />
         <div className="input-container">
           <label htmlFor="email">
             <input

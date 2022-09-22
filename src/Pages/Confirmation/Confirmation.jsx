@@ -11,6 +11,7 @@ function Confirmation() {
   const match = useRouteMatch();
   const history = useHistory();
   const { token } = match.params;
+
   useEffect(() => {
     async function confirmUser() {
       const { data } = await axios.post(API_ROOT + `/api/confirmation/`, {
