@@ -1,20 +1,20 @@
-import React, { useEffect, useState, useRef, Fragment } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState, useRef, Fragment } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
-import { EditorState, convertToRaw, ContentState } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
-import draftToHtml from 'draftjs-to-html';
-import htmlToDraft from 'html-to-draftjs';
-import ReactLoading from 'react-loading';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { toast } from 'react-toastify';
+import { EditorState, convertToRaw, ContentState } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+import draftToHtml from "draftjs-to-html";
+import htmlToDraft from "html-to-draftjs";
+import ReactLoading from "react-loading";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { toast } from "react-toastify";
 
-import { API_ROOT } from 'api-config';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import './ResumeUpload.scss';
-const toolbarOptions = useToolbarOptions();
+import { API_ROOT } from "api-config";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import "./ResumeUpload.scss";
+const toolbarOptions = returnToolbarOptions();
 
 const RichText = (props) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +35,7 @@ const RichText = (props) => {
       );
 
       if (data.resumeHtml) {
-        const blocksFromHtml = htmlToDraft(data.resumeHtml || '');
+        const blocksFromHtml = htmlToDraft(data.resumeHtml || "");
         const { contentBlocks, entityMap } = blocksFromHtml;
         const contentState = ContentState.createFromBlockArray(
           contentBlocks,
@@ -88,7 +88,7 @@ const RichText = (props) => {
           API_ROOT + `/api/post-resume/resume/${userUuid}`,
           {
             resumeUrl: reader.result,
-            resumeHtml: '',
+            resumeHtml: "",
           }
         );
 
@@ -187,7 +187,7 @@ const RichText = (props) => {
 
           {uploadedFile && <p>{uploadedFile.name}</p>}
           <button className="btn btn-blue" onClick={toggleRichTextEditor}>
-            {isShowEditor ? 'Close' : 'Text Editor'}
+            {isShowEditor ? "Close" : "Text Editor"}
           </button>
         </div>
         {!isShowEditor && <div className="separator" />}
@@ -223,16 +223,16 @@ const RichText = (props) => {
   );
 };
 
-function useToolbarOptions() {
+function returnToolbarOptions() {
   return {
-    options: ['inline', 'textAlign', 'list', 'blockType', 'link'],
+    options: ["inline", "textAlign", "list", "blockType", "link"],
     inline: {
       inDropdown: false,
-      options: ['bold', 'italic', 'underline'],
+      options: ["bold", "italic", "underline"],
     },
     blockType: {
       inDropdown: false,
-      options: ['Normal', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'Blockquote'],
+      options: ["Normal", "H1", "H2", "H3", "H4", "H5", "H6", "Blockquote"],
     },
   };
 }
